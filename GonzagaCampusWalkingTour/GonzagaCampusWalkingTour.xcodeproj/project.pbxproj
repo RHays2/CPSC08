@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35C75208D5A3282921BCC1B5 /* Pods_GonzagaCampusWalkingTourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1E281782CAC451AB1CB529 /* Pods_GonzagaCampusWalkingTourTests.framework */; };
 		8D4262E6236127540075D46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262E5236127540075D46C /* AppDelegate.swift */; };
 		8D4262E8236127540075D46C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262E7236127540075D46C /* ViewController.swift */; };
 		8D4262EB236127540075D46C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262E9236127540075D46C /* Main.storyboard */; };
 		8D4262ED236127540075D46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262EC236127540075D46C /* Assets.xcassets */; };
 		8D4262F0236127540075D46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262EE236127540075D46C /* LaunchScreen.storyboard */; };
 		8D4262FB236127540075D46C /* GonzagaCampusWalkingTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */; };
+		8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */; };
+		DC56C73E6283167EA1930AAA /* Pods_GonzagaCampusWalkingTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonzagaCampusWalkingTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C495D51C8CF23B03A15DD8D /* Pods-GonzagaCampusWalkingTourTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTourTests.debug.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTourTests/Pods-GonzagaCampusWalkingTourTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D4262E2236127540075D46C /* GonzagaCampusWalkingTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GonzagaCampusWalkingTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4262E5236127540075D46C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D4262E7236127540075D46C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +41,11 @@
 		8D4262F6236127540075D46C /* GonzagaCampusWalkingTourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GonzagaCampusWalkingTourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GonzagaCampusWalkingTourTests.swift; sourceTree = "<group>"; };
 		8D4262FC236127540075D46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
+		91C7A468224EB312AD79E03C /* Pods-GonzagaCampusWalkingTourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTourTests/Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; sourceTree = "<group>"; };
+		9D1E281782CAC451AB1CB529 /* Pods_GonzagaCampusWalkingTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonzagaCampusWalkingTourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B47C547D339749E2C4E9C7B3 /* Pods-GonzagaCampusWalkingTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.debug.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.debug.xcconfig"; sourceTree = "<group>"; };
+		C4641F10C79A8E3220B02C21 /* Pods-GonzagaCampusWalkingTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC56C73E6283167EA1930AAA /* Pods_GonzagaCampusWalkingTour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +61,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C75208D5A3282921BCC1B5 /* Pods_GonzagaCampusWalkingTourTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2240EBE29ED75CF9E768696F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */,
+				9D1E281782CAC451AB1CB529 /* Pods_GonzagaCampusWalkingTourTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8D4262D9236127540075D46C = {
 			isa = PBXGroup;
 			children = (
 				8D4262E4236127540075D46C /* GonzagaCampusWalkingTour */,
 				8D4262F9236127540075D46C /* GonzagaCampusWalkingTourTests */,
 				8D4262E3236127540075D46C /* Products */,
+				950FE1275871344EB2BA0BDF /* Pods */,
+				2240EBE29ED75CF9E768696F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +106,7 @@
 				8D4262EC236127540075D46C /* Assets.xcassets */,
 				8D4262EE236127540075D46C /* LaunchScreen.storyboard */,
 				8D4262F1236127540075D46C /* Info.plist */,
+				8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */,
 			);
 			path = GonzagaCampusWalkingTour;
 			sourceTree = "<group>";
@@ -96,6 +120,17 @@
 			path = GonzagaCampusWalkingTourTests;
 			sourceTree = "<group>";
 		};
+		950FE1275871344EB2BA0BDF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B47C547D339749E2C4E9C7B3 /* Pods-GonzagaCampusWalkingTour.debug.xcconfig */,
+				C4641F10C79A8E3220B02C21 /* Pods-GonzagaCampusWalkingTour.release.xcconfig */,
+				5C495D51C8CF23B03A15DD8D /* Pods-GonzagaCampusWalkingTourTests.debug.xcconfig */,
+				91C7A468224EB312AD79E03C /* Pods-GonzagaCampusWalkingTourTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D4262FF236127540075D46C /* Build configuration list for PBXNativeTarget "GonzagaCampusWalkingTour" */;
 			buildPhases = (
+				9565E10FCDDDFDA0098C9F79 /* [CP] Check Pods Manifest.lock */,
 				8D4262DE236127540075D46C /* Sources */,
 				8D4262DF236127540075D46C /* Frameworks */,
 				8D4262E0236127540075D46C /* Resources */,
+				757171D726D21CABA7957EB3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,6 +157,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D426302236127540075D46C /* Build configuration list for PBXNativeTarget "GonzagaCampusWalkingTourTests" */;
 			buildPhases = (
+				66650BAB7BD6D8EE9B3B4A78 /* [CP] Check Pods Manifest.lock */,
 				8D4262F2236127540075D46C /* Sources */,
 				8D4262F3236127540075D46C /* Frameworks */,
 				8D4262F4236127540075D46C /* Resources */,
@@ -194,6 +232,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		66650BAB7BD6D8EE9B3B4A78 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GonzagaCampusWalkingTourTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		757171D726D21CABA7957EB3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9565E10FCDDDFDA0098C9F79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GonzagaCampusWalkingTour-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D4262DE236127540075D46C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -201,6 +298,7 @@
 			files = (
 				8D4262E8236127540075D46C /* ViewController.swift in Sources */,
 				8D4262E6236127540075D46C /* AppDelegate.swift in Sources */,
+				8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +449,7 @@
 		};
 		8D426300236127540075D46C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B47C547D339749E2C4E9C7B3 /* Pods-GonzagaCampusWalkingTour.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -365,6 +464,7 @@
 		};
 		8D426301236127540075D46C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4641F10C79A8E3220B02C21 /* Pods-GonzagaCampusWalkingTour.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +479,7 @@
 		};
 		8D426303236127540075D46C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C495D51C8CF23B03A15DD8D /* Pods-GonzagaCampusWalkingTourTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -395,6 +496,7 @@
 		};
 		8D426304236127540075D46C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91C7A468224EB312AD79E03C /* Pods-GonzagaCampusWalkingTourTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
