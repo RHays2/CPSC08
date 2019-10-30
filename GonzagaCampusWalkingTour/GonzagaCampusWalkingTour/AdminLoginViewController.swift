@@ -1,31 +1,27 @@
 //
-//  ViewController.swift
+//  AdminLoginViewController.swift
 //  GonzagaCampusWalkingTour
 //
-//  Created by Max Heinzelman on 10/23/19.
+//  Created by Hays, Ryan T on 10/29/19.
 //  Copyright © 2019 Senior Design Group 8. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    @IBAction func buttonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "testSegue", sender: self)
-    }
-    @IBAction func AdminLoginButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "AdminLoginSegue", sender: self)
+class AdminLoginViewController: UIViewController {
+    
+    @IBAction func BackToStartButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "BackToStartScreenSegue", sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
-

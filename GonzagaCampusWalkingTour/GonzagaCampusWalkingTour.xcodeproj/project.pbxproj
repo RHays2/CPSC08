@@ -16,6 +16,7 @@
 		8D4262FB236127540075D46C /* GonzagaCampusWalkingTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */; };
 		8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */; };
 		DC56C73E6283167EA1930AAA /* Pods_GonzagaCampusWalkingTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */; };
+		E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44422A62369556B0035C938 /* AdminLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		9D1E281782CAC451AB1CB529 /* Pods_GonzagaCampusWalkingTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonzagaCampusWalkingTourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47C547D339749E2C4E9C7B3 /* Pods-GonzagaCampusWalkingTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.debug.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.debug.xcconfig"; sourceTree = "<group>"; };
 		C4641F10C79A8E3220B02C21 /* Pods-GonzagaCampusWalkingTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.release.xcconfig"; sourceTree = "<group>"; };
+		E44422A62369556B0035C938 /* AdminLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				8D4262E5236127540075D46C /* AppDelegate.swift */,
 				8D4262E7236127540075D46C /* ViewController.swift */,
+				E44422A62369556B0035C938 /* AdminLoginViewController.swift */,
 				8D4262E9236127540075D46C /* Main.storyboard */,
 				8D4262EC236127540075D46C /* Assets.xcassets */,
 				8D4262EE236127540075D46C /* LaunchScreen.storyboard */,
@@ -298,6 +301,7 @@
 			files = (
 				8D4262E8236127540075D46C /* ViewController.swift in Sources */,
 				8D4262E6236127540075D46C /* AppDelegate.swift in Sources */,
+				E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */,
 				8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
