@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         googleMapsViewController.modalPresentationStyle = .fullScreen
         self.present(googleMapsViewController, animated: true, completion: nil)
     }
+    @IBAction func AdminLoginButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "AdminLoginSegue", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
