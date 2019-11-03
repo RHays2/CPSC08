@@ -11,7 +11,7 @@ import GoogleMaps
 
 class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +26,26 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate {
             // the user turned off location, phone is airplane mode, lack of hardware, hardware failure,...
             print("Location services disabled")
         }
+        
+        // Create a GMSCameraPosition that tells the map to display the
+        // centered around the users location
+        let lattitude = locationManager.location?.coordinate.latitude
+        let longitude = locationManager.location?.coordinate.longitude
+        let camera = GMSCameraPosition.camera(withLatitude: lattitude ?? 0.0, longitude: longitude ?? 0.0, zoom: 18.0)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.settings.myLocationButton = true
+        mapView.isMyLocationEnabled = true
+        
+        //add layout constraints
+        view.addSubviewAndPinEdges(mapView)
+        
+
+        // Creates a marker in the center of the map.
+//        let marker = GMSMarker()
+//        marker.position = CLLocationCoordinate2D(latitude: 47.667533, longitude: -117.400630)
+//        marker.title = "Gonzaga University"
+//        marker.snippet = "Test Location"
+//        marker.map = mapView
     }
     
     func setupLocationServices() {
@@ -43,33 +63,8 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func loadView() {
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: 47.667533, longitude: -117.400630, zoom: 17.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        //self.view = mapView
-        
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: 47.667533, longitude: -117.400630)
-        marker.title = "Gonzaga University"
-        marker.snippet = "Test Location"
-        mapView.settings.myLocationButton = true
-        mapView.isMyLocationEnabled = true
-        marker.map = mapView
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+

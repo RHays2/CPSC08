@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func buttonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "testSegue", sender: self)
+        let googleMapsViewController = GoogleMapsViewController(nibName: nil, bundle: nil)
+        googleMapsViewController.modalPresentationStyle = .fullScreen
+        self.present(googleMapsViewController, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
