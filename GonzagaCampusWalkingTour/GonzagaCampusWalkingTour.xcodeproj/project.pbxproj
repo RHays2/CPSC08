@@ -469,7 +469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M8YM97V34C;
+				DEVELOPMENT_TEAM = GUYPJD4NUE;
 				INFOPLIST_FILE = GonzagaCampusWalkingTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GonzagaCampusWalkingTour;
@@ -485,7 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M8YM97V34C;
+				DEVELOPMENT_TEAM = GUYPJD4NUE;
 				INFOPLIST_FILE = GonzagaCampusWalkingTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GonzagaCampusWalkingTour;
