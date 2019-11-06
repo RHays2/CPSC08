@@ -16,7 +16,10 @@ class ViewController: UIViewController {
         self.present(googleMapsViewController, animated: true, completion: nil)
     }
     @IBAction func AdminLoginButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "AdminLoginSegue", sender: self)
+        //self.performSegue(withIdentifier: "AdminLoginSegue", sender: self)
+        let test = UIStoryboard(name: "Main", bundle: nil)
+        let admin = test.instantiateViewController(withIdentifier: "AdminLoginViewController")
+        self.present(admin, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

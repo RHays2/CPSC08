@@ -11,7 +11,8 @@ import UIKit
 class AdminLoginViewController: UIViewController {
     
     @IBAction func BackToStartButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "BackToStartScreenSegue", sender: self)
+        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
