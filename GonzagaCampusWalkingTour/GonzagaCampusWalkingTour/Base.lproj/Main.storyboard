@@ -16,20 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GonzagaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oTf-MB-7td">
-                                <rect key="frame" x="67" y="162" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GonzagaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oTf-MB-7td">
+                                <rect key="frame" x="20" y="73" width="335" height="242"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="242" id="5ub-vA-kHl"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Campus Augmented RealityWalking Tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uh-gW-APq">
-                                <rect key="frame" x="27" y="298" width="321" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campus Augmented RealityWalking Tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uh-gW-APq">
+                                <rect key="frame" x="32.5" y="323" width="310" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCg-1C-ESP">
-                                <rect key="frame" x="145" y="606" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCg-1C-ESP">
+                                <rect key="frame" x="8" y="617" width="359" height="30"/>
                                 <state key="normal" title="Admin Login">
                                     <color key="titleColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -37,9 +38,8 @@
                                     <action selector="AdminLoginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xGB-is-Uqa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-KT-XTE">
-                                <rect key="frame" x="16" y="552" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-KT-XTE">
+                                <rect key="frame" x="8" y="567" width="359" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Begin">
                                     <color key="titleColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,16 +50,30 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.036483272910000003" green="0.21865761280000001" blue="0.36250299219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d7W-KT-XTE" secondAttribute="trailing" constant="8" id="CXV-VB-5jq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oTf-MB-7td" secondAttribute="trailing" constant="20" id="EgO-C6-XHc"/>
+                            <constraint firstItem="8uh-gW-APq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fhf-hb-TPl"/>
+                            <constraint firstItem="8uh-gW-APq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Knp-93-ebt"/>
+                            <constraint firstItem="8uh-gW-APq" firstAttribute="top" secondItem="oTf-MB-7td" secondAttribute="bottom" constant="8" id="Mma-RN-10t"/>
+                            <constraint firstItem="rCg-1C-ESP" firstAttribute="top" secondItem="d7W-KT-XTE" secondAttribute="bottom" constant="8" id="O8E-I7-ayz"/>
+                            <constraint firstItem="oTf-MB-7td" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cg3-ud-pVi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rCg-1C-ESP" secondAttribute="trailing" constant="8" id="dKf-sy-jux"/>
+                            <constraint firstItem="d7W-KT-XTE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="gXN-w2-jhS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rCg-1C-ESP" secondAttribute="bottom" constant="20" id="mmZ-PJ-heq"/>
+                            <constraint firstItem="rCg-1C-ESP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="v2b-QD-Bb3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zNK-ls-23L"/>
                     <connections>
                         <segue destination="7a2-sa-lyc" kind="showDetail" identifier="testSegue" id="Ry1-z9-B6M"/>
-                        <segue destination="D5i-4Z-PGE" kind="showDetail" identifier="AdminLoginSegue" id="szq-bE-WbO"/>
+                        <segue destination="D5i-4Z-PGE" kind="show" identifier="AdminLoginSegue" id="szq-bE-WbO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="71" y="-136"/>
         </scene>
         <!--Admin Login View Controller-->
         <scene sceneID="nIF-Gm-Ihi">
@@ -120,13 +134,14 @@
                         <color key="backgroundColor" red="0.036483272910000003" green="0.21865761280000001" blue="0.36250299219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="TBl-x2-E7V"/>
                     </view>
+                    <navigationItem key="navigationItem" id="x0c-FZ-y6C"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="BackToStartScreenSegue" id="jnx-El-hKU"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="BackToStartScreenSegue" id="jnx-El-hKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5S-jV-RoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149.59999999999999" y="884.70764617691157"/>
+            <point key="canvasLocation" x="-711" y="628"/>
         </scene>
         <!--Google Maps View Controller-->
         <scene sceneID="e71-B4-6hQ">
