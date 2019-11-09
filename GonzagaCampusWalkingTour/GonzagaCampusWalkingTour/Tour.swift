@@ -8,27 +8,28 @@
 
 import UIKit
 
-class tour {
+class Tour {
     
     //MARK: Properties
-    var tour_name: String
-    var tour_description: String?
-    var tour_stops = [Stop]()
+    var tourName: String
+    var tourDescription: String?
+    var tourStops = [Stop]()
+    var tourImage: UIImage
     // var tour_location: // not sure what datatype to represent the tour's location for google maps
     
     
     
     //MARK: Initialization
-    init?(tour_name: String, tour_description: String, tour_stops: [Stop]) {
+    init?(tourName: String, tourImage: UIImage, tourDescription: String, tourStops: [Stop]) {
         // if there is no name, initialization fails
-        guard !tour_name.isEmpty else {
+        guard !tourName.isEmpty else {
             return nil
         }
         
-        self.tour_name = tour_name
-        self.tour_description = tour_description
-        self.tour_stops = tour_stops
+        self.tourName = tourName
+        self.tourImage = tourImage
+        self.tourDescription = tourDescription
+        self.tourStops = tourStops
     }
-    
 }
 

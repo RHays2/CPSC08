@@ -11,21 +11,21 @@ import UIKit
 class Asset {
     
     //MARK: Properties
-    var asset_name: String
+    var assetName: String
     var asset: UIImage? // will need to later add video capabilities
-    var asset_description: String?
+    var assetDescription: String?
     
     
     //MARK: Initialization
-    init?(asset_name: String, asset: UIImage?, asset_description: String) {
+    init?(assetName: String, asset: UIImage?, assetDescription: String) {
         // if there is no name, initialization fails
-        if asset_name.isEmpty {
+        if assetName.isEmpty {
             return nil
         }
         
-        self.asset_name = asset_name
+        self.assetName = assetName
         self.asset = asset
-        self.asset_description = asset_description
+        self.assetDescription = assetDescription
     }
     
 }
