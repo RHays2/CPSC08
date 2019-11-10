@@ -28,24 +28,33 @@ class TourTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1 // number of table sections, for us just one
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tours.count // each section (in this case just one) has tours.count number of rows
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { 
+        // a method to "configure and provide a cell to display for a given row"
+        
+        let cellIdentifier = "TourTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for:indexPath)
+            as? TourTableViewCell else { // downcast to a TourTableViewCell
+                fatalError("The dequeued cell is not an instance of TourTableViewCell")
+        }
+        
+        let tour = tours[indexPath.row] // set the tour to be displayed in this cell
+        
+        // configure the cell
+        cell.tourName.text = tour.tourName
+        cell.tourImage.image = tour.tourImage
+        cell.tourDescription.text = tour.tourDescription
+        
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -109,19 +118,19 @@ class TourTableViewController: UITableViewController {
                 fatalError("Unable to instantiate DefaultStop1")
             }
         
-        guard let tour1 = Tour(tourName: "College Hall", tourImage:tourPhoto1, tourDescription: "A tour of the first building of Gonzaga", tourStops: [stop1]) else {
+        guard let tour1 = Tour(tourName: "College Hall", tourImage:tourPhoto1, tourDescription: "A tour of the first building of Gonzaga", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour1")
         }
-        guard let tour2 = Tour(tourName: "College Hall", tourImage:tourPhoto2, tourDescription: "A tour of the first building of Gonzaga", tourStops: [stop1]) else {
+        guard let tour2 = Tour(tourName: "Foley", tourImage:tourPhoto2, tourDescription: "A tour of the library", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour2")
         }
-        guard let tour3 = Tour(tourName: "College Hall", tourImage:tourPhoto3, tourDescription: "A tour of the first building of Gonzaga", tourStops: [stop1]) else {
+        guard let tour3 = Tour(tourName: "Hemmy", tourImage:tourPhoto3, tourDescription: "A tour of offices and food", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour3")
         }
-        guard let tour4 = Tour(tourName: "College Hall", tourImage:tourPhoto4, tourDescription: "A tour of the first building of Gonzaga", tourStops: [stop1]) else {
+        guard let tour4 = Tour(tourName: "Paccar", tourImage:tourPhoto4, tourDescription: "A tour of Science and Engineering", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour4")
         }
-        guard let tour5 = Tour(tourName: "College Hall", tourImage:tourPhoto5, tourDescription: "A tour of the first building of Gonzaga", tourStops: [stop1]) else {
+        guard let tour5 = Tour(tourName: "Field", tourImage:tourPhoto5, tourDescription: "A tour of where soccer is played", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour5")
         }
         tours += [tour1, tour2, tour3, tour4, tour5]

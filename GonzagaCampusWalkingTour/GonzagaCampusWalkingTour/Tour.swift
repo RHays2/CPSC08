@@ -15,12 +15,14 @@ class Tour {
     var tourDescription: String?
     var tourStops = [Stop]()
     var tourImage: UIImage
+    var tourDistance: Float?
+    var tourTime: Int?
     // var tour_location: // not sure what datatype to represent the tour's location for google maps
     
     
     
     //MARK: Initialization
-    init?(tourName: String, tourImage: UIImage, tourDescription: String, tourStops: [Stop]) {
+    init?(tourName: String, tourImage: UIImage, tourDescription: String, tourStops: [Stop], tourDistance: Float, tourTime: Int) {
         // if there is no name, initialization fails
         guard !tourName.isEmpty else {
             return nil
@@ -30,6 +32,8 @@ class Tour {
         self.tourImage = tourImage
         self.tourDescription = tourDescription
         self.tourStops = tourStops
+        self.tourDistance = tourDistance
+        self.tourTime = tourTime
     }
 }
 

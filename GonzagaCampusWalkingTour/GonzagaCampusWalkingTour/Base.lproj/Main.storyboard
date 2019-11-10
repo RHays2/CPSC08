@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="-711" y="628"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Tour Table View Controller-->
         <scene sceneID="bil-Ky-Bya">
             <objects>
-                <tableViewController id="Xu1-Fz-K7H" sceneMemberID="viewController">
+                <tableViewController id="Xu1-Fz-K7H" customClass="TourTableViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="of7-ne-zzZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,13 +160,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="134.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="DefaultTour1" translatesAutoresizingMaskIntoConstraints="NO" id="ZG1-nK-BfT">
-                                            <rect key="frame" x="0.0" y="3" width="188" height="128"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="187.5" id="0Mh-OB-Wmt"/>
-                                                <constraint firstAttribute="height" constant="128" id="7Bj-Av-bTP"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="College Hall " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m47-3d-0Fh">
                                             <rect key="frame" x="195" y="11" width="164" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -178,15 +171,19 @@
                                             <rect key="frame" x="195" y="40" width="164" height="91"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DefaultTour2" translatesAutoresizingMaskIntoConstraints="NO" id="5nH-UR-svY">
+                                            <rect key="frame" x="8" y="7" width="179" height="121"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="tourDescription" destination="WGn-En-bwV" id="7Ew-dk-04z"/>
-                                    <outlet property="tourImage" destination="ZG1-nK-BfT" id="UXT-cH-5ik"/>
+                                    <outlet property="tourImage" destination="5nH-UR-svY" id="BFr-fZ-VMu"/>
                                     <outlet property="tourName" destination="m47-3d-0Fh" id="a5a-F8-g8I"/>
                                 </connections>
                             </tableViewCell>
@@ -219,7 +216,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DefaultTour1" width="352" height="168"/>
+        <image name="DefaultTour2" width="208" height="139"/>
         <image name="GonzagaLogo" width="552" height="369"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jnx-El-hKU"/>
+    </inferredMetricsTieBreakers>
 </document>
