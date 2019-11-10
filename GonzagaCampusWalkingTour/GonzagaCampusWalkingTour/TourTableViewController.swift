@@ -15,7 +15,7 @@ class TourTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // set up a placeholder asset, stop, and 5 tours
+        // set up a placeholder asset, stop, and multiple tours
         loadPlaceholderTours()
         
         // Uncomment the following line to preserve selection between presentations
@@ -25,8 +25,8 @@ class TourTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
 
+    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1 // number of table sections, for us just one
     }
@@ -101,6 +101,17 @@ class TourTableViewController: UITableViewController {
     }
     */
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+
+        tableView.deselectRow(at: indexPath, animated: true)
+        let tour = tours[indexPath.row] // the selected tour. Should be passed to the view controller for the tour detailed description screen.
+
+        // for now, selecting a tour takes the user straight to the map
+        let googleMapsViewController = GoogleMapsViewController(nibName: nil, bundle: nil)
+        googleMapsViewController.modalPresentationStyle = .fullScreen
+        self.present(googleMapsViewController, animated: true, completion: nil)
+    }
+
     //MARK: Private Methods
     private func loadPlaceholderTours() {
         let tourPhoto1 = UIImage(named: "DefaultTour1")!
@@ -108,7 +119,12 @@ class TourTableViewController: UITableViewController {
         let tourPhoto3 = UIImage(named: "DefaultTour3")!
         let tourPhoto4 = UIImage(named: "DefaultTour4")!
         let tourPhoto5 = UIImage(named: "DefaultTour5")!
-    
+        let tourPhoto6 = UIImage(named: "DefaultTour6")!
+        let tourPhoto7 = UIImage(named: "DefaultTour7")!
+        let tourPhoto8 = UIImage(named: "DefaultTour8")!
+        let tourPhoto9 = UIImage(named: "DefaultTour9")!
+        let tourPhoto10 = UIImage(named: "DefaultTour10")!
+        
         guard let asset1 = Asset(assetName: "DefaultAsset1", asset: tourPhoto1, assetDescription: "An aerial view of campus")
             else {
                 fatalError("Unable to instantiate DefaultAsset1")
@@ -130,9 +146,27 @@ class TourTableViewController: UITableViewController {
         guard let tour4 = Tour(tourName: "Paccar", tourImage:tourPhoto4, tourDescription: "A tour of Science and Engineering", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour4")
         }
-        guard let tour5 = Tour(tourName: "Field", tourImage:tourPhoto5, tourDescription: "A tour of where soccer is played", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        guard let tour5 = Tour(tourName: "Luger Field", tourImage:tourPhoto5, tourDescription: "A tour of where soccer is played", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour5")
         }
-        tours += [tour1, tour2, tour3, tour4, tour5]
+        guard let tour6 = Tour(tourName: "Parking", tourImage:tourPhoto6, tourDescription: "A tour of where to park on campus", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+            fatalError("Unable to instantiate DefaultTour6")
+        }
+        guard let tour7 = Tour(tourName: "Rosauer", tourImage:tourPhoto7, tourDescription: "A tour of the School of Education", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+            fatalError("Unable to instantiate DefaultTour7")
+        }
+        guard let tour8 = Tour(tourName: "Desmet", tourImage:tourPhoto8, tourDescription: "A tour of the first dorm, which is to this day men only", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+            fatalError("Unable to instantiate DefaultTour8")
+        }
+        guard let tour9 = Tour(tourName: "Coughlin", tourImage:tourPhoto9, tourDescription: "A tour of a newer dorm", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+            fatalError("Unable to instantiate DefaultTour9")
+        }
+        guard let tour10 = Tour(tourName: "Jundt", tourImage:tourPhoto10, tourDescription: "A tour of the art museum", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+            fatalError("Unable to instantiate DefaultTour10")
+        }
+        
+        
+        
+        tours += [tour1, tour2, tour3, tour4, tour5, tour6, tour7, tour8, tour9, tour10]
     }
 }

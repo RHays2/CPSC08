@@ -47,6 +47,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7a-UA-oKZ"/>
+                                    <segue destination="mvs-k9-FR2" kind="presentation" id="xxC-Nu-Sm3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -68,7 +69,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="zNK-ls-23L"/>
                     <connections>
-                        <segue destination="7a2-sa-lyc" kind="showDetail" identifier="testSegue" id="Ry1-z9-B6M"/>
                         <segue destination="D5i-4Z-PGE" kind="show" identifier="AdminLoginSegue" id="szq-bE-WbO"/>
                     </connections>
                 </viewController>
@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="-711" y="628"/>
         </scene>
-        <!--Tour Table View Controller-->
+        <!--Available Tours-->
         <scene sceneID="bil-Ky-Bya">
             <objects>
-                <tableViewController id="Xu1-Fz-K7H" customClass="TourTableViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TourTableViewController" title="Available Tours" id="Xu1-Fz-K7H" customClass="TourTableViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="of7-ne-zzZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,6 +185,7 @@
                                     <outlet property="tourDescription" destination="WGn-En-bwV" id="7Ew-dk-04z"/>
                                     <outlet property="tourImage" destination="5nH-UR-svY" id="BFr-fZ-VMu"/>
                                     <outlet property="tourName" destination="m47-3d-0Fh" id="a5a-F8-g8I"/>
+                                    <segue destination="7a2-sa-lyc" kind="show" identifier="TourToMapSegue" id="eEI-0W-V8y"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -193,10 +194,11 @@
                             <outlet property="delegate" destination="Xu1-Fz-K7H" id="ZJK-Wx-9Sd"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Available Tours" id="1sn-nI-9Le"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjJ-wp-Gaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965.60000000000002" y="330.58470764617692"/>
+            <point key="canvasLocation" x="1546" y="-484"/>
         </scene>
         <!--Google Maps View Controller-->
         <scene sceneID="e71-B4-6hQ">
@@ -212,14 +214,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Itt-Xd-DPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="-411"/>
+            <point key="canvasLocation" x="823" y="286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ULb-gt-Pqo">
+            <objects>
+                <navigationController storyboardIdentifier="TourTableViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="mvs-k9-FR2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ibh-It-FEt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xu1-Fz-K7H" kind="relationship" relationship="rootViewController" id="Dkp-ia-vHX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="owG-am-NlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="-484"/>
         </scene>
     </scenes>
     <resources>
         <image name="DefaultTour2" width="208" height="139"/>
         <image name="GonzagaLogo" width="552" height="369"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="jnx-El-hKU"/>
-    </inferredMetricsTieBreakers>
 </document>
