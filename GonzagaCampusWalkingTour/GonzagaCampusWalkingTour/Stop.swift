@@ -14,12 +14,13 @@ class Stop {
     var stopName: String
     var stopDescription: String?
     var stopAssets = [Asset]()
-    // var stop_location: // not sure what datatype to represent the stop's location for google maps
+    var stopLatitude: Float // I think latitude and longitude as floats could be useful representaitons of stop locations -Mason
+    var stopLongitude: Float
     
     
     
     //MARK: Initialization
-    init?(stopName: String, stopDescription: String, stopAssets: [Asset]) {
+    init?(stopName: String, stopDescription: String, stopAssets: [Asset], stopLatitude: Float, stopLongitude: Float) {
         // if there is no name, initialization fails
         guard !stopName.isEmpty else {
             return nil
@@ -28,6 +29,8 @@ class Stop {
         self.stopName = stopName
         self.stopDescription = stopDescription
         self.stopAssets = stopAssets
+        self.stopLatitude = stopLatitude
+        self.stopLongitude = stopLongitude
     }
     
 }
