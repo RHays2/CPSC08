@@ -15,6 +15,7 @@ class Stop {
     var stopDescription: String?
     var stopAssets = [Asset]()
     var stopLatitude: Float // I think latitude and longitude as floats could be useful representaitons of stop locations -Mason
+        //commenting again because I messed up the push
     var stopLongitude: Float
     
     

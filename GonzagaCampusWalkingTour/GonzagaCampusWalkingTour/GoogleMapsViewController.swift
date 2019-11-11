@@ -93,6 +93,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate{
 
     //a temporary function for displaying several markers before tour data is loaded from database
     // when data is passed from the tours, we can set the marker information as needed
+    //commenting again because I messed up the push
     func setStopsTemp(){
         // Creates a marker at hemmingson.
         let hemmingson = GMSMarker()
