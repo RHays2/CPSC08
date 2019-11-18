@@ -144,7 +144,7 @@ class TourTableViewController: UITableViewController {
             else {
                 fatalError("Unable to instantiate DefaultAsset1")
         }
-        guard let stop1 = Stop(stopName: "DefaultStop1", stopDescription: "An example stop", stopAssets: [asset1])
+        guard let stop1 = Stop(stopName: "DefaultStop1", stopDescription: "An example stop", stopAssets: [asset1], stopLatitude: 47.668112, stopLongitude: -117.402269)
             else {
                 fatalError("Unable to instantiate DefaultStop1")
             }

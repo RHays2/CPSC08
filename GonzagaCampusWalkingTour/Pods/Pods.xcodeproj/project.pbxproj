@@ -16,6 +16,7 @@
 				D42315111F400C0605ACCD6B5CAF2178 /* PBXTargetDependency */,
 			);
 			name = GooglePlaces;
+			productName = GooglePlaces;
 		};
 		E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */ = {
 			isa = PBXAggregateTarget;
@@ -25,6 +26,7 @@
 			dependencies = (
 			);
 			name = GoogleMaps;
+			productName = GoogleMaps;
 		};
 /* End PBXAggregateTarget section */
 
@@ -82,15 +84,15 @@
 		67AC96DE9D276F4C2195AC619830F317 /* Pods-GonzagaCampusWalkingTour-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GonzagaCampusWalkingTour-resources.sh"; sourceTree = "<group>"; };
 		7198F1A190CE02CCAA1ADF544823CF1B /* GoogleMaps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.xcconfig; sourceTree = "<group>"; };
 		7AC624FA21A87CDC613F187E17DEF900 /* Pods-GonzagaCampusWalkingTour-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GonzagaCampusWalkingTour-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8874C0221AED37E3B7B11D12A7F7AC3C /* Pods_GonzagaCampusWalkingTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GonzagaCampusWalkingTour.framework; path = "Pods-GonzagaCampusWalkingTour.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8874C0221AED37E3B7B11D12A7F7AC3C /* Pods_GonzagaCampusWalkingTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonzagaCampusWalkingTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		989DF01973143FE302D21AE8B047C981 /* Pods-GonzagaCampusWalkingTour.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GonzagaCampusWalkingTour.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FC292397823354F6914D8BF3E5D0C23 /* Pods-GonzagaCampusWalkingTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GonzagaCampusWalkingTour.release.xcconfig"; sourceTree = "<group>"; };
 		ABAD2513D5DCA9686B7CAAA7AFA75D76 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		ADE73A0174573E39B54F51D0D2DE5616 /* Pods-GonzagaCampusWalkingTourTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GonzagaCampusWalkingTourTests-dummy.m"; sourceTree = "<group>"; };
 		B2DA0C65CE0C3082809DE9F24B1887B2 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
 		B55CEE7026050D306243DD2BB71E28DE /* Pods-GonzagaCampusWalkingTourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; sourceTree = "<group>"; };
-		C548D5EB14E44E64B7CA14492ECDB21D /* Pods_GonzagaCampusWalkingTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GonzagaCampusWalkingTourTests.framework; path = "Pods-GonzagaCampusWalkingTourTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C548D5EB14E44E64B7CA14492ECDB21D /* Pods_GonzagaCampusWalkingTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonzagaCampusWalkingTourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA12D4DA8D520C656615C845CD273F3E /* Pods-GonzagaCampusWalkingTour-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GonzagaCampusWalkingTour-dummy.m"; sourceTree = "<group>"; };
 		DB001ECD90D080CDBC17FBA3381D6A3C /* Pods-GonzagaCampusWalkingTourTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GonzagaCampusWalkingTourTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E40DD335B2359CFDA6974249FFD880AB /* Pods-GonzagaCampusWalkingTourTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GonzagaCampusWalkingTourTests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -253,7 +255,6 @@
 				8CDA57B31B4FD68CE0585801635EBE42 /* Maps */,
 				153AAF7F80E262315923FD64E14A648F /* Support Files */,
 			);
-			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
@@ -301,7 +302,6 @@
 				60D3E8D6CD3CEEC213162D5A120B3F80 /* Resources */,
 				9E01F0E67DD69D261BC584514BA97576 /* Support Files */,
 			);
-			name = GooglePlaces;
 			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
@@ -527,8 +527,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
