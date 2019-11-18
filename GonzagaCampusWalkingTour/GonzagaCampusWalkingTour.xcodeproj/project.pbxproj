@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25471F46237A1BD9001BB0AA /* GonzagaGPX.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 25471F45237A1BD9001BB0AA /* GonzagaGPX.gpx */; };
 		35C75208D5A3282921BCC1B5 /* Pods_GonzagaCampusWalkingTourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1E281782CAC451AB1CB529 /* Pods_GonzagaCampusWalkingTourTests.framework */; };
 		8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */; };
 		8D4262E6236127540075D46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262E5236127540075D46C /* AppDelegate.swift */; };
@@ -16,6 +15,7 @@
 		8D4262ED236127540075D46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262EC236127540075D46C /* Assets.xcassets */; };
 		8D4262F0236127540075D46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262EE236127540075D46C /* LaunchScreen.storyboard */; };
 		8D4262FB236127540075D46C /* GonzagaCampusWalkingTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */; };
+		8D6AB90F2382642D0047BDD2 /* GonzagaGPX.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8D6AB90E2382642D0047BDD2 /* GonzagaGPX.gpx */; };
 		8D81D946236E0B1900D1CB79 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81D945236E0B1900D1CB79 /* UIView+.swift */; };
 		8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */; };
 		A71A088323775E6700AF7BA0 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A088223775E6700AF7BA0 /* Stop.swift */; };
@@ -38,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25471F45237A1BD9001BB0AA /* GonzagaGPX.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = GonzagaGPX.gpx; path = ../../../../Desktop/CPSC08/GonzagaCampusWalkingTour/GonzagaCampusWalkingTour/GonzagaGPX.gpx; sourceTree = "<group>"; };
 		2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonzagaCampusWalkingTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C495D51C8CF23B03A15DD8D /* Pods-GonzagaCampusWalkingTourTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTourTests.debug.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTourTests/Pods-GonzagaCampusWalkingTourTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDescriptionViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		8D4262F6236127540075D46C /* GonzagaCampusWalkingTourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GonzagaCampusWalkingTourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GonzagaCampusWalkingTourTests.swift; sourceTree = "<group>"; };
 		8D4262FC236127540075D46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D6AB90E2382642D0047BDD2 /* GonzagaGPX.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = GonzagaGPX.gpx; path = ../../../../../Downloads/GonzagaGPX.gpx; sourceTree = "<group>"; };
 		8D81D945236E0B1900D1CB79 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		91C7A468224EB312AD79E03C /* Pods-GonzagaCampusWalkingTourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTourTests/Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +118,7 @@
 		8D4262E4236127540075D46C /* GonzagaCampusWalkingTour */ = {
 			isa = PBXGroup;
 			children = (
+				8D6AB90E2382642D0047BDD2 /* GonzagaGPX.gpx */,
 				8D81D944236E0B0300D1CB79 /* Extensions */,
 				8D4262E5236127540075D46C /* AppDelegate.swift */,
 				8D4262E7236127540075D46C /* ViewController.swift */,
@@ -128,7 +129,6 @@
 				A71A088423775EBF00AF7BA0 /* Asset.swift */,
 				A71A088223775E6700AF7BA0 /* Stop.swift */,
 				A71A0886237760B000AF7BA0 /* Tour.swift */,
-				25471F45237A1BD9001BB0AA /* GonzagaGPX.gpx */,
 				8D4262EC236127540075D46C /* Assets.xcassets */,
 				8D4262EE236127540075D46C /* LaunchScreen.storyboard */,
 				8D4262F1236127540075D46C /* Info.plist */,
@@ -253,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D4262F0236127540075D46C /* LaunchScreen.storyboard in Resources */,
-				25471F46237A1BD9001BB0AA /* GonzagaGPX.gpx in Resources */,
+				8D6AB90F2382642D0047BDD2 /* GonzagaGPX.gpx in Resources */,
 				8D4262ED236127540075D46C /* Assets.xcassets in Resources */,
 				8D4262EB236127540075D46C /* Main.storyboard in Resources */,
 			);
@@ -497,7 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GUYPJD4NUE;
+				DEVELOPMENT_TEAM = M8YM97V34C;
 				INFOPLIST_FILE = GonzagaCampusWalkingTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GonzagaCampusWalkingTour;
@@ -513,7 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GUYPJD4NUE;
+				DEVELOPMENT_TEAM = M8YM97V34C;
 				INFOPLIST_FILE = GonzagaCampusWalkingTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GonzagaCampusWalkingTour;
