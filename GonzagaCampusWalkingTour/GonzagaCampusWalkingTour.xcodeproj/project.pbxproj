@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35C75208D5A3282921BCC1B5 /* Pods_GonzagaCampusWalkingTourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1E281782CAC451AB1CB529 /* Pods_GonzagaCampusWalkingTourTests.framework */; };
+		8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */; };
 		8D4262E6236127540075D46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262E5236127540075D46C /* AppDelegate.swift */; };
 		8D4262E8236127540075D46C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262E7236127540075D46C /* ViewController.swift */; };
 		8D4262EB236127540075D46C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262E9236127540075D46C /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonzagaCampusWalkingTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C495D51C8CF23B03A15DD8D /* Pods-GonzagaCampusWalkingTourTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTourTests.debug.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTourTests/Pods-GonzagaCampusWalkingTourTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDescriptionViewController.swift; sourceTree = "<group>"; };
 		8D4262E2236127540075D46C /* GonzagaCampusWalkingTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GonzagaCampusWalkingTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4262E5236127540075D46C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D4262E7236127540075D46C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				8D4262EE236127540075D46C /* LaunchScreen.storyboard */,
 				8D4262F1236127540075D46C /* Info.plist */,
 				8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */,
+				8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */,
 			);
 			path = GonzagaCampusWalkingTour;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */,
 				A71A088523775EBF00AF7BA0 /* Asset.swift in Sources */,
 				8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */,
+				8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */,
 				A71A0887237760B000AF7BA0 /* Tour.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

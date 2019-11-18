@@ -12,6 +12,23 @@ class TourTableViewController: UITableViewController {
     //MARK: Properties
     var tours = [Tour]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //makes the back button show just "< Back"
+        let myBackButton = UIBarButtonItem()
+        myBackButton.title = "Back"
+        navigationItem.backBarButtonItem = myBackButton
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? TourDescriptionViewController {
+            //set the selectedTour in TourDescriptionViewController
+            destination.selectedTour = tours[(tableView.indexPathForSelectedRow?.row)!]
+            //deselct row
+            tableView.deselectRow(at: tableView!.indexPathForSelectedRow!, animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -101,15 +118,13 @@ class TourTableViewController: UITableViewController {
     }
     */
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
-
-        tableView.deselectRow(at: indexPath, animated: true)
-        let tour = tours[indexPath.row] // the selected tour. Should be passed to the view controller for the tour detailed description screen.
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //perform segue to the TourDescriptionViewController
+        performSegue(withIdentifier: "toTourDescriptionSegue", sender: self)
         // for now, selecting a tour takes the user straight to the map
-        let googleMapsViewController = GoogleMapsViewController(nibName: nil, bundle: nil)
-        googleMapsViewController.modalPresentationStyle = .fullScreen
-        self.present(googleMapsViewController, animated: true, completion: nil)
+//        let googleMapsViewController = GoogleMapsViewController(nibName: nil, bundle: nil)
+//        googleMapsViewController.modalPresentationStyle = .fullScreen
+//        self.present(googleMapsViewController, animated: true, completion: nil)
     }
 
     //MARK: Private Methods
