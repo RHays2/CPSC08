@@ -57,6 +57,7 @@ class TourDescriptionViewController: UIViewController {
         //start the google maps view
         let googleMapsViewController = GoogleMapsViewController(nibName: nil, bundle: nil)
         googleMapsViewController.modalPresentationStyle = .fullScreen
+        googleMapsViewController.activeTour = selectedTour
         self.present(googleMapsViewController, animated: true, completion: nil)
     }
 

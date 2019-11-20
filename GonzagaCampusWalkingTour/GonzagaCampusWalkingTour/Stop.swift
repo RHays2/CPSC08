@@ -14,13 +14,13 @@ class Stop {
     var stopName: String
     var stopDescription: String?
     var stopAssets = [Asset]()
-    var stopLatitude: Float // I think latitude and longitude as floats could be useful representaitons of stop locations -Mason
-    var stopLongitude: Float
+    var stopLatitude: Double
+    var stopLongitude: Double
     
     
     
     //MARK: Initialization
-    init?(stopName: String, stopDescription: String, stopAssets: [Asset], stopLatitude: Float, stopLongitude: Float) {
+    init?(stopName: String, stopDescription: String, stopAssets: [Asset], stopLatitude: Double, stopLongitude: Double) {
         // if there is no name, initialization fails
         guard !stopName.isEmpty else {
             return nil

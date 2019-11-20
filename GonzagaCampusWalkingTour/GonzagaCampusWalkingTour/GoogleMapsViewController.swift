@@ -17,6 +17,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate{
     let CAMERA_ANGLE = 45.0;
     var currentDirection = CLLocationDirection()
     var currentLocation = CLLocation()
+    var activeTour:Tour?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +35,14 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate{
             print("Location services disabled")
         }
         
-        // will setup tour stops
-        setStopsTemp()
+        // will setup tour stops for the selected tour
+        if activeTour != nil {
+            createMarkersForTourStops(tour: activeTour!)
+        } else {
+            print("Failed to pass selected tour")
+            setStopsTemp() // otherwise set up default markers
+        }
+
     }
     
     func centerUserLocationOnMap(location: CLLocation) {
@@ -91,6 +98,24 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate{
         self.orientMapTowardUserHeading(direction: newHeading.magneticHeading)
     }
 
+    func createMarkersForTourStops(tour: Tour) {
+        for stop in tour.tourStops {
+            createMarkerForStop(currentStop: stop)
+        }
+    }
+    
+    func createMarkerForStop(currentStop: Stop) {
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: currentStop.stopLatitude, longitude: currentStop.stopLongitude)
+        marker.title = currentStop.stopName
+        marker.snippet = currentStop.stopDescription ?? currentStop.stopName // snippet is the description; if that doesn't exist use the name again
+        marker.map = mapView
+        marker.icon = UIImage(named: "question")
+        marker.isFlat = true;
+    }
+
+    
+    
     //a temporary function for displaying several markers before tour data is loaded from database
     // when data is passed from the tours, we can set the marker information as needed
     func setStopsTemp(){
