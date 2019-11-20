@@ -15,7 +15,6 @@
 		8D4262ED236127540075D46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262EC236127540075D46C /* Assets.xcassets */; };
 		8D4262F0236127540075D46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262EE236127540075D46C /* LaunchScreen.storyboard */; };
 		8D4262FB236127540075D46C /* GonzagaCampusWalkingTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */; };
-		8D6AB90F2382642D0047BDD2 /* GonzagaGPX.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8D6AB90E2382642D0047BDD2 /* GonzagaGPX.gpx */; };
 		8D81D946236E0B1900D1CB79 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81D945236E0B1900D1CB79 /* UIView+.swift */; };
 		8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */; };
 		A71A088323775E6700AF7BA0 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A088223775E6700AF7BA0 /* Stop.swift */; };
@@ -23,6 +22,7 @@
 		A71A0887237760B000AF7BA0 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A0886237760B000AF7BA0 /* Tour.swift */; };
 		A71A0889237766BD00AF7BA0 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A0888237766BD00AF7BA0 /* TourTableViewCell.swift */; };
 		A71A088B2377713700AF7BA0 /* TourTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A088A2377713700AF7BA0 /* TourTableViewController.swift */; };
+		A7C06E162384C4C200DD197B /* GonzagaGPX.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */; };
 		DC56C73E6283167EA1930AAA /* Pods_GonzagaCampusWalkingTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */; };
 		E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44422A62369556B0035C938 /* AdminLoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +51,6 @@
 		8D4262F6236127540075D46C /* GonzagaCampusWalkingTourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GonzagaCampusWalkingTourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GonzagaCampusWalkingTourTests.swift; sourceTree = "<group>"; };
 		8D4262FC236127540075D46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D6AB90E2382642D0047BDD2 /* GonzagaGPX.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = GonzagaGPX.gpx; path = ../../../../../Downloads/GonzagaGPX.gpx; sourceTree = "<group>"; };
 		8D81D945236E0B1900D1CB79 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		91C7A468224EB312AD79E03C /* Pods-GonzagaCampusWalkingTourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTourTests/Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		A71A0886237760B000AF7BA0 /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		A71A0888237766BD00AF7BA0 /* TourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourTableViewCell.swift; sourceTree = "<group>"; };
 		A71A088A2377713700AF7BA0 /* TourTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourTableViewController.swift; sourceTree = "<group>"; };
+		A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GonzagaGPX.gpx; sourceTree = "<group>"; };
 		B47C547D339749E2C4E9C7B3 /* Pods-GonzagaCampusWalkingTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.debug.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.debug.xcconfig"; sourceTree = "<group>"; };
 		C4641F10C79A8E3220B02C21 /* Pods-GonzagaCampusWalkingTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.release.xcconfig"; sourceTree = "<group>"; };
 		E44422A62369556B0035C938 /* AdminLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		8D4262E4236127540075D46C /* GonzagaCampusWalkingTour */ = {
 			isa = PBXGroup;
 			children = (
-				8D6AB90E2382642D0047BDD2 /* GonzagaGPX.gpx */,
+				A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */,
 				8D81D944236E0B0300D1CB79 /* Extensions */,
 				8D4262E5236127540075D46C /* AppDelegate.swift */,
 				8D4262E7236127540075D46C /* ViewController.swift */,
@@ -253,8 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D4262F0236127540075D46C /* LaunchScreen.storyboard in Resources */,
-				8D6AB90F2382642D0047BDD2 /* GonzagaGPX.gpx in Resources */,
 				8D4262ED236127540075D46C /* Assets.xcassets in Resources */,
+				A7C06E162384C4C200DD197B /* GonzagaGPX.gpx in Resources */,
 				8D4262EB236127540075D46C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

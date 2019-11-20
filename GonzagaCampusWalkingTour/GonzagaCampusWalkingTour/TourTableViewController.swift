@@ -144,41 +144,177 @@ class TourTableViewController: UITableViewController {
             else {
                 fatalError("Unable to instantiate DefaultAsset1")
         }
-        guard let stop1 = Stop(stopName: "DefaultStop1", stopDescription: "An example stop", stopAssets: [asset1], stopLatitude: 47.668112, stopLongitude: -117.402269)
-            else {
-                fatalError("Unable to instantiate DefaultStop1")
-            }
+//        guard let stop1 = Stop(stopName: "DefaultStop1", stopDescription: "An example stop", stopAssets: [asset1], stopLatitude: 47.668112, stopLongitude: -117.402269)
+//            else {
+//                fatalError("Unable to instantiate DefaultStop1")
+//            }
         
-        guard let tour1 = Tour(tourName: "College Hall", tourImage:tourPhoto1, tourDescription: "A tour of the first building of Gonzaga", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        guard let cHall1 = Stop(stopName: "College Hall Stop 1", stopDescription: "College Hall Stop 1", stopAssets: [asset1], stopLatitude: 47.668112, stopLongitude: -117.401748)
+            else {
+                fatalError("Unable to instantiate cHall1")
+        }
+        guard let cHall2 = Stop(stopName: "College Hall Stop 2", stopDescription: "College Hall Stop 2", stopAssets: [asset1], stopLatitude: 47.668108, stopLongitude: -117.402419)
+            else {
+                fatalError("Unable to instantiate cHall2")
+        }
+        guard let cHall3 = Stop(stopName: "College Hall Stop 3", stopDescription: "College Hall Stop 3", stopAssets: [asset1], stopLatitude: 47.668101, stopLongitude: -117.403331)
+            else {
+                fatalError("Unable to instantiate cHall3")
+        }
+        
+        
+        guard let tour1 = Tour(tourName: "College Hall", tourImage:tourPhoto1, tourDescription: "A tour of the first building of Gonzaga", tourStops: [cHall1, cHall2, cHall3], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour1")
         }
-        guard let tour2 = Tour(tourName: "Foley", tourImage:tourPhoto2, tourDescription: "A tour of the library", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        
+        guard let foley1 = Stop(stopName: "Foley Library Stop 1", stopDescription: "Foley Library Stop 1", stopAssets: [asset1], stopLatitude: 47.666714, stopLongitude: -117.401201)
+            else {
+                fatalError("Unable to instantiate foley1")
+        }
+        guard let foley2 = Stop(stopName: "Foley Library Stop 2", stopDescription: "Foley Library Stop 2", stopAssets: [asset1], stopLatitude: 47.666439, stopLongitude: -117.400917)
+            else {
+                fatalError("Unable to instantiate foley2")
+        }
+        guard let foley3 = Stop(stopName: "Foley Library Stop 3", stopDescription: "Foley Library Stop 3", stopAssets: [asset1], stopLatitude: 47.666526, stopLongitude: 117.400322)
+            else {
+                fatalError("Unable to instantiate foley3")
+        }
+        guard let tour2 = Tour(tourName: "Foley", tourImage:tourPhoto2, tourDescription: "A tour of the library", tourStops: [foley1, foley2, foley3], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour2")
         }
-        guard let tour3 = Tour(tourName: "Hemmy", tourImage:tourPhoto3, tourDescription: "A tour of offices and food", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        
+        guard let hemmy1 = Stop(stopName: "Hemmingson Stop 1", stopDescription: "Hemmingson Stop 1", stopAssets: [asset1], stopLatitude: 47.667126, stopLongitude: -117.399839)
+            else {
+                fatalError("Unable to instantiate hemmy1")
+        }
+        guard let hemmy2 = Stop(stopName: "Hemmingson Stop 2", stopDescription: "Hemmingson Stop 2", stopAssets: [asset1], stopLatitude: 47.667090, stopLongitude: -117.399211)
+            else {
+                fatalError("Unable to instantiate hemmy2")
+        }
+        guard let hemmy3 = Stop(stopName: "COG", stopDescription: "Hemmingson Stop 3", stopAssets: [asset1], stopLatitude: 47.667101, stopLongitude: -117.398380)
+            else {
+                fatalError("Unable to instantiate hemmy3")
+        }
+        guard let tour3 = Tour(tourName: "Hemmingson", tourImage:tourPhoto3, tourDescription: "A tour of offices and food", tourStops: [hemmy1, hemmy2, hemmy3], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour3")
         }
-        guard let tour4 = Tour(tourName: "Paccar", tourImage:tourPhoto4, tourDescription: "A tour of Science and Engineering", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        
+        
+        guard let paccar1 = Stop(stopName: "It's okay to fail", stopDescription: "Paccar Stop 1", stopAssets: [asset1], stopLatitude: 47.666364, stopLongitude: -117.401840)
+            else {
+                fatalError("Unable to instantiate paccar1")
+        }
+        guard let paccar2 = Stop(stopName: "Dean's Office", stopDescription: "Paccar Stop 2", stopAssets: [asset1], stopLatitude: 47.666328, stopLongitude: -117.402130)
+            else {
+                fatalError("Unable to instantiate paccar2")
+        }
+        guard let paccar3 = Stop(stopName: "Sky Bridge", stopDescription: "Paccar Stop 3", stopAssets: [asset1], stopLatitude: 47.666491, stopLongitude: -117.402446)
+            else {
+                fatalError("Unable to instantiate paccar3")
+        }
+        guard let tour4 = Tour(tourName: "Paccar", tourImage:tourPhoto4, tourDescription: "A tour of Science and Engineering", tourStops: [paccar1, paccar2, paccar3], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour4")
         }
-        guard let tour5 = Tour(tourName: "Luger Field", tourImage:tourPhoto5, tourDescription: "A tour of where soccer is played", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        
+        guard let luger1 = Stop(stopName: "Luger Stop 3", stopDescription: "Luger Stop 1", stopAssets: [asset1], stopLatitude: 47.665949, stopLongitude:  -117.402119)
+            else {
+                fatalError("Unable to instantiate luger1")
+        }
+        guard let luger2 = Stop(stopName: "Luger Stop 3", stopDescription: "Luger Stop 2", stopAssets: [asset1], stopLatitude: 47.665310, stopLongitude: -117.402103)
+            else {
+                fatalError("Unable to instantiate luger2")
+        }
+        guard let luger3 = Stop(stopName: "Luger Stop 3", stopDescription: "Luger Stop 3", stopAssets: [asset1], stopLatitude: 47.664508, stopLongitude: -117.402039)
+            else {
+                fatalError("Unable to instantiate luger3")
+        }
+        guard let tour5 = Tour(tourName: "Luger Field", tourImage:tourPhoto5, tourDescription: "A tour of where soccer is played", tourStops: [luger1, luger2, luger3], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour5")
         }
-        guard let tour6 = Tour(tourName: "Parking", tourImage:tourPhoto6, tourDescription: "A tour of where to park on campus", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        
+        
+        guard let parking1 = Stop(stopName: "Parking Stop 3", stopDescription: "Parking Stop 1", stopAssets: [asset1], stopLatitude: 47.664364, stopLongitude: -117.398905)
+            else {
+                fatalError("Unable to instantiate parking1")
+        }
+        guard let parking2 = Stop(stopName: "Parking Stop 3", stopDescription: "Parking Stop 2", stopAssets: [asset1], stopLatitude: 47.668009, stopLongitude: -117.397076)
+            else {
+                fatalError("Unable to instantiate parking2")
+        }
+        guard let parking3 = Stop(stopName: "Parking Stop 3", stopDescription: "Parking Stop 3", stopAssets: [asset1], stopLatitude: 47.668770, stopLongitude: -117.402216)
+            else {
+                fatalError("Unable to instantiate parking3")
+        }
+        guard let tour6 = Tour(tourName: "Parking", tourImage:tourPhoto6, tourDescription: "A tour of where to park on campus", tourStops: [parking1, parking2, parking3], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour6")
         }
-        guard let tour7 = Tour(tourName: "Rosauer", tourImage:tourPhoto7, tourDescription: "A tour of the School of Education", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        
+        
+        guard let rosauer1 = Stop(stopName: "Rosauer Stop 3", stopDescription: "Rosauer Stop 1", stopAssets: [asset1], stopLatitude: 47.668123, stopLongitude: -117.399453)
+            else {
+                fatalError("Unable to instantiate rosauer1")
+        }
+        guard let rosauer2 = Stop(stopName: "Rosauer Stop 3", stopDescription: "Rosauer Stop 2", stopAssets: [asset1], stopLatitude: 47.668137, stopLongitude: -117.399147)
+            else {
+                fatalError("Unable to instantiate rosauer2")
+        }
+        guard let rosauer3 = Stop(stopName: "Rosauer Stop 3", stopDescription: "Rosauer Stop 3", stopAssets: [asset1], stopLatitude: 47.668076, stopLongitude: -117.398809)
+            else {
+                fatalError("Unable to instantiate rosauer3")
+        }
+        guard let tour7 = Tour(tourName: "Rosauer", tourImage:tourPhoto7, tourDescription: "A tour of the School of Education", tourStops: [rosauer1, rosauer2, rosauer3], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour7")
         }
-        guard let tour8 = Tour(tourName: "Desmet", tourImage:tourPhoto8, tourDescription: "A tour of the first dorm, which is to this day men only", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        
+        
+        guard let desmet1 = Stop(stopName: "Desmet Stop 3", stopDescription: "Desmet Stop 1", stopAssets: [asset1], stopLatitude: 47.667945, stopLongitude: -117.401122)
+            else {
+                fatalError("Unable to instantiate desmet1")
+        }
+        guard let desmet2 = Stop(stopName: "Desmet Stop 3", stopDescription: "Desmet Stop 2", stopAssets: [asset1], stopLatitude: 47.667849, stopLongitude: -117.401126)
+            else {
+                fatalError("Unable to instantiate desmet2")
+        }
+        guard let desmet3 = Stop(stopName: "Desmet Stop 3", stopDescription: "Desmet Stop 3", stopAssets: [asset1], stopLatitude: 47.667679, stopLongitude: -117.401078)
+            else {
+                fatalError("Unable to instantiate desmet3")
+        }
+        guard let tour8 = Tour(tourName: "Desmet", tourImage:tourPhoto8, tourDescription: "A tour of the first dorm, which is to this day men only", tourStops: [desmet1, desmet2, desmet3], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour8")
         }
-        guard let tour9 = Tour(tourName: "Coughlin", tourImage:tourPhoto9, tourDescription: "A tour of a newer dorm", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        
+        guard let coughlin1 = Stop(stopName: "Coughlin Stop 3", stopDescription: "Coughlin Stop 1", stopAssets: [asset1], stopLatitude: 47.664924, stopLongitude: -117.396824)
+            else {
+                fatalError("Unable to instantiate coughlin1")
+        }
+        guard let coughlin2 = Stop(stopName: "Coughlin Stop 3", stopDescription: "Coughlin Stop 2", stopAssets: [asset1], stopLatitude: 47.664577, stopLongitude: -117.396878)
+            else {
+                fatalError("Unable to instantiate coughlin2")
+        }
+        guard let coughlin3 = Stop(stopName: "Coughlin Stop 3", stopDescription: "Coughlin Stop 3", stopAssets: [asset1], stopLatitude: 47.665220, stopLongitude: -117.396867)
+            else {
+                fatalError("Unable to instantiate coughlin3")
+        }
+        guard let tour9 = Tour(tourName: "Coughlin", tourImage:tourPhoto9, tourDescription: "A tour of a newer dorm", tourStops: [coughlin1, coughlin2, coughlin3], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour9")
         }
-        guard let tour10 = Tour(tourName: "Jundt", tourImage:tourPhoto10, tourDescription: "A tour of the art museum", tourStops: [stop1], tourDistance: 0.5, tourTime: 30) else {
+        
+        guard let jundt1 = Stop(stopName: "Jundt Stop 3", stopDescription: "Jundt Stop 1", stopAssets: [asset1], stopLatitude: 47.666333, stopLongitude: -117.407145)
+            else {
+                fatalError("Unable to instantiate jundt1")
+        }
+        guard let jundt2 = Stop(stopName: "Jundt Stop 3", stopDescription: "Jundt Stop 2", stopAssets: [asset1], stopLatitude: 47.666331, stopLongitude: -117.406870)
+            else {
+                fatalError("Unable to instantiate jundt2")
+        }
+        guard let jundt3 = Stop(stopName: "Jundt Stop 3", stopDescription: "Jundt Stop 3", stopAssets: [asset1], stopLatitude: 47.666400, stopLongitude: -117.406532)
+            else {
+                fatalError("Unable to instantiate jundt3")
+        }
+        guard let tour10 = Tour(tourName: "Jundt", tourImage:tourPhoto10, tourDescription: "A tour of the art museum", tourStops: [jundt1, jundt2, jundt3], tourDistance: 0.5, tourTime: 30) else {
             fatalError("Unable to instantiate DefaultTour10")
         }
+
         
         
         
