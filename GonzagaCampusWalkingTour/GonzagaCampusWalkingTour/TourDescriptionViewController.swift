@@ -18,9 +18,7 @@ class TourDescriptionViewController: UIViewController {
     @IBOutlet weak var tourName: UILabel!
     @IBOutlet weak var tourPreviewImage: UIImageView!
     @IBOutlet weak var tourDescription: UITextView!
-    @IBOutlet weak var tourDescriptionHC: NSLayoutConstraint!
     @IBOutlet weak var tourLength: UITextView!
-    @IBOutlet weak var tourLengthHC: NSLayoutConstraint!
     
     var selectedTour:Tour?
     
@@ -34,9 +32,7 @@ class TourDescriptionViewController: UIViewController {
         tourName.text = selectedTour?.tourName
         tourPreviewImage.image = selectedTour?.tourImage
         tourDescription.text = selectedTour?.tourDescription
-        tourDescriptionHC.constant = tourDescription.contentSize.height
         tourLength.text = "Tour Length: \(selectedTour?.tourDistance ?? 0.0) mi"
-        tourLengthHC.constant = tourLength.contentSize.height
     }
     
     func initNavigationItemBar() {
