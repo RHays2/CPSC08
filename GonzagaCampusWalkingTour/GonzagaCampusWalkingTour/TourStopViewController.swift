@@ -13,8 +13,7 @@ class TourStopViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("now we are in tourstop view controller")
-        self.view.backgroundColor = UIColor.blue
+        print(currentStop?.stopName)
         // Do any additional setup after loading the view.
     }
     

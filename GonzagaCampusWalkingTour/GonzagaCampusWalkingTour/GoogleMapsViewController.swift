@@ -45,12 +45,6 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
 
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? TourStopViewController {
-            destination.currentStop = self.mapView.selectedMarker as? Stop
-        }
-    }
-    
     func centerUserLocationOnMap(location: CLLocation) {
         // Create a GMSCameraPosition that tells the map to display the
         // centered around the users location
@@ -107,11 +101,12 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let stop = marker as? Stop {
-            let tourStopViewController = TourStopViewController(nibName: nil, bundle: nil)
-            //tourStopViewController.modalPresentationStyle = .fullScreen
-            tourStopViewController.currentStop = stop
-            self.present(tourStopViewController, animated: true, completion: nil)
-            return true
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            if let stopView = storyBoard.instantiateViewController(withIdentifier: "TourStopViewController") as? TourStopViewController {
+                stopView.currentStop = stop
+                self.present(stopView, animated: true, completion: nil)
+                return true
+            }
         }
         return false
     }

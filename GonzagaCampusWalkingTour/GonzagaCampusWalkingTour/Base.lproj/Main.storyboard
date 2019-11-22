@@ -312,7 +312,7 @@
         <!--Tour Stop View Controller-->
         <scene sceneID="V8R-qG-Zab">
             <objects>
-                <viewController id="e2J-3E-bqQ" customClass="TourStopViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TourStopViewController" id="e2J-3E-bqQ" customClass="TourStopViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jzf-9W-6Nf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
