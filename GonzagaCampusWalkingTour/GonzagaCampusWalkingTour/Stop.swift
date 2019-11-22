@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class Stop {
+import GoogleMaps
+class Stop: GMSMarker {
     
     //MARK: Properties
     var stopName: String
@@ -31,6 +31,10 @@ class Stop {
         self.stopAssets = stopAssets
         self.stopLatitude = stopLatitude
         self.stopLongitude = stopLongitude
+        
+        super.init()
+        self.position = CLLocationCoordinate2D(latitude: stopLatitude, longitude: stopLongitude)
+        self.icon = UIImage(named: "question")
     }
     
 }

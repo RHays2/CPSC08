@@ -24,6 +24,7 @@
 		A71A088B2377713700AF7BA0 /* TourTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A088A2377713700AF7BA0 /* TourTableViewController.swift */; };
 		A7C06E162384C4C200DD197B /* GonzagaGPX.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */; };
 		DC56C73E6283167EA1930AAA /* Pods_GonzagaCampusWalkingTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */; };
+		E438381A238793E700858C8B /* TourStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383819238793E700858C8B /* TourStopViewController.swift */; };
 		E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44422A62369556B0035C938 /* AdminLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GonzagaGPX.gpx; sourceTree = "<group>"; };
 		B47C547D339749E2C4E9C7B3 /* Pods-GonzagaCampusWalkingTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.debug.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.debug.xcconfig"; sourceTree = "<group>"; };
 		C4641F10C79A8E3220B02C21 /* Pods-GonzagaCampusWalkingTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.release.xcconfig"; sourceTree = "<group>"; };
+		E4383819238793E700858C8B /* TourStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourStopViewController.swift; sourceTree = "<group>"; };
 		E44422A62369556B0035C938 /* AdminLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				8D4262F1236127540075D46C /* Info.plist */,
 				8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */,
 				8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */,
+				E4383819238793E700858C8B /* TourStopViewController.swift */,
 			);
 			path = GonzagaCampusWalkingTour;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				A71A0889237766BD00AF7BA0 /* TourTableViewCell.swift in Sources */,
 				8D4262E6236127540075D46C /* AppDelegate.swift in Sources */,
 				A71A088B2377713700AF7BA0 /* TourTableViewController.swift in Sources */,
+				E438381A238793E700858C8B /* TourStopViewController.swift in Sources */,
 				E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */,
 				A71A088523775EBF00AF7BA0 /* Asset.swift in Sources */,
 				8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */,
