@@ -129,6 +129,7 @@ class TourTableViewController: UITableViewController {
 
     //MARK: Private Methods
     private func loadPlaceholderTours() {
+        // get tour images
         let tourPhoto1 = UIImage(named: "DefaultTour1")!
         let tourPhoto2 = UIImage(named: "DefaultTour2")!
         let tourPhoto3 = UIImage(named: "DefaultTour3")!
@@ -139,11 +140,70 @@ class TourTableViewController: UITableViewController {
         let tourPhoto8 = UIImage(named: "DefaultTour8")!
         let tourPhoto9 = UIImage(named: "DefaultTour9")!
         let tourPhoto10 = UIImage(named: "DefaultTour10")!
+        let tourPhoto11 = UIImage(named: "DefaultTour11")!
         
+        // get stop images
+        let stop1Image1 = UIImage(named: "Stop1Image1")!
+        let stop1Image2 = UIImage(named: "Stop1Image2")!
+        let stop1Image3 = UIImage(named: "Stop1Image3")!
+        let stop2Image1 = UIImage(named: "Stop2Image1")!
+        let stop2Image2 = UIImage(named: "Stop2Image2")!
+        let stop2Image3 = UIImage(named: "Stop2Image3")!
+        let stop3Image1 = UIImage(named: "Stop3Image1")!
+        let stop3Image2 = UIImage(named: "Stop3Image2")!
+        let stop3Image3 = UIImage(named: "Stop3Image3")!
+        
+        
+        // set up a default asset
         guard let asset1 = Asset(assetName: "DefaultAsset1", asset: tourPhoto1, assetDescription: "An aerial view of campus")
             else {
                 fatalError("Unable to instantiate DefaultAsset1")
         }
+        
+        // set up assets for paccar stops
+        guard let paccarAsset1 = Asset(assetName: "Paccar Asset 1", asset: stop1Image1, assetDescription: "This is paccar stop 1 asset 1")
+            else {
+                fatalError("Unable to instantiate paccarAsset1")
+        }
+        guard let paccarAsset2 = Asset(assetName: "Paccar Asset 2", asset: stop1Image2, assetDescription: "This is paccar stop 1 asset 2. This has a longer description because the description may have to be scrollable in fact it really should be so we want to have a ton of text here so that we can see if we can actually scroll to see it all. Sorry that the descriptions are so boring but they are just stand ins and I wasn't about to go take pictures and describe them and there aren't enough available images on google of specific parts of campus. lalala. Stop reading it's the same. This has a longer description because the description may have to be scrollable in fact it really should be so we want to have a ton of text here so that we can see if we can actually scroll to see it all. Sorry that the descriptions are so boring but they are just stand ins and I wasn't about to go take pictures and describe them and there aren't enough available images on google of specific parts of campus. lalala.")
+            else {
+                fatalError("Unable to instantiate paccarAsset2")
+        }
+        guard let paccarAsset3 = Asset(assetName: "Paccar Asset 3", asset: stop1Image3, assetDescription: "This is paccar stop 1 asset 3")
+            else {
+                fatalError("Unable to instantiate paccarAsset3")
+        }
+        guard let paccarAsset4 = Asset(assetName: "Paccar Asset 4", asset: stop2Image1, assetDescription: "This is paccar stop 2 asset 1")
+            else {
+                fatalError("Unable to instantiate paccarAsset4")
+        }
+        guard let paccarAsset5 = Asset(assetName: "Paccar Asset 2", asset: stop2Image2, assetDescription: "This is paccar stop 2 asset 2")
+            else {
+                fatalError("Unable to instantiate paccarAsset5")
+        }
+        guard let paccarAsset6 = Asset(assetName: "Paccar Asset 3", asset: stop2Image3, assetDescription: "This is paccar stop 2 asset 3")
+            else {
+                fatalError("Unable to instantiate paccarAsset6")
+        }
+        guard let paccarAsset7 = Asset(assetName: "Paccar Asset 1", asset: stop3Image1, assetDescription: "This is paccar stop 3 asset 1")
+            else {
+                fatalError("Unable to instantiate paccarAsset7")
+        }
+        guard let paccarAsset8 = Asset(assetName: "Paccar Asset 2", asset: stop3Image2, assetDescription: "This is paccar stop 3 asset 2")
+            else {
+                fatalError("Unable to instantiate paccarAsset8")
+        }
+        guard let paccarAsset9 = Asset(assetName: "Paccar Asset 3", asset: stop3Image3, assetDescription: "This is paccar stop 3 asset 3")
+            else {
+                fatalError("Unable to instantiate paccarAsset9")
+        }
+        
+        let paccar1Assets = [paccarAsset1, paccarAsset2, paccarAsset3]
+        let paccar2Assets = [paccarAsset4, paccarAsset5, paccarAsset6]
+        let paccar3Assets = [paccarAsset7, paccarAsset8, paccarAsset9]
+        
+        
+        
 //        guard let stop1 = Stop(stopName: "DefaultStop1", stopDescription: "An example stop", stopAssets: [asset1], stopLatitude: 47.668112, stopLongitude: -117.402269)
 //            else {
 //                fatalError("Unable to instantiate DefaultStop1")
@@ -200,15 +260,15 @@ class TourTableViewController: UITableViewController {
         }
         
         
-        guard let paccar1 = Stop(stopName: "It's okay to fail", stopDescription: "Paccar Stop 1", stopAssets: [asset1], stopLatitude: 47.666364, stopLongitude: -117.401840)
+        guard let paccar1 = Stop(stopName: "It's okay to fail", stopDescription: "Paccar Stop 1", stopAssets: paccar1Assets, stopLatitude: 47.666364, stopLongitude: -117.401840)
             else {
                 fatalError("Unable to instantiate paccar1")
         }
-        guard let paccar2 = Stop(stopName: "Dean's Office", stopDescription: "Paccar Stop 2", stopAssets: [asset1], stopLatitude: 47.666328, stopLongitude: -117.402130)
+        guard let paccar2 = Stop(stopName: "Dean's Office", stopDescription: "Paccar Stop 2", stopAssets: paccar2Assets, stopLatitude: 47.666328, stopLongitude: -117.402130)
             else {
                 fatalError("Unable to instantiate paccar2")
         }
-        guard let paccar3 = Stop(stopName: "Sky Bridge", stopDescription: "Paccar Stop 3", stopAssets: [asset1], stopLatitude: 47.666491, stopLongitude: -117.402446)
+        guard let paccar3 = Stop(stopName: "Sky Bridge", stopDescription: "Paccar Stop 3", stopAssets: paccar3Assets, stopLatitude: 47.666491, stopLongitude: -117.402446)
             else {
                 fatalError("Unable to instantiate paccar3")
         }
@@ -315,9 +375,24 @@ class TourTableViewController: UITableViewController {
             fatalError("Unable to instantiate DefaultTour10")
         }
 
+        guard let jepson1 = Stop(stopName: "Jepson Stop 1", stopDescription: "Jepson Stop 1", stopAssets: [asset1], stopLatitude: 47.666989, stopLongitude: -117.405009)
+            else {
+                fatalError("Unable to instantiate jepson1")
+        }
+        guard let jepson2 = Stop(stopName: "Jepson Stop 2", stopDescription: "Jepson Stop 2", stopAssets: [asset1], stopLatitude: 47.667256, stopLongitude: -117.405194)
+            else {
+                fatalError("Unable to instantiate jepson2")
+        }
+        guard let jepson3 = Stop(stopName: "Jepson Stop 3", stopDescription: "Jepson Stop 3", stopAssets: [asset1], stopLatitude: 47.667133, stopLongitude: -117.405641)
+            else {
+                fatalError("Unable to instantiate jepson3")
+        }
+        guard let tour11 = Tour(tourName: "Jepson", tourImage:tourPhoto11, tourDescription: "A tour of the business building", tourStops: [jepson1, jepson2, jepson3], tourDistance: 0.5, tourTime: 30) else {
+            fatalError("Unable to instantiate defaultTour11")
+        }
+
         
         
-        
-        tours += [tour1, tour2, tour3, tour4, tour5, tour6, tour7, tour8, tour9, tour10]
+        tours += [tour1, tour2, tour3, tour4, tour5, tour6, tour7, tour8, tour9, tour10, tour11]
     }
 }
