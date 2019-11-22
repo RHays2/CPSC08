@@ -55,7 +55,7 @@ class TourDescriptionViewController: UIViewController {
         googleMapsViewController.modalPresentationStyle = .fullScreen
         googleMapsViewController.activeTour = selectedTour
         self.present(googleMapsViewController, animated: true, completion: nil)
-    }
+    }	
 
     /*
     // MARK: - Navigation
