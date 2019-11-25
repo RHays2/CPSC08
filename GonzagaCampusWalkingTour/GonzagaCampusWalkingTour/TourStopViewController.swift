@@ -10,22 +10,17 @@ import UIKit
 
 class TourStopViewController: UIViewController {
     var currentStop: Stop?
-
+    @IBOutlet weak var stopName: UILabel!
+    @IBOutlet weak var stopDescription:UITextView!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        print(currentStop?.stopName)
         // Do any additional setup after loading the view.
+        setUpStopView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUpStopView() {
+        stopName.text = currentStop?.stopName
+        stopDescription.text = currentStop?.stopDescription
     }
-    */
-
+    
 }

@@ -44,7 +44,6 @@ class TourDescriptionViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(startTour)
-            
         )
         navigationItem.rightBarButtonItem = startTourButton
     }

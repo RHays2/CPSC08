@@ -42,7 +42,6 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
             print("Failed to pass selected tour")
             setStopsTemp() // otherwise set up default markers
         }
-
     }
     
     func centerUserLocationOnMap(location: CLLocation) {
@@ -104,6 +103,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             if let stopView = storyBoard.instantiateViewController(withIdentifier: "TourStopViewController") as? TourStopViewController {
                 stopView.currentStop = stop
+                stopView.modalPresentationStyle = .pageSheet
                 self.present(stopView, animated: true, completion: nil)
                 return true
             }
