@@ -289,12 +289,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jnd-ne-q49" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2498" y="-136"/>
+            <point key="canvasLocation" x="2556" y="-150"/>
         </scene>
         <!--Google Maps View Controller-->
         <scene sceneID="e71-B4-6hQ">
             <objects>
-                <viewController id="7a2-sa-lyc" customClass="GoogleMapsViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoogleMapsViewController" id="7a2-sa-lyc" customClass="GoogleMapsViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UWw-dg-XAz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -21,7 +21,6 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         
         // check to make sure the user has location enabled
@@ -104,7 +103,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
             if let stopView = storyBoard.instantiateViewController(withIdentifier: "TourStopViewController") as? TourStopViewController {
                 stopView.currentStop = stop
                 stopView.modalPresentationStyle = .pageSheet
-                self.present(stopView, animated: true, completion: nil)
+                self.navigationController?.pushViewController(stopView, animated: true)
                 return true
             }
         }
