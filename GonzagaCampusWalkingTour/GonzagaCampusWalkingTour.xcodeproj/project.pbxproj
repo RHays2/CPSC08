@@ -17,6 +17,10 @@
 		8D4262FB236127540075D46C /* GonzagaCampusWalkingTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */; };
 		8D81D946236E0B1900D1CB79 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81D945236E0B1900D1CB79 /* UIView+.swift */; };
 		8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */; };
+		8DFF3D4D238E1BF3006D527A /* StopViewTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D4C238E1BF3006D527A /* StopViewTabBarController.swift */; };
+		8DFF3D4F238E2C62006D527A /* StopViewImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D4E238E2C62006D527A /* StopViewImagesViewController.swift */; };
+		8DFF3D512393653D006D527A /* StopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D502393653D006D527A /* StopCollectionViewCell.swift */; };
+		8DFF3D5323937865006D527A /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D5223937865006D527A /* FullImageViewController.swift */; };
 		A71A088323775E6700AF7BA0 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A088223775E6700AF7BA0 /* Stop.swift */; };
 		A71A088523775EBF00AF7BA0 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A088423775EBF00AF7BA0 /* Asset.swift */; };
 		A71A0887237760B000AF7BA0 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A0886237760B000AF7BA0 /* Tour.swift */; };
@@ -54,6 +58,10 @@
 		8D4262FC236127540075D46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D81D945236E0B1900D1CB79 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
+		8DFF3D4C238E1BF3006D527A /* StopViewTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopViewTabBarController.swift; sourceTree = "<group>"; };
+		8DFF3D4E238E2C62006D527A /* StopViewImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopViewImagesViewController.swift; sourceTree = "<group>"; };
+		8DFF3D502393653D006D527A /* StopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DFF3D5223937865006D527A /* FullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		91C7A468224EB312AD79E03C /* Pods-GonzagaCampusWalkingTourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTourTests/Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D1E281782CAC451AB1CB529 /* Pods_GonzagaCampusWalkingTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonzagaCampusWalkingTourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71A088223775E6700AF7BA0 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
@@ -137,6 +145,10 @@
 				8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */,
 				8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */,
 				E4383819238793E700858C8B /* TourStopViewController.swift */,
+				8DFF3D4C238E1BF3006D527A /* StopViewTabBarController.swift */,
+				8DFF3D4E238E2C62006D527A /* StopViewImagesViewController.swift */,
+				8DFF3D502393653D006D527A /* StopCollectionViewCell.swift */,
+				8DFF3D5223937865006D527A /* FullImageViewController.swift */,
 			);
 			path = GonzagaCampusWalkingTour;
 			sourceTree = "<group>";
@@ -343,8 +355,12 @@
 				A71A088B2377713700AF7BA0 /* TourTableViewController.swift in Sources */,
 				E438381A238793E700858C8B /* TourStopViewController.swift in Sources */,
 				E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */,
+				8DFF3D4D238E1BF3006D527A /* StopViewTabBarController.swift in Sources */,
 				A71A088523775EBF00AF7BA0 /* Asset.swift in Sources */,
 				8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */,
+				8DFF3D512393653D006D527A /* StopCollectionViewCell.swift in Sources */,
+				8DFF3D4F238E2C62006D527A /* StopViewImagesViewController.swift in Sources */,
+				8DFF3D5323937865006D527A /* FullImageViewController.swift in Sources */,
 				8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */,
 				A71A0887237760B000AF7BA0 /* Tour.swift in Sources */,
 			);

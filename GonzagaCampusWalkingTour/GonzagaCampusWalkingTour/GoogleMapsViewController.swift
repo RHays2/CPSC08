@@ -100,10 +100,12 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let stop = marker as? Stop {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            if let stopView = storyBoard.instantiateViewController(withIdentifier: "TourStopViewController") as? TourStopViewController {
-                stopView.currentStop = stop
-                stopView.modalPresentationStyle = .pageSheet
-                self.navigationController?.pushViewController(stopView, animated: true)
+            //create the tabBarController
+            if let tabBarController = storyBoard.instantiateViewController(withIdentifier: "StopViewTabBarController") as? StopViewTabBarController{
+                tabBarController.curStop = stop
+                tabBarController.modalPresentationStyle = .pageSheet
+                //show the new tabViewController
+                self.navigationController?.pushViewController(tabBarController, animated: true)
                 return true
             }
         }
