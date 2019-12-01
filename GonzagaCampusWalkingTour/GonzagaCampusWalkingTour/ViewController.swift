@@ -13,8 +13,9 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: Any) {
         // moves to the tourList when begin it tapped.
         let test = UIStoryboard(name: "Main", bundle: nil)
-        let admin = test.instantiateViewController(withIdentifier: "TourTableViewControllerNav")
-        self.present(admin, animated: true, completion: nil)
+        let tourList = test.instantiateViewController(withIdentifier: "TourTableViewControllerNav")
+        tourList.modalPresentationStyle = .fullScreen
+        self.present(tourList, animated: true, completion: nil)
         
         // previous code to move to the googleMaps screen from the landing screen.
 //        let googleMapsViewController = GoogleMapsViewController(nibName: nil, bundle: nil)

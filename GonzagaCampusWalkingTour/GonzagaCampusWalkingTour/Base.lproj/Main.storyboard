@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,23 +14,23 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GonzagaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oTf-MB-7td">
-                                <rect key="frame" x="20" y="63" width="335" height="242"/>
+                                <rect key="frame" x="20" y="73" width="335" height="242"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="242" id="5ub-vA-kHl"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campus Augmented RealityWalking Tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uh-gW-APq">
-                                <rect key="frame" x="32.5" y="313" width="310" height="21"/>
+                                <rect key="frame" x="32.5" y="323" width="310" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCg-1C-ESP">
-                                <rect key="frame" x="8" y="597" width="359" height="30"/>
+                                <rect key="frame" x="8" y="617" width="359" height="30"/>
                                 <state key="normal" title="Admin Login">
                                     <color key="titleColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -38,14 +39,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-KT-XTE">
-                                <rect key="frame" x="8" y="547" width="359" height="42"/>
+                                <rect key="frame" x="8" y="567" width="359" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Begin">
                                     <color key="titleColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7a-UA-oKZ"/>
-                                    <segue destination="mvs-k9-FR2" kind="presentation" modalPresentationStyle="automatic" id="xxC-Nu-Sm3"/>
+                                    <segue destination="mvs-k9-FR2" kind="presentation" modalPresentationStyle="fullScreen" id="xxC-Nu-Sm3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,7 +68,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zNK-ls-23L"/>
                     <connections>
-                        <segue destination="D5i-4Z-PGE" kind="presentation" identifier="AdminLoginSegue" modalPresentationStyle="automatic" id="szq-bE-WbO"/>
+                        <segue destination="D5i-4Z-PGE" kind="presentation" identifier="AdminLoginSegue" modalPresentationStyle="fullScreen" id="szq-bE-WbO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -79,7 +80,7 @@
             <objects>
                 <viewController storyboardIdentifier="AdminLoginViewController" id="D5i-4Z-PGE" customClass="AdminLoginViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ry5-G1-ISf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GonzagaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Jtf-t9-idZ">
@@ -135,7 +136,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="x0c-FZ-y6C"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="BackToStartScreenSegue" modalPresentationStyle="automatic" id="jnx-El-hKU"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="BackToStartScreenSegue" modalPresentationStyle="fullScreen" id="jnx-El-hKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5S-jV-RoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,7 +148,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="TourTableViewController" title="Available Tours" id="Xu1-Fz-K7H" customClass="TourTableViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="of7-ne-zzZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -205,14 +206,14 @@
             <objects>
                 <viewController id="P5l-td-Z3v" customClass="TourDescriptionViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Sh-O9-koG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="END-uD-dbq">
-                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIe-n8-yC9">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="722.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="654"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fky-Uf-gTY">
                                                 <rect key="frame" x="10" y="20" width="355" height="36"/>
@@ -221,10 +222,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultTour1" translatesAutoresizingMaskIntoConstraints="NO" id="nYv-VO-TvB">
-                                                <rect key="frame" x="5" y="76" width="365" height="168.5"/>
+                                                <rect key="frame" x="5" y="76" width="365" height="100"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yUY-Cb-4Rb">
-                                                <rect key="frame" x="10" y="264.5" width="355" height="175"/>
+                                                <rect key="frame" x="10" y="196" width="355" height="175"/>
                                                 <color key="backgroundColor" red="0.002214750042" green="0.21949887279999999" blue="0.37704542279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -232,7 +233,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1qU-FX-FqB">
-                                                <rect key="frame" x="10" y="459.5" width="355" height="243"/>
+                                                <rect key="frame" x="10" y="391" width="355" height="243"/>
                                                 <color key="backgroundColor" red="0.002214750042" green="0.21949887279999999" blue="0.37704542279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -289,12 +290,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jnd-ne-q49" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2498" y="-136"/>
+            <point key="canvasLocation" x="2556" y="-150"/>
         </scene>
         <!--Google Maps View Controller-->
         <scene sceneID="e71-B4-6hQ">
             <objects>
-                <viewController id="7a2-sa-lyc" customClass="GoogleMapsViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoogleMapsViewController" id="7a2-sa-lyc" customClass="GoogleMapsViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UWw-dg-XAz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,7 +306,175 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Itt-Xd-DPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3380" y="-136"/>
+            <point key="canvasLocation" x="3377" y="-151"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="V8R-qG-Zab">
+            <objects>
+                <viewController storyboardIdentifier="TourStopViewController" id="e2J-3E-bqQ" customClass="TourStopViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jzf-9W-6Nf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J5v-XJ-LNK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-XV-sqp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="339"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7P-Wu-C5B">
+                                                <rect key="frame" x="10" y="20" width="355" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pwx-Cq-SKG">
+                                                <rect key="frame" x="10" y="76" width="355" height="243"/>
+                                                <color key="backgroundColor" red="0.002214750042" green="0.21949887279999999" blue="0.37704542279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.002214750042" green="0.21949887279999999" blue="0.37704542279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pwx-Cq-SKG" secondAttribute="trailing" constant="10" id="0QC-tv-b99"/>
+                                            <constraint firstItem="b7P-Wu-C5B" firstAttribute="leading" secondItem="eIB-XV-sqp" secondAttribute="leading" constant="10" id="8Vz-R3-Rbn"/>
+                                            <constraint firstItem="b7P-Wu-C5B" firstAttribute="leading" secondItem="eIB-XV-sqp" secondAttribute="leading" constant="10" id="9GL-YJ-6EK"/>
+                                            <constraint firstItem="b7P-Wu-C5B" firstAttribute="top" secondItem="eIB-XV-sqp" secondAttribute="top" constant="20" id="FuO-SN-nYL"/>
+                                            <constraint firstAttribute="trailing" secondItem="pwx-Cq-SKG" secondAttribute="trailing" constant="10" id="UuE-5Z-Vr4"/>
+                                            <constraint firstItem="pwx-Cq-SKG" firstAttribute="leading" secondItem="eIB-XV-sqp" secondAttribute="leading" constant="10" id="UzY-0m-gcD"/>
+                                            <constraint firstAttribute="trailing" secondItem="b7P-Wu-C5B" secondAttribute="trailing" constant="10" id="Xrl-h0-meg"/>
+                                            <constraint firstAttribute="bottom" secondItem="pwx-Cq-SKG" secondAttribute="bottom" constant="20" id="hen-ef-hQS"/>
+                                            <constraint firstAttribute="trailing" secondItem="b7P-Wu-C5B" secondAttribute="trailing" constant="10" id="ijl-bo-ZoN"/>
+                                            <constraint firstItem="pwx-Cq-SKG" firstAttribute="top" secondItem="b7P-Wu-C5B" secondAttribute="bottom" constant="20" id="rK3-Xe-TxM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eIB-XV-sqp" firstAttribute="top" secondItem="J5v-XJ-LNK" secondAttribute="top" id="1Kw-1i-qrV"/>
+                                    <constraint firstItem="eIB-XV-sqp" firstAttribute="leading" secondItem="J5v-XJ-LNK" secondAttribute="leading" id="MJ3-q1-ad9"/>
+                                    <constraint firstAttribute="bottom" secondItem="eIB-XV-sqp" secondAttribute="bottom" id="R3h-ET-MdZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="eIB-XV-sqp" secondAttribute="trailing" id="T5u-eF-xKd"/>
+                                    <constraint firstItem="eIB-XV-sqp" firstAttribute="width" secondItem="J5v-XJ-LNK" secondAttribute="width" id="g1h-SL-8gC"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="mDB-iY-2sx"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="AyO-QC-vEI"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.002214750042" green="0.21949887279999999" blue="0.37704542279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="J5v-XJ-LNK" firstAttribute="bottom" secondItem="zZ2-7T-f7L" secondAttribute="bottom" id="IEK-ww-DBA"/>
+                            <constraint firstItem="J5v-XJ-LNK" firstAttribute="top" secondItem="zZ2-7T-f7L" secondAttribute="top" id="W2b-5x-8Go"/>
+                            <constraint firstItem="J5v-XJ-LNK" firstAttribute="trailing" secondItem="zZ2-7T-f7L" secondAttribute="trailing" id="cut-Pn-FSj"/>
+                            <constraint firstItem="J5v-XJ-LNK" firstAttribute="leading" secondItem="zZ2-7T-f7L" secondAttribute="leading" id="jlB-gf-Uil"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zZ2-7T-f7L"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="3Z7-Du-qBK"/>
+                    <connections>
+                        <outlet property="stopDescription" destination="pwx-Cq-SKG" id="V8q-aA-9M2"/>
+                        <outlet property="stopName" destination="b7P-Wu-C5B" id="PjN-Je-hjk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lU8-Y1-953" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5128.8000000000002" y="-151.57421289355324"/>
+        </scene>
+        <!--Stop View Images View Controller-->
+        <scene sceneID="TL0-1K-bkQ">
+            <objects>
+                <viewController storyboardIdentifier="StopViewImagesViewController" id="U8T-4U-rRF" customClass="StopViewImagesViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oah-iD-9oG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gsk-UU-nRw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.002214750042" green="0.21949887279999999" blue="0.37704542279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RIg-Io-Ccl">
+                                    <size key="itemSize" width="97" height="101"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageView" id="eFF-1a-O0n" customClass="StopCollectionViewCell" customModule="GonzagaCampusWalkingTour" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C1t-zU-TjB">
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="101"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultTour1" translatesAutoresizingMaskIntoConstraints="NO" id="uSh-id-4sF">
+                                                    <rect key="frame" x="1" y="1" width="95" height="99"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="uSh-id-4sF" secondAttribute="trailing" constant="1" id="6gN-Th-Ddc"/>
+                                                <constraint firstItem="uSh-id-4sF" firstAttribute="top" secondItem="C1t-zU-TjB" secondAttribute="top" constant="1" id="CMr-Eh-NJm"/>
+                                                <constraint firstItem="uSh-id-4sF" firstAttribute="leading" secondItem="C1t-zU-TjB" secondAttribute="leading" constant="1" id="tdS-Ny-DY3"/>
+                                                <constraint firstAttribute="bottom" secondItem="uSh-id-4sF" secondAttribute="bottom" constant="1" id="ztO-mt-POw"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="97" height="101"/>
+                                        <connections>
+                                            <outlet property="image" destination="uSh-id-4sF" id="rd7-la-VVH"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="U8T-4U-rRF" id="PnX-Lt-dq9"/>
+                                    <outlet property="delegate" destination="U8T-4U-rRF" id="Mww-y9-W9O"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.002214750042" green="0.21949887279999999" blue="0.37704542279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="gsk-UU-nRw" firstAttribute="bottom" secondItem="MKE-cZ-ZMy" secondAttribute="bottom" id="4Ei-Zk-hfB"/>
+                            <constraint firstItem="gsk-UU-nRw" firstAttribute="top" secondItem="MKE-cZ-ZMy" secondAttribute="top" id="4NO-eG-vXx"/>
+                            <constraint firstItem="gsk-UU-nRw" firstAttribute="trailing" secondItem="MKE-cZ-ZMy" secondAttribute="trailing" id="P9t-6a-j6F"/>
+                            <constraint firstItem="gsk-UU-nRw" firstAttribute="leading" secondItem="MKE-cZ-ZMy" secondAttribute="leading" id="a17-2l-bjD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MKE-cZ-ZMy"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="gsk-UU-nRw" id="hab-rZ-KNl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iU8-I0-7iE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5132" y="544.67766116941539"/>
+        </scene>
+        <!--Full Image View Controller-->
+        <scene sceneID="hnJ-pr-OUO">
+            <objects>
+                <viewController storyboardIdentifier="FullImageViewController" id="KkE-op-Zir" customClass="FullImageViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6FK-aL-13X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3en-4A-D1T">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3en-4A-D1T" firstAttribute="leading" secondItem="lp3-zR-Jtb" secondAttribute="leading" id="7ER-Lq-Q7H"/>
+                            <constraint firstItem="3en-4A-D1T" firstAttribute="bottom" secondItem="lp3-zR-Jtb" secondAttribute="bottom" id="Ui5-7e-LZL"/>
+                            <constraint firstItem="3en-4A-D1T" firstAttribute="top" secondItem="lp3-zR-Jtb" secondAttribute="top" id="dMR-hz-sqH"/>
+                            <constraint firstItem="3en-4A-D1T" firstAttribute="trailing" secondItem="lp3-zR-Jtb" secondAttribute="trailing" id="fu1-m6-4BB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lp3-zR-Jtb"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="3en-4A-D1T" id="8Y7-cH-T4l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AQd-d3-3eu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5832.8000000000002" y="544.67766116941539"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ULb-gt-Pqo">
@@ -314,7 +483,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="4Gw-Ec-vJN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ibh-It-FEt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -326,10 +495,25 @@
             </objects>
             <point key="canvasLocation" x="857" y="-136"/>
         </scene>
+        <!--Stop View Tab Bar Controller-->
+        <scene sceneID="RQe-rZ-Enm">
+            <objects>
+                <tabBarController storyboardIdentifier="StopViewTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Kpg-ko-LfU" customClass="StopViewTabBarController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bbp-sC-3PB">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bf8-zc-sP7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4189.6000000000004" y="-151.57421289355324"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="DefaultTour1" width="352" height="168.5"/>
-        <image name="DefaultTour2" width="208" height="139.5"/>
+        <image name="DefaultTour1" width="200" height="100"/>
+        <image name="DefaultTour2" width="200" height="100"/>
         <image name="GonzagaLogo" width="552" height="369"/>
     </resources>
 </document>

@@ -11,7 +11,7 @@
 import UIKit
 import GoogleMaps
 
-class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate{
+class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate{
     let locationManager = CLLocationManager()
     var mapView = GMSMapView.map(withFrame: CGRect.zero, camera: GMSCameraPosition.camera(withLatitude: 0, longitude: 0, zoom:0))
     let CAMERA_ANGLE = 45.0;
@@ -21,7 +21,6 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         
         // check to make sure the user has location enabled
@@ -42,7 +41,6 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate{
             print("Failed to pass selected tour")
             setStopsTemp() // otherwise set up default markers
         }
-
     }
     
     func centerUserLocationOnMap(location: CLLocation) {
@@ -80,6 +78,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate{
         mapView.isMyLocationEnabled = true
         //change map type to be hybrid (satellite with labels)
         mapView.mapType = GMSMapViewType.hybrid
+        mapView.delegate = self
         //add layout constraints
         view.addSubviewAndPinEdges(mapView)
     }
@@ -97,14 +96,29 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         self.orientMapTowardUserHeading(direction: newHeading.magneticHeading)
     }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        if let stop = marker as? Stop {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            //create the tabBarController
+            if let tabBarController = storyBoard.instantiateViewController(withIdentifier: "StopViewTabBarController") as? StopViewTabBarController{
+                tabBarController.curStop = stop
+                tabBarController.modalPresentationStyle = .pageSheet
+                //show the new tabViewController
+                self.navigationController?.pushViewController(tabBarController, animated: true)
+                return true
+            }
+        }
+        return false
+    }
 
     func createMarkersForTourStops(tour: Tour) {
         for stop in tour.tourStops {
-            createMarkerForStop(currentStop: stop)
+            stop.map = self.mapView
         }
     }
     
-    func createMarkerForStop(currentStop: Stop) {
+    /*func createMarkerForStop(currentStop: Stop) {
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: currentStop.stopLatitude, longitude: currentStop.stopLongitude)
         marker.title = currentStop.stopName
@@ -112,7 +126,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate{
         marker.map = mapView
         marker.icon = UIImage(named: "question")
         marker.isFlat = true;
-    }
+    }*/
 
     
     

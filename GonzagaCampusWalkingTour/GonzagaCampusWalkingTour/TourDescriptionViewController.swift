@@ -7,13 +7,7 @@
 //
 
 import UIKit
-/*
- TODO:
-    - allow all text boxes to wrap
-    - allow text boxes to be sized based on size of text
-    - resize image to always fit the screen
-    - set autolayout constraints for all ui objects
- */
+
 class TourDescriptionViewController: UIViewController {
     @IBOutlet weak var tourName: UILabel!
     @IBOutlet weak var tourPreviewImage: UIImageView!
@@ -44,17 +38,26 @@ class TourDescriptionViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(startTour)
-            
         )
         navigationItem.rightBarButtonItem = startTourButton
+        //make the back button say just "back"
+        let backButton = UIBarButtonItem()
+        backButton.title = "Back"
+        navigationItem.backBarButtonItem = backButton
     }
     
     @objc func startTour() {
         //start the google maps view
-        let googleMapsViewController = GoogleMapsViewController(nibName: nil, bundle: nil)
-        googleMapsViewController.modalPresentationStyle = .fullScreen
-        googleMapsViewController.activeTour = selectedTour
-        self.present(googleMapsViewController, animated: true, completion: nil)
+//        let googleMapsViewController = GoogleMapsViewController(nibName: nil, bundle: nil)
+//        googleMapsViewController.modalPresentationStyle = .fullScreen
+//        googleMapsViewController.activeTour = selectedTour
+//        self.present(googleMapsViewController, animated: true, completion: nil)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let mapView = storyBoard.instantiateViewController(withIdentifier: "GoogleMapsViewController") as? GoogleMapsViewController {
+            mapView.activeTour = selectedTour
+            mapView.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(mapView, animated: true)
+        }
     }	
 
     /*
