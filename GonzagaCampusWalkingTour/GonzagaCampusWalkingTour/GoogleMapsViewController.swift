@@ -103,12 +103,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
             self.orientMapTowardUserHeading(direction: newHeading.magneticHeading)
         }
     }
-    
-    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        //update the current zoom member var
-        //this allows the user to u
-        //self.currentZoom = position.zoom
-    }
+
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         // if the user manually attempts to change location by dragging
@@ -123,6 +118,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         //user wants to have map centered around their location once again
         self.centerOnUser = true
         self.currentZoom = GoogleMapsViewController.DEFAULT_ZOOM
+        self.centerUserLocationOnMap(location: self.currentLocation)
         return true
     }
     
