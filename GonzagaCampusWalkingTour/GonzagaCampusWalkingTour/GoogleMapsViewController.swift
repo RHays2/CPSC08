@@ -12,12 +12,16 @@ import UIKit
 import GoogleMaps
 
 class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate{
+    static let CAMERA_ANGLE = 45.0
+    static let DEFAULT_ZOOM: Float = 19.0
+    
     let locationManager = CLLocationManager()
-    var mapView = GMSMapView.map(withFrame: CGRect.zero, camera: GMSCameraPosition.camera(withLatitude: 0, longitude: 0, zoom:0))
-    let CAMERA_ANGLE = 45.0;
+    var mapView = GMSMapView.map(withFrame: CGRect.zero, camera: GMSCameraPosition.camera(withLatitude: 0, longitude: 0, zoom: DEFAULT_ZOOM))
     var currentDirection = CLLocationDirection()
     var currentLocation = CLLocation()
     var activeTour:Tour?
+    var currentZoom: Float = DEFAULT_ZOOM
+    var centerOnUser = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +50,10 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     func centerUserLocationOnMap(location: CLLocation) {
         // Create a GMSCameraPosition that tells the map to display the
         // centered around the users location
-        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 18.0, bearing: self.currentDirection, viewingAngle: CAMERA_ANGLE)
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: self.currentZoom, bearing: self.currentDirection, viewingAngle: GoogleMapsViewController.CAMERA_ANGLE)
         mapView.animate(to: camera)
-        
         //update current location var
         self.currentLocation = location
-        
     }
     
     func orientMapTowardUserHeading(direction: CLLocationDirection) {
@@ -89,12 +91,35 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //move map to center around user
-        self.centerUserLocationOnMap(location: locations.last ?? CLLocation())
+        //move map to center around user if centerOnUser == true
+        if (self.centerOnUser == true) {
+          self.centerUserLocationOnMap(location: locations.last ?? CLLocation())
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        self.orientMapTowardUserHeading(direction: newHeading.magneticHeading)
+        //orient map to direction of user if centerOnUser == true
+        if (self.centerOnUser == true) {
+            self.orientMapTowardUserHeading(direction: newHeading.magneticHeading)
+        }
+    }
+
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        // if the user manually attempts to change location by dragging
+        // gesture will be true
+        if (gesture == true) {
+            self.centerOnUser = false
+        }
+    }
+    
+    func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
+        //method called when user presses the MyLocationButton
+        //user wants to have map centered around their location once again
+        self.centerOnUser = true
+        self.currentZoom = GoogleMapsViewController.DEFAULT_ZOOM
+        self.centerUserLocationOnMap(location: self.currentLocation)
+        return true
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
