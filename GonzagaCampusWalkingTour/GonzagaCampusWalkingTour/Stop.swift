@@ -36,7 +36,15 @@ class Stop: GMSMarker {
         
         super.init()
         self.position = CLLocationCoordinate2D(latitude: stopLatitude, longitude: stopLongitude)
-        self.icon = UIImage(named: "question")
+        if order > 0 && order <= 30 {
+            let image = UIImage(named: "BWR\(order)")
+            let imageView = UIImageView(image: image)
+            imageView.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
+            self.iconView = imageView
+        }
+        else {
+            self.icon = UIImage(named: "question")
+        }
     }
     
 }
