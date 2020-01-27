@@ -16,11 +16,12 @@ class Stop: GMSMarker {
     var stopAssets = [Asset]()
     var stopLatitude: Double
     var stopLongitude: Double
+    var order: Int
     
     
     
     //MARK: Initialization
-    init?(stopName: String, stopDescription: String, stopAssets: [Asset], stopLatitude: Double, stopLongitude: Double) {
+    init?(stopName: String, stopDescription: String, stopAssets: [Asset], stopLatitude: Double, stopLongitude: Double, order: Int) {
         // if there is no name, initialization fails
         guard !stopName.isEmpty else {
             return nil
@@ -31,6 +32,7 @@ class Stop: GMSMarker {
         self.stopAssets = stopAssets
         self.stopLatitude = stopLatitude
         self.stopLongitude = stopLongitude
+        self.order = order
         
         super.init()
         self.position = CLLocationCoordinate2D(latitude: stopLatitude, longitude: stopLongitude)
