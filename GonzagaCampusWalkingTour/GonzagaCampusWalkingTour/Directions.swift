@@ -34,11 +34,20 @@ class Directions {
         }
     }
     
-    static func getDirections(pointA:CLLocationCoordinate2D, pointB:CLLocationCoordinate2D, callback: @escaping (MKRoute) -> Void) {
+    static func getDirections(pointA:CLLocationCoordinate2D, pointB:CLLocationCoordinate2D, callback: @escaping ([CLLocationCoordinate2D]) -> Void) {
         self.fetchDirections(pointA: pointA, pointB: pointB, travelType: MKDirectionsTransportType.walking, completionHandlerFunction: {(response, error) in
             guard let response = response else { return }
             if response.routes.count == 0 { return }
-            callback(response.routes[0])
+            //get all of the coordinates out of the route
+            var coordinates = [CLLocationCoordinate2D](
+                repeating: kCLLocationCoordinate2DInvalid,
+                count: response.routes[0].polyline.pointCount
+            )
+            response.routes[0].polyline.getCoordinates(
+                &coordinates,
+                range: NSRange(location: 0, length: response.routes[0].polyline.pointCount)
+            )
+            callback(coordinates)
         })
     }
     

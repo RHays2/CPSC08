@@ -110,11 +110,11 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                 
             } else {
                 //get directions
-                Directions.getDirections(pointA: myLocation.coordinate, pointB: destination.coordinate, callback: {(route) in
+                Directions.getDirections(pointA: myLocation.coordinate, pointB: destination.coordinate, callback: {(coordinates) in
                     //this function is called when all the waypoints are recieved
                     self.path.addCoordinate(coord: myLocation.coordinate)
-                    for step in route.steps {
-                        self.path.addCoordinate(coord: step.polyline.coordinate)
+                    for coord in coordinates{
+                        self.path.addCoordinate(coord: coord)
                     }
                     self.path.addCoordinate(coord: destination.coordinate)
                     self.path.createPolyline()
