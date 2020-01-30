@@ -20,6 +20,8 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     var currentDirection = CLLocationDirection()
     var currentLocation = CLLocation()
     var activeTour:Tour?
+    let path = Path()
+    var tourStopCounter = 0
     var currentZoom: Float = DEFAULT_ZOOM
     var centerOnUser = true
     
@@ -32,6 +34,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
             print("Location services enabled")
             setupLocationServices()
             setUpMapView()
+            addDirectionsPath()
         }
         else {
             // the user turned off location, phone is airplane mode, lack of hardware, hardware failure,...
@@ -68,7 +71,8 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         // shows the users location as accurate as possible. Will be battery intensive
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         // requests users location only when the app is in use
-        locationManager.requestWhenInUseAuthorization()
+        //locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
         //begin getting the location and heading
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading();
@@ -79,11 +83,48 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         mapView.settings.myLocationButton = true
         mapView.isMyLocationEnabled = true
         //change map type to be hybrid (satellite with labels)
-        mapView.mapType = GMSMapViewType.hybrid
+        mapView.mapType = GMSMapViewType.satellite
         mapView.delegate = self
         //add layout constraints
         view.addSubviewAndPinEdges(mapView)
     }
+    
+    func addDirectionsPath() {
+        if let stops = self.activeTour?.tourStops {
+            guard let myLocation = self.locationManager.location else { return }
+            var destination = CLLocation()
+            if stops.count > 0 && self.tourStopCounter < stops.count {
+                destination = CLLocation(latitude: stops[self.tourStopCounter].stopLatitude, longitude: stops[self.tourStopCounter].stopLongitude)
+            } else { return }
+            
+            self.path.removePolyline()
+            self.path.resetPath()
+            
+            //determine the distance between the 2 points
+            let distance = myLocation.distance(from: destination)
+            if distance.isLess(than: 60.0) {
+                self.path.addCoordinate(coord: myLocation.coordinate)
+                self.path.addCoordinate(coord: destination.coordinate)
+                self.path.createPolyline()
+                self.path.polyLine.map = self.mapView
+                
+            } else {
+                //get directions
+                Directions.getDirections(pointA: myLocation.coordinate, pointB: destination.coordinate, callback: {(coordinates) in
+                    //this function is called when all the waypoints are recieved
+                    self.path.addCoordinate(coord: myLocation.coordinate)
+                    for coord in coordinates{
+                        self.path.addCoordinate(coord: coord)
+                    }
+                    self.path.addCoordinate(coord: destination.coordinate)
+                    self.path.createPolyline()
+                    self.path.polyLine.map = self.mapView
+                })
+            }
+        }
+    }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -122,7 +163,12 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         return true
     }
     
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        //this function will run when user enters the region of a tour stop
+    }
+    
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        //make sure user is accessing stops in order
         if let stop = marker as? Stop {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             //create the tabBarController
@@ -131,6 +177,13 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                 tabBarController.modalPresentationStyle = .pageSheet
                 //show the new tabViewController
                 self.navigationController?.pushViewController(tabBarController, animated: true)
+                
+                //draw the route to the next stop
+                if self.tourStopCounter == stop.order - 1 {
+                    self.tourStopCounter += 1
+                    self.addDirectionsPath()
+                }
+                
                 return true
             }
         }
@@ -138,8 +191,12 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     }
 
     func createMarkersForTourStops(tour: Tour) {
-        for stop in tour.tourStops {
+        for i in 0 ..< tour.tourStops.count {
+            let stop = tour.tourStops[i]
             stop.map = self.mapView
+            let center = CLLocationCoordinate2D(latitude: stop.stopLatitude, longitude: stop.stopLongitude)
+            let region = CLCircularRegion(center: center, radius: 30, identifier: "\(i)")
+            self.locationManager.startMonitoring(for: region)
         }
     }
     

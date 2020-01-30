@@ -209,15 +209,15 @@ class TourTableViewController: UITableViewController {
 //                fatalError("Unable to instantiate DefaultStop1")
 //            }
         
-        guard let cHall1 = Stop(stopName: "College Hall Stop 1", stopDescription: "College Hall Stop 1", stopAssets: [asset1], stopLatitude: 47.668112, stopLongitude: -117.401748)
+        guard let cHall1 = Stop(stopName: "College Hall Stop 1", stopDescription: "College Hall Stop 1", stopAssets: [asset1], stopLatitude: 47.668112, stopLongitude: -117.401748, order: 1)
             else {
                 fatalError("Unable to instantiate cHall1")
         }
-        guard let cHall2 = Stop(stopName: "College Hall Stop 2", stopDescription: "College Hall Stop 2", stopAssets: [asset1], stopLatitude: 47.668108, stopLongitude: -117.402419)
+        guard let cHall2 = Stop(stopName: "College Hall Stop 2", stopDescription: "College Hall Stop 2", stopAssets: [asset1], stopLatitude: 47.668108, stopLongitude: -117.402419, order: 2)
             else {
                 fatalError("Unable to instantiate cHall2")
         }
-        guard let cHall3 = Stop(stopName: "College Hall Stop 3", stopDescription: "College Hall Stop 3", stopAssets: [asset1], stopLatitude: 47.668101, stopLongitude: -117.403331)
+        guard let cHall3 = Stop(stopName: "College Hall Stop 3", stopDescription: "College Hall Stop 3", stopAssets: [asset1], stopLatitude: 47.668101, stopLongitude: -117.403331, order: 3)
             else {
                 fatalError("Unable to instantiate cHall3")
         }
@@ -227,15 +227,15 @@ class TourTableViewController: UITableViewController {
             fatalError("Unable to instantiate DefaultTour1")
         }
         
-        guard let foley1 = Stop(stopName: "Foley Library Stop 1", stopDescription: "Foley Library Stop 1", stopAssets: [asset1], stopLatitude: 47.666714, stopLongitude: -117.401201)
+        guard let foley1 = Stop(stopName: "Foley Library Stop 1", stopDescription: "Foley Library Stop 1", stopAssets: [asset1], stopLatitude: 47.666714, stopLongitude: -117.401201, order: 1)
             else {
                 fatalError("Unable to instantiate foley1")
         }
-        guard let foley2 = Stop(stopName: "Foley Library Stop 2", stopDescription: "Foley Library Stop 2", stopAssets: [asset1], stopLatitude: 47.666439, stopLongitude: -117.400917)
+        guard let foley2 = Stop(stopName: "Foley Library Stop 2", stopDescription: "Foley Library Stop 2", stopAssets: [asset1], stopLatitude: 47.666439, stopLongitude: -117.400917, order: 2)
             else {
                 fatalError("Unable to instantiate foley2")
         }
-        guard let foley3 = Stop(stopName: "Foley Library Stop 3", stopDescription: "Foley Library Stop 3", stopAssets: [asset1], stopLatitude: 47.666526, stopLongitude: 117.400322)
+        guard let foley3 = Stop(stopName: "Foley Library Stop 3", stopDescription: "Foley Library Stop 3", stopAssets: [asset1], stopLatitude: 47.666526, stopLongitude: -117.400322, order: 3)
             else {
                 fatalError("Unable to instantiate foley3")
         }
@@ -243,15 +243,15 @@ class TourTableViewController: UITableViewController {
             fatalError("Unable to instantiate DefaultTour2")
         }
         
-        guard let hemmy1 = Stop(stopName: "Hemmingson Stop 1", stopDescription: "Hemmingson Stop 1", stopAssets: [asset1], stopLatitude: 47.667126, stopLongitude: -117.399839)
+        guard let hemmy1 = Stop(stopName: "Hemmingson Stop 1", stopDescription: "Hemmingson Stop 1", stopAssets: [asset1], stopLatitude: 47.667126, stopLongitude: -117.399839, order: 1)
             else {
                 fatalError("Unable to instantiate hemmy1")
         }
-        guard let hemmy2 = Stop(stopName: "Hemmingson Stop 2", stopDescription: "Hemmingson Stop 2", stopAssets: [asset1], stopLatitude: 47.667090, stopLongitude: -117.399211)
+        guard let hemmy2 = Stop(stopName: "Hemmingson Stop 2", stopDescription: "Hemmingson Stop 2", stopAssets: [asset1], stopLatitude: 47.667090, stopLongitude: -117.399211, order: 2)
             else {
                 fatalError("Unable to instantiate hemmy2")
         }
-        guard let hemmy3 = Stop(stopName: "COG", stopDescription: "Hemmingson Stop 3", stopAssets: [asset1], stopLatitude: 47.667101, stopLongitude: -117.398380)
+        guard let hemmy3 = Stop(stopName: "COG", stopDescription: "Hemmingson Stop 3", stopAssets: [asset1], stopLatitude: 47.667101, stopLongitude: -117.398380, order: 3)
             else {
                 fatalError("Unable to instantiate hemmy3")
         }
@@ -260,15 +260,15 @@ class TourTableViewController: UITableViewController {
         }
         
         
-        guard let paccar1 = Stop(stopName: "It's okay to fail", stopDescription: "Paccar Stop 1", stopAssets: paccar1Assets, stopLatitude: 47.666364, stopLongitude: -117.401840)
+        guard let paccar1 = Stop(stopName: "It's okay to fail", stopDescription: "Paccar Stop 1", stopAssets: paccar1Assets, stopLatitude: 47.666364, stopLongitude: -117.401840, order: 1)
             else {
                 fatalError("Unable to instantiate paccar1")
         }
-        guard let paccar2 = Stop(stopName: "Dean's Office", stopDescription: "Paccar Stop 2", stopAssets: paccar2Assets, stopLatitude: 47.666328, stopLongitude: -117.402130)
+        guard let paccar2 = Stop(stopName: "Dean's Office", stopDescription: "Paccar Stop 2", stopAssets: paccar2Assets, stopLatitude: 47.666328, stopLongitude: -117.402130, order: 2)
             else {
                 fatalError("Unable to instantiate paccar2")
         }
-        guard let paccar3 = Stop(stopName: "Sky Bridge", stopDescription: "Paccar Stop 3", stopAssets: paccar3Assets, stopLatitude: 47.666491, stopLongitude: -117.402446)
+        guard let paccar3 = Stop(stopName: "Sky Bridge", stopDescription: "Paccar Stop 3", stopAssets: paccar3Assets, stopLatitude: 47.666491, stopLongitude: -117.402446, order: 3)
             else {
                 fatalError("Unable to instantiate paccar3")
         }
@@ -276,15 +276,15 @@ class TourTableViewController: UITableViewController {
             fatalError("Unable to instantiate DefaultTour4")
         }
         
-        guard let luger1 = Stop(stopName: "Luger Stop 3", stopDescription: "Luger Stop 1", stopAssets: [asset1], stopLatitude: 47.665949, stopLongitude:  -117.402119)
+        guard let luger1 = Stop(stopName: "Luger Stop 1", stopDescription: "Luger Stop 1", stopAssets: [asset1], stopLatitude: 47.665949, stopLongitude:  -117.402119, order: 1)
             else {
                 fatalError("Unable to instantiate luger1")
         }
-        guard let luger2 = Stop(stopName: "Luger Stop 3", stopDescription: "Luger Stop 2", stopAssets: [asset1], stopLatitude: 47.665310, stopLongitude: -117.402103)
+        guard let luger2 = Stop(stopName: "Luger Stop 2", stopDescription: "Luger Stop 2", stopAssets: [asset1], stopLatitude: 47.665310, stopLongitude: -117.402103, order: 2)
             else {
                 fatalError("Unable to instantiate luger2")
         }
-        guard let luger3 = Stop(stopName: "Luger Stop 3", stopDescription: "Luger Stop 3", stopAssets: [asset1], stopLatitude: 47.664508, stopLongitude: -117.402039)
+        guard let luger3 = Stop(stopName: "Luger Stop 3", stopDescription: "Luger Stop 3", stopAssets: [asset1], stopLatitude: 47.664508, stopLongitude: -117.402039, order: 3)
             else {
                 fatalError("Unable to instantiate luger3")
         }
@@ -293,15 +293,15 @@ class TourTableViewController: UITableViewController {
         }
         
         
-        guard let parking1 = Stop(stopName: "Parking Stop 3", stopDescription: "Parking Stop 1", stopAssets: [asset1], stopLatitude: 47.664364, stopLongitude: -117.398905)
+        guard let parking1 = Stop(stopName: "Parking Stop 3", stopDescription: "Parking Stop 1", stopAssets: [asset1], stopLatitude: 47.664364, stopLongitude: -117.398905, order: 1)
             else {
                 fatalError("Unable to instantiate parking1")
         }
-        guard let parking2 = Stop(stopName: "Parking Stop 3", stopDescription: "Parking Stop 2", stopAssets: [asset1], stopLatitude: 47.668009, stopLongitude: -117.397076)
+        guard let parking2 = Stop(stopName: "Parking Stop 3", stopDescription: "Parking Stop 2", stopAssets: [asset1], stopLatitude: 47.668009, stopLongitude: -117.397076, order: 2)
             else {
                 fatalError("Unable to instantiate parking2")
         }
-        guard let parking3 = Stop(stopName: "Parking Stop 3", stopDescription: "Parking Stop 3", stopAssets: [asset1], stopLatitude: 47.668770, stopLongitude: -117.402216)
+        guard let parking3 = Stop(stopName: "Parking Stop 3", stopDescription: "Parking Stop 3", stopAssets: [asset1], stopLatitude: 47.668770, stopLongitude: -117.402216, order: 3)
             else {
                 fatalError("Unable to instantiate parking3")
         }
@@ -310,15 +310,15 @@ class TourTableViewController: UITableViewController {
         }
         
         
-        guard let rosauer1 = Stop(stopName: "Rosauer Stop 3", stopDescription: "Rosauer Stop 1", stopAssets: [asset1], stopLatitude: 47.668123, stopLongitude: -117.399453)
+        guard let rosauer1 = Stop(stopName: "Rosauer Stop 3", stopDescription: "Rosauer Stop 1", stopAssets: [asset1], stopLatitude: 47.668123, stopLongitude: -117.399453, order: 1)
             else {
                 fatalError("Unable to instantiate rosauer1")
         }
-        guard let rosauer2 = Stop(stopName: "Rosauer Stop 3", stopDescription: "Rosauer Stop 2", stopAssets: [asset1], stopLatitude: 47.668137, stopLongitude: -117.399147)
+        guard let rosauer2 = Stop(stopName: "Rosauer Stop 3", stopDescription: "Rosauer Stop 2", stopAssets: [asset1], stopLatitude: 47.668137, stopLongitude: -117.399147, order: 2)
             else {
                 fatalError("Unable to instantiate rosauer2")
         }
-        guard let rosauer3 = Stop(stopName: "Rosauer Stop 3", stopDescription: "Rosauer Stop 3", stopAssets: [asset1], stopLatitude: 47.668076, stopLongitude: -117.398809)
+        guard let rosauer3 = Stop(stopName: "Rosauer Stop 3", stopDescription: "Rosauer Stop 3", stopAssets: [asset1], stopLatitude: 47.668076, stopLongitude: -117.398809, order: 3)
             else {
                 fatalError("Unable to instantiate rosauer3")
         }
@@ -327,15 +327,15 @@ class TourTableViewController: UITableViewController {
         }
         
         
-        guard let desmet1 = Stop(stopName: "Desmet Stop 3", stopDescription: "Desmet Stop 1", stopAssets: [asset1], stopLatitude: 47.667945, stopLongitude: -117.401122)
+        guard let desmet1 = Stop(stopName: "Desmet Stop 1", stopDescription: "Desmet Stop 1", stopAssets: [asset1], stopLatitude: 47.667945, stopLongitude: -117.401122, order: 1)
             else {
                 fatalError("Unable to instantiate desmet1")
         }
-        guard let desmet2 = Stop(stopName: "Desmet Stop 3", stopDescription: "Desmet Stop 2", stopAssets: [asset1], stopLatitude: 47.667849, stopLongitude: -117.401126)
+        guard let desmet2 = Stop(stopName: "Desmet Stop 2", stopDescription: "Desmet Stop 2", stopAssets: [asset1], stopLatitude: 47.667849, stopLongitude: -117.401126, order: 2)
             else {
                 fatalError("Unable to instantiate desmet2")
         }
-        guard let desmet3 = Stop(stopName: "Desmet Stop 3", stopDescription: "Desmet Stop 3", stopAssets: [asset1], stopLatitude: 47.667679, stopLongitude: -117.401078)
+        guard let desmet3 = Stop(stopName: "Desmet Stop 3", stopDescription: "Desmet Stop 3", stopAssets: [asset1], stopLatitude: 47.667679, stopLongitude: -117.401078, order: 3)
             else {
                 fatalError("Unable to instantiate desmet3")
         }
@@ -343,15 +343,15 @@ class TourTableViewController: UITableViewController {
             fatalError("Unable to instantiate DefaultTour8")
         }
         
-        guard let coughlin1 = Stop(stopName: "Coughlin Stop 3", stopDescription: "Coughlin Stop 1", stopAssets: [asset1], stopLatitude: 47.664924, stopLongitude: -117.396824)
+        guard let coughlin1 = Stop(stopName: "Coughlin Stop 1", stopDescription: "Coughlin Stop 1", stopAssets: [asset1], stopLatitude: 47.664924, stopLongitude: -117.396824, order: 1)
             else {
                 fatalError("Unable to instantiate coughlin1")
         }
-        guard let coughlin2 = Stop(stopName: "Coughlin Stop 3", stopDescription: "Coughlin Stop 2", stopAssets: [asset1], stopLatitude: 47.664577, stopLongitude: -117.396878)
+        guard let coughlin2 = Stop(stopName: "Coughlin Stop 2", stopDescription: "Coughlin Stop 2", stopAssets: [asset1], stopLatitude: 47.664577, stopLongitude: -117.396878, order: 2)
             else {
                 fatalError("Unable to instantiate coughlin2")
         }
-        guard let coughlin3 = Stop(stopName: "Coughlin Stop 3", stopDescription: "Coughlin Stop 3", stopAssets: [asset1], stopLatitude: 47.665220, stopLongitude: -117.396867)
+        guard let coughlin3 = Stop(stopName: "Coughlin Stop 3", stopDescription: "Coughlin Stop 3", stopAssets: [asset1], stopLatitude: 47.665220, stopLongitude: -117.396867, order: 3)
             else {
                 fatalError("Unable to instantiate coughlin3")
         }
@@ -359,15 +359,15 @@ class TourTableViewController: UITableViewController {
             fatalError("Unable to instantiate DefaultTour9")
         }
         
-        guard let jundt1 = Stop(stopName: "Jundt Stop 3", stopDescription: "Jundt Stop 1", stopAssets: [asset1], stopLatitude: 47.666333, stopLongitude: -117.407145)
+        guard let jundt1 = Stop(stopName: "Jundt Stop 1", stopDescription: "Jundt Stop 1", stopAssets: [asset1], stopLatitude: 47.666333, stopLongitude: -117.407145, order: 1)
             else {
                 fatalError("Unable to instantiate jundt1")
         }
-        guard let jundt2 = Stop(stopName: "Jundt Stop 3", stopDescription: "Jundt Stop 2", stopAssets: [asset1], stopLatitude: 47.666331, stopLongitude: -117.406870)
+        guard let jundt2 = Stop(stopName: "Jundt Stop 2", stopDescription: "Jundt Stop 2", stopAssets: [asset1], stopLatitude: 47.666331, stopLongitude: -117.406870, order: 2)
             else {
                 fatalError("Unable to instantiate jundt2")
         }
-        guard let jundt3 = Stop(stopName: "Jundt Stop 3", stopDescription: "Jundt Stop 3", stopAssets: [asset1], stopLatitude: 47.666400, stopLongitude: -117.406532)
+        guard let jundt3 = Stop(stopName: "Jundt Stop 3", stopDescription: "Jundt Stop 3", stopAssets: [asset1], stopLatitude: 47.666400, stopLongitude: -117.406532, order: 3)
             else {
                 fatalError("Unable to instantiate jundt3")
         }
@@ -375,15 +375,15 @@ class TourTableViewController: UITableViewController {
             fatalError("Unable to instantiate DefaultTour10")
         }
 
-        guard let jepson1 = Stop(stopName: "Jepson Stop 1", stopDescription: "Jepson Stop 1", stopAssets: [asset1], stopLatitude: 47.666989, stopLongitude: -117.405009)
+        guard let jepson1 = Stop(stopName: "Jepson Stop 1", stopDescription: "Jepson Stop 1", stopAssets: [asset1], stopLatitude: 47.666989, stopLongitude: -117.405009, order: 1)
             else {
                 fatalError("Unable to instantiate jepson1")
         }
-        guard let jepson2 = Stop(stopName: "Jepson Stop 2", stopDescription: "Jepson Stop 2", stopAssets: [asset1], stopLatitude: 47.667256, stopLongitude: -117.405194)
+        guard let jepson2 = Stop(stopName: "Jepson Stop 2", stopDescription: "Jepson Stop 2", stopAssets: [asset1], stopLatitude: 47.667256, stopLongitude: -117.405194, order: 2)
             else {
                 fatalError("Unable to instantiate jepson2")
         }
-        guard let jepson3 = Stop(stopName: "Jepson Stop 3", stopDescription: "Jepson Stop 3", stopAssets: [asset1], stopLatitude: 47.667133, stopLongitude: -117.405641)
+        guard let jepson3 = Stop(stopName: "Jepson Stop 3", stopDescription: "Jepson Stop 3", stopAssets: [asset1], stopLatitude: 47.667133, stopLongitude: -117.405641, order: 3)
             else {
                 fatalError("Unable to instantiate jepson3")
         }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class Tour {
     
@@ -17,6 +18,7 @@ class Tour {
     var tourImage: UIImage
     var tourDistance: Float?
     var tourTime: Int?
+    let path = Path()
     // var tour_location: // not sure what datatype to represent the tour's location for google maps
     
     
@@ -34,6 +36,15 @@ class Tour {
         self.tourStops = tourStops
         self.tourDistance = tourDistance
         self.tourTime = tourTime
+        
+        //create the path between each stop
+        //createPath()
     }
+    
+//    func createPath() {
+//        for stop in tourStops {
+//            path.addCoordinate(lat: stop.stopLatitude, lng: stop.stopLongitude)
+//        }
+//    }
 }
 
