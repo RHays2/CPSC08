@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IH2-j3-mn8">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GonzagaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oTf-MB-7td">
-                                <rect key="frame" x="20" y="73" width="335" height="242"/>
+                                <rect key="frame" x="20" y="72" width="335" height="242"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="242" id="5ub-vA-kHl"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campus Augmented RealityWalking Tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uh-gW-APq">
-                                <rect key="frame" x="32.5" y="323" width="310" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Campus Augmented Reality Walking Tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uh-gW-APq">
+                                <rect key="frame" x="12" y="328" width="350.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -49,20 +49,42 @@
                                     <segue destination="mvs-k9-FR2" kind="presentation" modalPresentationStyle="fullScreen" id="xxC-Nu-Sm3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXO-ki-9Qa">
+                                <rect key="frame" x="313" y="617" width="42" height="30"/>
+                                <state key="normal" title="About">
+                                    <color key="titleColor" red="0.97239733968979247" green="0.97682849122200754" blue="0.99012194581865287" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FCb-8G-pMx" kind="show" id="JSu-Ze-Buq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wa-kg-XBx">
+                                <rect key="frame" x="26" y="617" width="36" height="30"/>
+                                <state key="normal" title="Stats">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Dwq-ga-LlM" kind="show" id="uh6-d4-DuY"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.044875688850879669" green="0.21989923715591431" blue="0.36524432897567749" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.043137254901960784" green="0.2196078431372549" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="bXO-ki-9Qa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="297" id="B4y-lp-59S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d7W-KT-XTE" secondAttribute="trailing" constant="8" id="CXV-VB-5jq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oTf-MB-7td" secondAttribute="trailing" constant="20" id="EgO-C6-XHc"/>
                             <constraint firstItem="8uh-gW-APq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fhf-hb-TPl"/>
                             <constraint firstItem="8uh-gW-APq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Knp-93-ebt"/>
                             <constraint firstItem="8uh-gW-APq" firstAttribute="top" secondItem="oTf-MB-7td" secondAttribute="bottom" constant="8" id="Mma-RN-10t"/>
+                            <constraint firstItem="bXO-ki-9Qa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="562" id="NwQ-Pb-FJY"/>
                             <constraint firstItem="rCg-1C-ESP" firstAttribute="top" secondItem="d7W-KT-XTE" secondAttribute="bottom" constant="8" id="O8E-I7-ayz"/>
                             <constraint firstItem="oTf-MB-7td" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cg3-ud-pVi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rCg-1C-ESP" secondAttribute="trailing" constant="8" id="dKf-sy-jux"/>
                             <constraint firstItem="d7W-KT-XTE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="gXN-w2-jhS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rCg-1C-ESP" secondAttribute="bottom" constant="20" id="mmZ-PJ-heq"/>
                             <constraint firstItem="rCg-1C-ESP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="v2b-QD-Bb3"/>
+                            <constraint firstItem="6wa-kg-XBx" firstAttribute="top" secondItem="oTf-MB-7td" secondAttribute="bottom" constant="292" id="vqd-2R-IIG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6wa-kg-XBx" secondAttribute="trailing" constant="300" id="zdv-8h-ysY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -73,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="-136"/>
+            <point key="canvasLocation" x="1008.8" y="-136.28185907046478"/>
         </scene>
         <!--Admin Login View Controller-->
         <scene sceneID="nIF-Gm-Ihi">
@@ -136,7 +158,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="x0c-FZ-y6C"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="BackToStartScreenSegue" modalPresentationStyle="fullScreen" id="jnx-El-hKU"/>
+                        <segue destination="IH2-j3-mn8" kind="presentation" identifier="BackToStartScreenSegue" modalPresentationStyle="fullScreen" id="jnx-El-hKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5S-jV-RoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,7 +221,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjJ-wp-Gaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1684" y="-136"/>
+            <point key="canvasLocation" x="2623.1999999999998" y="-136.28185907046478"/>
         </scene>
         <!--Tour Description View Controller-->
         <scene sceneID="xvK-wQ-GEH">
@@ -290,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jnd-ne-q49" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2556" y="-150"/>
+            <point key="canvasLocation" x="3495.1999999999998" y="-150.67466266866569"/>
         </scene>
         <!--Google Maps View Controller-->
         <scene sceneID="e71-B4-6hQ">
@@ -306,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Itt-Xd-DPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3377" y="-151"/>
+            <point key="canvasLocation" x="4316" y="-151.57421289355324"/>
         </scene>
         <!--Item-->
         <scene sceneID="V8R-qG-Zab">
@@ -380,7 +402,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lU8-Y1-953" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5128.8000000000002" y="-151.57421289355324"/>
+            <point key="canvasLocation" x="6068" y="-151.57421289355324"/>
         </scene>
         <!--Stop View Images View Controller-->
         <scene sceneID="TL0-1K-bkQ">
@@ -493,7 +515,101 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="owG-am-NlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="-136"/>
+            <point key="canvasLocation" x="1796" y="-136.28185907046478"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gwW-Fi-NM6">
+            <objects>
+                <viewController id="Dwq-ga-LlM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cgg-WD-MVy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ug-uf-uLA">
+                                <rect key="frame" x="141" y="70" width="92" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tours Completed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJs-B0-XE7">
+                                <rect key="frame" x="30" y="140" width="151" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stops Found:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfk-YW-8km">
+                                <rect key="frame" x="30" y="183" width="113" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance Walked:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I4-06-QbA">
+                                <rect key="frame" x="30" y="227" width="147" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.043137254901960784" green="0.2196078431372549" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="wto-g5-w3u"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lwQ-XS-fwE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBf-eC-XLt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514" y="614"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Yd8-7n-qO8">
+            <objects>
+                <viewController id="FCb-8G-pMx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NT1-RW-tOf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d4M-KC-iah">
+                                <rect key="frame" x="53" y="290" width="273" height="234"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.043137254901960784" green="0.2196078431372549" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">This mobile application is a was  proposed by the Gonzaga History Deparment as a way to teach and impart the rich history of Gonzaga. It was conceived and produced as a senior design project for the Computer Science Deparment. It was developed in the 2019-2020 school year by Alexa Andrews, Mason Dellutri, Maxwell Heinzelman, and Ryan Hays
+ </mutableString>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULC-fh-ey6">
+                                <rect key="frame" x="163" y="61" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GonzagaLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="iXn-Ku-gmT">
+                                <rect key="frame" x="53" y="90" width="268" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gonzaga Campus Walking Tour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcg-hL-9F5">
+                                <rect key="frame" x="49" y="257" width="277" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.043137254901960784" green="0.2196078431372549" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7Lf-La-kd7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q7c-u9-Jgq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JV2-qL-0UV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="613.94302848575717"/>
         </scene>
         <!--Stop View Tab Bar Controller-->
         <scene sceneID="RQe-rZ-Enm">
@@ -508,12 +624,31 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bf8-zc-sP7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4189.6000000000004" y="-151.57421289355324"/>
+            <point key="canvasLocation" x="5128.8000000000002" y="-151.57421289355324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vsj-41-cc2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IH2-j3-mn8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4zq-ff-137">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6OZ-qg-6XZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYy-eA-u5V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.599999999999994" y="-136.28185907046478"/>
         </scene>
     </scenes>
     <resources>
         <image name="DefaultTour1" width="200" height="100"/>
         <image name="DefaultTour2" width="200" height="100"/>
         <image name="GonzagaLogo" width="552" height="369"/>
+        <image name="GonzagaLogoBlue" width="290" height="199"/>
     </resources>
 </document>
