@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -130,6 +130,14 @@
                                     <action selector="BackToStartButtonPressed:" destination="D5i-4Z-PGE" eventType="touchUpInside" id="y98-Kb-1aP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-G9-gu3">
+                                <rect key="frame" x="163" y="523" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="D5i-4Z-PGE" eventType="touchUpInside" id="cp1-z7-XQz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.036483272910000003" green="0.21865761280000001" blue="0.36250299219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="TBl-x2-E7V"/>
@@ -137,6 +145,7 @@
                     <navigationItem key="navigationItem" id="x0c-FZ-y6C"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="BackToStartScreenSegue" modalPresentationStyle="fullScreen" id="jnx-El-hKU"/>
+                        <segue destination="mvs-k9-FR2" kind="show" identifier="goHome" id="TWM-Xw-ljX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5S-jV-RoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,7 +157,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="TourTableViewController" title="Available Tours" id="Xu1-Fz-K7H" customClass="TourTableViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="of7-ne-zzZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -206,11 +215,11 @@
             <objects>
                 <viewController id="P5l-td-Z3v" customClass="TourDescriptionViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Sh-O9-koG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="END-uD-dbq">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIe-n8-yC9">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="654"/>
@@ -483,7 +492,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="4Gw-Ec-vJN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ibh-It-FEt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -516,4 +525,7 @@
         <image name="DefaultTour2" width="200" height="100"/>
         <image name="GonzagaLogo" width="552" height="369"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TWM-Xw-ljX"/>
+    </inferredMetricsTieBreakers>
 </document>
