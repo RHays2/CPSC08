@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         let admin = test.instantiateViewController(withIdentifier: "AdminLoginViewController")
         self.present(admin, animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

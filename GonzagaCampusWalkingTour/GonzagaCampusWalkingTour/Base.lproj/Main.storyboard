@@ -29,15 +29,6 @@
                                 <color key="textColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCg-1C-ESP">
-                                <rect key="frame" x="8" y="617" width="359" height="30"/>
-                                <state key="normal" title="Admin Login">
-                                    <color key="titleColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="AdminLoginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xGB-is-Uqa"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-KT-XTE">
                                 <rect key="frame" x="8" y="567" width="359" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -49,42 +40,52 @@
                                     <segue destination="mvs-k9-FR2" kind="presentation" modalPresentationStyle="fullScreen" id="xxC-Nu-Sm3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXO-ki-9Qa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXO-ki-9Qa">
                                 <rect key="frame" x="313" y="617" width="42" height="30"/>
                                 <state key="normal" title="About">
                                     <color key="titleColor" red="0.97239733968979247" green="0.97682849122200754" blue="0.99012194581865287" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FCb-8G-pMx" kind="show" id="JSu-Ze-Buq"/>
+                                    <segue destination="FCb-8G-pMx" kind="presentation" id="i5K-dZ-4ie"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wa-kg-XBx">
-                                <rect key="frame" x="26" y="617" width="36" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wa-kg-XBx">
+                                <rect key="frame" x="20" y="617" width="36" height="30"/>
                                 <state key="normal" title="Stats">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Dwq-ga-LlM" kind="show" id="uh6-d4-DuY"/>
+                                    <segue destination="Dwq-ga-LlM" kind="presentation" id="Qbn-03-wLg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCg-1C-ESP">
+                                <rect key="frame" x="130" y="617" width="115" height="30"/>
+                                <state key="normal" title="Admin Login">
+                                    <color key="titleColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="AdminLoginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xGB-is-Uqa"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.043137254901960784" green="0.2196078431372549" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bXO-ki-9Qa" secondAttribute="bottom" constant="20" id="0qh-pv-wqg"/>
                             <constraint firstItem="bXO-ki-9Qa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="297" id="B4y-lp-59S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d7W-KT-XTE" secondAttribute="trailing" constant="8" id="CXV-VB-5jq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oTf-MB-7td" secondAttribute="trailing" constant="20" id="EgO-C6-XHc"/>
                             <constraint firstItem="8uh-gW-APq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fhf-hb-TPl"/>
                             <constraint firstItem="8uh-gW-APq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Knp-93-ebt"/>
                             <constraint firstItem="8uh-gW-APq" firstAttribute="top" secondItem="oTf-MB-7td" secondAttribute="bottom" constant="8" id="Mma-RN-10t"/>
-                            <constraint firstItem="bXO-ki-9Qa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="562" id="NwQ-Pb-FJY"/>
                             <constraint firstItem="rCg-1C-ESP" firstAttribute="top" secondItem="d7W-KT-XTE" secondAttribute="bottom" constant="8" id="O8E-I7-ayz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6wa-kg-XBx" secondAttribute="bottom" constant="20" id="S6E-2f-7Pc"/>
                             <constraint firstItem="oTf-MB-7td" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cg3-ud-pVi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rCg-1C-ESP" secondAttribute="trailing" constant="8" id="dKf-sy-jux"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rCg-1C-ESP" secondAttribute="trailing" constant="130" id="dKf-sy-jux"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bXO-ki-9Qa" secondAttribute="trailing" constant="20" id="etP-UA-ht6"/>
                             <constraint firstItem="d7W-KT-XTE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="gXN-w2-jhS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rCg-1C-ESP" secondAttribute="bottom" constant="20" id="mmZ-PJ-heq"/>
-                            <constraint firstItem="rCg-1C-ESP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="v2b-QD-Bb3"/>
-                            <constraint firstItem="6wa-kg-XBx" firstAttribute="top" secondItem="oTf-MB-7td" secondAttribute="bottom" constant="292" id="vqd-2R-IIG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6wa-kg-XBx" secondAttribute="trailing" constant="300" id="zdv-8h-ysY"/>
+                            <constraint firstItem="6wa-kg-XBx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rVF-uU-dnF"/>
+                            <constraint firstItem="rCg-1C-ESP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="v2b-QD-Bb3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -142,16 +143,6 @@
                                 <color key="textColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvu-Ci-a35">
-                                <rect key="frame" x="24" y="32" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.99552039609999998" green="1" blue="0.99085191800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="BackToStartButtonPressed:" destination="D5i-4Z-PGE" eventType="touchUpInside" id="y98-Kb-1aP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.036483272910000003" green="0.21865761280000001" blue="0.36250299219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="TBl-x2-E7V"/>
@@ -522,7 +513,7 @@
             <objects>
                 <viewController id="Dwq-ga-LlM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cgg-WD-MVy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ug-uf-uLA">
@@ -553,6 +544,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N8K-R0-umK">
+                                <rect key="frame" x="67" y="259" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.043137254901960784" green="0.2196078431372549" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="wto-g5-w3u"/>
@@ -568,7 +564,7 @@
             <objects>
                 <viewController id="FCb-8G-pMx" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NT1-RW-tOf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d4M-KC-iah">
@@ -576,8 +572,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.2196078431372549" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">This mobile application is a was  proposed by the Gonzaga History Deparment as a way to teach and impart the rich history of Gonzaga. It was conceived and produced as a senior design project for the Computer Science Deparment. It was developed in the 2019-2020 school year by Alexa Andrews, Mason Dellutri, Maxwell Heinzelman, and Ryan Hays
- </mutableString>
+                                <string key="text">This mobile application is a was  proposed by the Gonzaga History Deparment as a way to teach and impart the rich history of Gonzaga. It was conceived and produced as a senior design project for the Computer Science Deparment. It was developed in the 2019-2020 school year by Alexa Andrews, Mason Dellutri, Maxwell Heinzelman, and Ryan Hays
+ </string>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
