@@ -15,38 +15,32 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     static let CAMERA_ANGLE = 45.0
     static let DEFAULT_ZOOM: Float = 19.0
     
+    var databaseReference: DatabaseAccessible?
     let locationManager = CLLocationManager()
     var mapView = GMSMapView.map(withFrame: CGRect.zero, camera: GMSCameraPosition.camera(withLatitude: 0, longitude: 0, zoom: DEFAULT_ZOOM))
     var currentDirection = CLLocationDirection()
     var currentLocation = CLLocation()
-    var activeTour:Tour?
+    var active:Tour?
+    var activeTour: TourInfo?
     let path = Path()
     var tourStopCounter = 0
     var currentZoom: Float = DEFAULT_ZOOM
     var centerOnUser = true
+    var waypointCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         // check to make sure the user has location enabled
         if CLLocationManager.locationServicesEnabled() {
             print("Location services enabled")
             setupLocationServices()
             setUpMapView()
-            addDirectionsPath()
+            setupMapWithTourStops()
         }
         else {
             // the user turned off location, phone is airplane mode, lack of hardware, hardware failure,...
             print("Location services disabled")
-        }
-        
-        // will setup tour stops for the selected tour
-        if activeTour != nil {
-            createMarkersForTourStops(tour: activeTour!)
-        } else {
-            print("Failed to pass selected tour")
-            setStopsTemp() // otherwise set up default markers
         }
     }
     
@@ -76,6 +70,27 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         //begin getting the location and heading
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading();
+    }
+    
+    func setupMapWithTourStops() {
+        // will setup tour stops for the selected tour
+        if let tour = activeTour {
+            //get the stops from the database
+            let indicator = self.createCenteredProgressIndicator()
+            self.view.addSubview(indicator)
+            indicator.startAnimating()
+            databaseReference?.getStopsForTour(id: tour.id, callback: {(stops) in
+                //we have recieved the stops in sorted order
+                tour.tourStops = stops
+                self.createMarkersForTourStops(tour: tour)
+                indicator.stopAnimating()
+                self.addDirectionsPath()
+            })
+            
+        } else {
+            print("Failed to pass selected tour")
+            setStopsTemp() // otherwise set up default markers
+        }
     }
     
     func setUpMapView() {
@@ -113,7 +128,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                 Directions.getDirections(pointA: myLocation.coordinate, pointB: destination.coordinate, callback: {(coordinates) in
                     //this function is called when all the waypoints are recieved
                     self.path.addCoordinate(coord: myLocation.coordinate)
-                    for coord in coordinates{
+                    for coord in coordinates {
                         self.path.addCoordinate(coord: coord)
                     }
                     self.path.addCoordinate(coord: destination.coordinate)
@@ -165,6 +180,9 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         //this function will run when user enters the region of a tour stop
+        if region.identifier.contains("stop_") {
+            print("you have reached \(region.identifier)")
+        }
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -174,6 +192,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
             //create the tabBarController
             if let tabBarController = storyBoard.instantiateViewController(withIdentifier: "StopViewTabBarController") as? StopViewTabBarController{
                 tabBarController.curStop = stop
+                tabBarController.databaseReference = self.databaseReference
                 tabBarController.modalPresentationStyle = .pageSheet
                 //show the new tabViewController
                 self.navigationController?.pushViewController(tabBarController, animated: true)
@@ -190,14 +209,18 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         return false
     }
 
-    func createMarkersForTourStops(tour: Tour) {
+    func createMarkersForTourStops(tour: TourInfo) {
         for i in 0 ..< tour.tourStops.count {
             let stop = tour.tourStops[i]
             stop.map = self.mapView
-            let center = CLLocationCoordinate2D(latitude: stop.stopLatitude, longitude: stop.stopLongitude)
-            let region = CLCircularRegion(center: center, radius: 30, identifier: "\(i)")
-            self.locationManager.startMonitoring(for: region)
+            //only 20 monitored regions allowed
+            self.createMonitoredRegion(center: CLLocationCoordinate2D(latitude: stop.stopLatitude, longitude: stop.stopLongitude), radius: 30, id: "stop_\(i + 1)")
         }
+    }
+    
+    func createMonitoredRegion(center: CLLocationCoordinate2D, radius: Double, id: String) {
+        let region = CLCircularRegion(center: center, radius: radius, identifier: id)
+        self.locationManager.startMonitoring(for: region)
     }
     
     /*func createMarkerForStop(currentStop: Stop) {

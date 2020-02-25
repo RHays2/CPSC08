@@ -9,18 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var databaseReference: DatabaseAccessible?
 
     @IBAction func buttonPressed(_ sender: Any) {
         // moves to the tourList when begin it tapped.
         let test = UIStoryboard(name: "Main", bundle: nil)
-        let tourList = test.instantiateViewController(withIdentifier: "TourTableViewControllerNav")
-        tourList.modalPresentationStyle = .fullScreen
-        self.present(tourList, animated: true, completion: nil)
-        
-        // previous code to move to the googleMaps screen from the landing screen.
-//        let googleMapsViewController = GoogleMapsViewController(nibName: nil, bundle: nil)
-//        googleMapsViewController.modalPresentationStyle = .fullScreen
-//        self.present(googleMapsViewController, animated: true, completion: nil)
+        if let tourList = test.instantiateViewController(withIdentifier: "TourTableViewController") as? TourTableViewController {
+            tourList.modalPresentationStyle = .fullScreen
+            tourList.databaseReference = self.databaseReference
+            //self.present(tourList, animated: true, completion: nil)
+            self.navigationController?.pushViewController(tourList, animated: true)
+        }
     }
     
     @IBAction func AdminLoginButtonPressed(_ sender: Any) {
@@ -32,11 +31,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //let stor = FirebaseStorageAccess()
+        //stor.getImageNamed(name: "CollegeHall1.jpg")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //remove the nav bar from this view
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        //set the nav bar visible for all future views
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
 

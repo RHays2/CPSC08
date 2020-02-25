@@ -12,8 +12,9 @@ class StopViewImagesViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet weak var collectionView: UICollectionView!
     var curStop:Stop?
-    var assets:[Asset] = []
+    var assets:[Asset]?
     let reuseIdentifier = "imageView"
+    var databaseReference: DatabaseAccessible?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +22,37 @@ class StopViewImagesViewController: UIViewController, UICollectionViewDataSource
             assets = tempAssets
         }
         collectionView.delegate = self
-        collectionView.reloadData()
+        
+        //make sure that the stop hasnt already loaded the assets
+        if self.curStop?.stopAssets == nil {
+           loadImages()
+        }
+        else {
+            //we have already loaded the assets
+            //dont waste time and load again
+            self.assets = self.curStop?.stopAssets
+            self.collectionView.reloadData()
+        }
+        
+    }
+    
+    func loadImages() {
+        if self.databaseReference != nil && self.curStop != nil {
+            let indicator = self.createCenteredProgressIndicator()
+            indicator.startAnimating()
+            self.view.addSubview(indicator)
+            self.databaseReference?.getStopAssets(stopId: self.curStop!.id, callback: {(assets) in
+                self.assets = assets
+                self.curStop?.stopAssets = assets
+                indicator.stopAnimating()
+                self.collectionView.reloadData()
+            })
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return assets.count
+        guard let count = assets?.count else { return 0 }
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -34,7 +61,13 @@ class StopViewImagesViewController: UIViewController, UICollectionViewDataSource
         guard let stopCell = cell as? StopCollectionViewCell else {
             return cell
         }
-        stopCell.image.image = assets[indexPath.item].asset
+        if let image = assets?[indexPath.item].asset {
+            stopCell.image.image = image
+        }
+        else {
+            stopCell.image.image = UIImage(named: "default_preview_image")
+        }
+        
         return stopCell
     }
     
@@ -46,7 +79,13 @@ class StopViewImagesViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name:"Main", bundle:nil)
         if let fullImageView = storyBoard.instantiateViewController(withIdentifier: "FullImageViewController") as? FullImageViewController {
-            fullImageView.image = assets[indexPath.item].asset
+            if let image = assets?[indexPath.item].asset {
+                fullImageView.image = image
+            }
+            else {
+                fullImageView.image = UIImage(named: "default_preview_image")
+            }
+            
             navigationController?.pushViewController(fullImageView, animated: true)
         }
     }

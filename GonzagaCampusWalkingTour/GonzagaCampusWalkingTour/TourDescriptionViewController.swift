@@ -14,7 +14,9 @@ class TourDescriptionViewController: UIViewController {
     @IBOutlet weak var tourDescription: UITextView!
     @IBOutlet weak var tourLength: UITextView!
     
-    var selectedTour:Tour?
+    var selected:Tour?
+    var selectedTour: TourInfo?
+    var databaseReference: DatabaseAccessible?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +26,9 @@ class TourDescriptionViewController: UIViewController {
     
     func initTourDetails() {
         tourName.text = selectedTour?.tourName
-        tourPreviewImage.image = selectedTour?.tourImage
+        tourPreviewImage.image = selectedTour?.previewImage
         tourDescription.text = selectedTour?.tourDescription
-        tourLength.text = "Tour Length: \(selectedTour?.tourDistance ?? 0.0) mi"
+        tourLength.text = "Tour Length: \(selectedTour?.tourLength ?? 0.0) mi"
     }
     
     func initNavigationItemBar() {
@@ -54,7 +56,9 @@ class TourDescriptionViewController: UIViewController {
 //        self.present(googleMapsViewController, animated: true, completion: nil)
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if let mapView = storyBoard.instantiateViewController(withIdentifier: "GoogleMapsViewController") as? GoogleMapsViewController {
+            mapView.active = selected
             mapView.activeTour = selectedTour
+            mapView.databaseReference = self.databaseReference
             mapView.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(mapView, animated: true)
         }

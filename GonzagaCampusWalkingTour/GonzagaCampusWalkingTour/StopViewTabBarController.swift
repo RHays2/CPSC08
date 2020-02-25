@@ -12,6 +12,7 @@ class StopViewTabBarController: UITabBarController {
     var stopView:TourStopViewController?
     var imagesView:StopViewImagesViewController?
     var curStop:Stop?
+    var databaseReference: DatabaseAccessible?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class StopViewTabBarController: UITabBarController {
             return nil
         }
         imagesController.curStop = curStop
+        imagesController.databaseReference = self.databaseReference
         return imagesController
     }
     

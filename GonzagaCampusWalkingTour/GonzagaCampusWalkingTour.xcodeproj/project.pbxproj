@@ -8,19 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		25CE8B7223EB7F2800519FDC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25CE8B7123EB7F2800519FDC /* GoogleService-Info.plist */; };
-		35C75208D5A3282921BCC1B5 /* Pods_GonzagaCampusWalkingTourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1E281782CAC451AB1CB529 /* Pods_GonzagaCampusWalkingTourTests.framework */; };
+		30A6CAF3A34C5E731F028947 /* libPods-GonzagaCampusWalkingTour.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98783245A1F2079CBD5D0508 /* libPods-GonzagaCampusWalkingTour.a */; };
 		8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */; };
+		8D1DD4B923FCC77F001A54B2 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DD4B823FCC77F001A54B2 /* UIViewController+.swift */; };
+		8D2C42FB23F283F00090E830 /* TourInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C42FA23F283F00090E830 /* TourInfo.swift */; };
 		8D4262E6236127540075D46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262E5236127540075D46C /* AppDelegate.swift */; };
 		8D4262E8236127540075D46C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262E7236127540075D46C /* ViewController.swift */; };
 		8D4262EB236127540075D46C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262E9236127540075D46C /* Main.storyboard */; };
 		8D4262ED236127540075D46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262EC236127540075D46C /* Assets.xcassets */; };
 		8D4262F0236127540075D46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262EE236127540075D46C /* LaunchScreen.storyboard */; };
 		8D4262FB236127540075D46C /* GonzagaCampusWalkingTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */; };
+		8D5C33CE23F0E68A0077FFAF /* DatabaseAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C33CD23F0E68A0077FFAF /* DatabaseAccessible.swift */; };
+		8D5C33D023F0E7000077FFAF /* FirebaseDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C33CF23F0E7000077FFAF /* FirebaseDataAccess.swift */; };
 		8D81D946236E0B1900D1CB79 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81D945236E0B1900D1CB79 /* UIView+.swift */; };
 		8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */; };
 		8D87DF9F23D92D2C00FB30C2 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87DF9E23D92D2C00FB30C2 /* Directions.swift */; };
 		8D886E4B23D7D26F0099449E /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D886E4A23D7D26F0099449E /* Path.swift */; };
 		8DA94B1823DE3D1D006A5D5F /* OrderedCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */; };
+		8DB1DE4C23F492C0003E072D /* FirebaseStorageAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */; };
 		8DFF3D4D238E1BF3006D527A /* StopViewTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D4C238E1BF3006D527A /* StopViewTabBarController.swift */; };
 		8DFF3D4F238E2C62006D527A /* StopViewImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D4E238E2C62006D527A /* StopViewImagesViewController.swift */; };
 		8DFF3D512393653D006D527A /* StopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D502393653D006D527A /* StopCollectionViewCell.swift */; };
@@ -31,9 +36,9 @@
 		A71A0889237766BD00AF7BA0 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A0888237766BD00AF7BA0 /* TourTableViewCell.swift */; };
 		A71A088B2377713700AF7BA0 /* TourTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A088A2377713700AF7BA0 /* TourTableViewController.swift */; };
 		A7C06E162384C4C200DD197B /* GonzagaGPX.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */; };
-		DC56C73E6283167EA1930AAA /* Pods_GonzagaCampusWalkingTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */; };
 		E438381A238793E700858C8B /* TourStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383819238793E700858C8B /* TourStopViewController.swift */; };
 		E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44422A62369556B0035C938 /* AdminLoginViewController.swift */; };
+		E9D91F53D16AE135D9D12050 /* libPods-GonzagaCampusWalkingTourTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5780B5EE98E5FB2053290B14 /* libPods-GonzagaCampusWalkingTourTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +53,11 @@
 
 /* Begin PBXFileReference section */
 		25CE8B7123EB7F2800519FDC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonzagaCampusWalkingTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5780B5EE98E5FB2053290B14 /* libPods-GonzagaCampusWalkingTourTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GonzagaCampusWalkingTourTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C495D51C8CF23B03A15DD8D /* Pods-GonzagaCampusWalkingTourTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTourTests.debug.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTourTests/Pods-GonzagaCampusWalkingTourTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDescriptionViewController.swift; sourceTree = "<group>"; };
+		8D1DD4B823FCC77F001A54B2 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		8D2C42FA23F283F00090E830 /* TourInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourInfo.swift; sourceTree = "<group>"; };
 		8D4262E2236127540075D46C /* GonzagaCampusWalkingTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GonzagaCampusWalkingTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4262E5236127540075D46C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D4262E7236127540075D46C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,17 +68,20 @@
 		8D4262F6236127540075D46C /* GonzagaCampusWalkingTourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GonzagaCampusWalkingTourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GonzagaCampusWalkingTourTests.swift; sourceTree = "<group>"; };
 		8D4262FC236127540075D46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D5C33CD23F0E68A0077FFAF /* DatabaseAccessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseAccessible.swift; sourceTree = "<group>"; };
+		8D5C33CF23F0E7000077FFAF /* FirebaseDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataAccess.swift; sourceTree = "<group>"; };
 		8D81D945236E0B1900D1CB79 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		8D87DF9E23D92D2C00FB30C2 /* Directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
 		8D886E4A23D7D26F0099449E /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedCoordinate.swift; sourceTree = "<group>"; };
+		8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageAccess.swift; sourceTree = "<group>"; };
 		8DFF3D4C238E1BF3006D527A /* StopViewTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopViewTabBarController.swift; sourceTree = "<group>"; };
 		8DFF3D4E238E2C62006D527A /* StopViewImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopViewImagesViewController.swift; sourceTree = "<group>"; };
 		8DFF3D502393653D006D527A /* StopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DFF3D5223937865006D527A /* FullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		91C7A468224EB312AD79E03C /* Pods-GonzagaCampusWalkingTourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTourTests/Pods-GonzagaCampusWalkingTourTests.release.xcconfig"; sourceTree = "<group>"; };
-		9D1E281782CAC451AB1CB529 /* Pods_GonzagaCampusWalkingTourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonzagaCampusWalkingTourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98783245A1F2079CBD5D0508 /* libPods-GonzagaCampusWalkingTour.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GonzagaCampusWalkingTour.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71A088223775E6700AF7BA0 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		A71A088423775EBF00AF7BA0 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		A71A0886237760B000AF7BA0 /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
@@ -89,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC56C73E6283167EA1930AAA /* Pods_GonzagaCampusWalkingTour.framework in Frameworks */,
+				30A6CAF3A34C5E731F028947 /* libPods-GonzagaCampusWalkingTour.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35C75208D5A3282921BCC1B5 /* Pods_GonzagaCampusWalkingTourTests.framework in Frameworks */,
+				E9D91F53D16AE135D9D12050 /* libPods-GonzagaCampusWalkingTourTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,8 +117,8 @@
 		2240EBE29ED75CF9E768696F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2D51F608B0DE1A3291BF769C /* Pods_GonzagaCampusWalkingTour.framework */,
-				9D1E281782CAC451AB1CB529 /* Pods_GonzagaCampusWalkingTourTests.framework */,
+				98783245A1F2079CBD5D0508 /* libPods-GonzagaCampusWalkingTour.a */,
+				5780B5EE98E5FB2053290B14 /* libPods-GonzagaCampusWalkingTourTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,6 +146,7 @@
 		8D4262E4236127540075D46C /* GonzagaCampusWalkingTour */ = {
 			isa = PBXGroup;
 			children = (
+				8D5C33CC23F0E5960077FFAF /* Database */,
 				A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */,
 				8D81D944236E0B0300D1CB79 /* Extensions */,
 				8D4262E5236127540075D46C /* AppDelegate.swift */,
@@ -161,6 +172,7 @@
 				8DFF3D4E238E2C62006D527A /* StopViewImagesViewController.swift */,
 				8DFF3D502393653D006D527A /* StopCollectionViewCell.swift */,
 				8DFF3D5223937865006D527A /* FullImageViewController.swift */,
+				8D2C42FA23F283F00090E830 /* TourInfo.swift */,
 			);
 			path = GonzagaCampusWalkingTour;
 			sourceTree = "<group>";
@@ -174,10 +186,21 @@
 			path = GonzagaCampusWalkingTourTests;
 			sourceTree = "<group>";
 		};
+		8D5C33CC23F0E5960077FFAF /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				8D5C33CD23F0E68A0077FFAF /* DatabaseAccessible.swift */,
+				8D5C33CF23F0E7000077FFAF /* FirebaseDataAccess.swift */,
+				8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		8D81D944236E0B0300D1CB79 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				8D81D945236E0B1900D1CB79 /* UIView+.swift */,
+				8D1DD4B823FCC77F001A54B2 /* UIViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -205,7 +228,6 @@
 				8D4262DF236127540075D46C /* Frameworks */,
 				8D4262E0236127540075D46C /* Resources */,
 				757171D726D21CABA7957EB3 /* [CP] Copy Pods Resources */,
-				80824A7B28FAE9371F487CD3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -340,30 +362,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		80824A7B28FAE9371F487CD3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9565E10FCDDDFDA0098C9F79 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,11 +389,15 @@
 			files = (
 				8D886E4B23D7D26F0099449E /* Path.swift in Sources */,
 				A71A088323775E6700AF7BA0 /* Stop.swift in Sources */,
+				8D1DD4B923FCC77F001A54B2 /* UIViewController+.swift in Sources */,
 				8D81D946236E0B1900D1CB79 /* UIView+.swift in Sources */,
 				8D4262E8236127540075D46C /* ViewController.swift in Sources */,
+				8D5C33CE23F0E68A0077FFAF /* DatabaseAccessible.swift in Sources */,
 				A71A0889237766BD00AF7BA0 /* TourTableViewCell.swift in Sources */,
 				8D4262E6236127540075D46C /* AppDelegate.swift in Sources */,
 				A71A088B2377713700AF7BA0 /* TourTableViewController.swift in Sources */,
+				8D5C33D023F0E7000077FFAF /* FirebaseDataAccess.swift in Sources */,
+				8D2C42FB23F283F00090E830 /* TourInfo.swift in Sources */,
 				8D87DF9F23D92D2C00FB30C2 /* Directions.swift in Sources */,
 				E438381A238793E700858C8B /* TourStopViewController.swift in Sources */,
 				E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */,
@@ -403,6 +405,7 @@
 				8DFF3D4D238E1BF3006D527A /* StopViewTabBarController.swift in Sources */,
 				A71A088523775EBF00AF7BA0 /* Asset.swift in Sources */,
 				8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */,
+				8DB1DE4C23F492C0003E072D /* FirebaseStorageAccess.swift in Sources */,
 				8DFF3D512393653D006D527A /* StopCollectionViewCell.swift in Sources */,
 				8DFF3D4F238E2C62006D527A /* StopViewImagesViewController.swift in Sources */,
 				8DFF3D5323937865006D527A /* FullImageViewController.swift in Sources */,
@@ -562,7 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GUYPJD4NUE;
+				DEVELOPMENT_TEAM = M8YM97V34C;
 				INFOPLIST_FILE = GonzagaCampusWalkingTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GonzagaCampusWalkingTour;

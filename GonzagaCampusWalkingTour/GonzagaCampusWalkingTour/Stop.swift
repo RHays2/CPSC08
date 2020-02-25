@@ -13,26 +13,23 @@ class Stop: GMSMarker {
     //MARK: Properties
     var stopName: String
     var stopDescription: String?
-    var stopAssets = [Asset]()
+    var stopAssets: [Asset]?
     var stopLatitude: Double
     var stopLongitude: Double
     var order: Int
+    var id: String
     
     
     
     //MARK: Initialization
-    init?(stopName: String, stopDescription: String, stopAssets: [Asset], stopLatitude: Double, stopLongitude: Double, order: Int) {
-        // if there is no name, initialization fails
-        guard !stopName.isEmpty else {
-            return nil
-        }
-        
+    init(stopName: String, stopDescription: String, stopAssets: [Asset]?, stopLatitude: Double, stopLongitude: Double, order: Int, id: String) {    
         self.stopName = stopName
         self.stopDescription = stopDescription
         self.stopAssets = stopAssets
         self.stopLatitude = stopLatitude
         self.stopLongitude = stopLongitude
         self.order = order
+        self.id = id
         
         super.init()
         self.position = CLLocationCoordinate2D(latitude: stopLatitude, longitude: stopLongitude)

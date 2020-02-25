@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mvs-k9-FR2">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,7 +46,6 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7a-UA-oKZ"/>
-                                    <segue destination="mvs-k9-FR2" kind="presentation" modalPresentationStyle="fullScreen" id="xxC-Nu-Sm3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="-136"/>
+            <point key="canvasLocation" x="471" y="-136"/>
         </scene>
         <!--Admin Login View Controller-->
         <scene sceneID="nIF-Gm-Ihi">
@@ -157,7 +156,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="TourTableViewController" title="Available Tours" id="Xu1-Fz-K7H" customClass="TourTableViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="of7-ne-zzZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -219,7 +218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="END-uD-dbq">
-                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIe-n8-yC9">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="654"/>
@@ -497,12 +496,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Xu1-Fz-K7H" kind="relationship" relationship="rootViewController" id="Dkp-ia-vHX"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FPh-Ky-X1Y"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="owG-am-NlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="-136"/>
+            <point key="canvasLocation" x="-788" y="675"/>
         </scene>
         <!--Stop View Tab Bar Controller-->
         <scene sceneID="RQe-rZ-Enm">
@@ -526,6 +525,6 @@
         <image name="GonzagaLogo" width="552" height="369"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TWM-Xw-ljX"/>
+        <segue reference="FPh-Ky-X1Y"/>
     </inferredMetricsTieBreakers>
 </document>
