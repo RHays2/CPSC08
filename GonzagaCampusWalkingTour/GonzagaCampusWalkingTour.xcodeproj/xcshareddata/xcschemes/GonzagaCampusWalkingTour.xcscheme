@@ -27,6 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8D4262E1236127540075D46C"
+            BuildableName = "GonzagaCampusWalkingTour.app"
+            BlueprintName = "GonzagaCampusWalkingTour"
+            ReferencedContainer = "container:GonzagaCampusWalkingTour.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -39,17 +48,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D4262E1236127540075D46C"
-            BuildableName = "GonzagaCampusWalkingTour.app"
-            BlueprintName = "GonzagaCampusWalkingTour"
-            ReferencedContainer = "container:GonzagaCampusWalkingTour.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -71,8 +69,6 @@
             ReferencedContainer = "container:GonzagaCampusWalkingTour.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
       <LocationScenarioReference
          identifier = "../../../../Desktop/CPSC08/GonzagaCampusWalkingTour/GonzagaCampusWalkingTour/GonzagaGPX.gpx"
          referenceType = "0">

@@ -19,10 +19,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey("AIzaSyC6SKuteTHBObD3zW29u2ruA0w1cyL-nKM")
-        GMSPlacesClient.provideAPIKey("AIzaSyC6SKuteTHBObD3zW29u2ruA0w1cyL-nKM")
+        GMSServices.provideAPIKey("AIzaSyCMJ2Xei03qznK4Bg_g0RsnmNvWUl6sd78")
         FirebaseApp.configure()
+        injectDatabaseDependancy()
         return true
+    }
+    
+    func injectDatabaseDependancy() {
+        if let vc = window?.rootViewController as? UINavigationController {
+            let db: DatabaseAccessible = FirebaseDataAccess()
+            //vc.databaseReference = db
+            if let topVC = vc.topViewController as? ViewController {
+                topVC.databaseReference = db
+            }
+        }
+        else {
+            //should change this
+            fatalError("cannot initialize database")
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

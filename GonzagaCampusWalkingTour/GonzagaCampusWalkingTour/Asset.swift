@@ -15,14 +15,7 @@ class Asset {
     var asset: UIImage? // will need to later add video capabilities
     var assetDescription: String?
     
-    
-    //MARK: Initialization
-    init?(assetName: String, asset: UIImage?, assetDescription: String) {
-        // if there is no name, initialization fails
-        if assetName.isEmpty {
-            return nil
-        }
-        
+    init(assetName: String, asset: UIImage?, assetDescription: String) {
         self.assetName = assetName
         self.asset = asset
         self.assetDescription = assetDescription
