@@ -21,4 +21,14 @@ extension UIView {
         ])
     }
     
+    func addLabelAndPinEdgesToTopRight(_ label: UILabel) {
+        label.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(label)
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            label.heightAnchor.constraint(equalToConstant: 100),
+            label.rightAnchor.constraint(equalTo: self.layoutMarginsGuide.rightAnchor),
+            label.leftAnchor.constraint(equalTo: self.layoutMarginsGuide.leftAnchor)
+        ])
+    }
 }

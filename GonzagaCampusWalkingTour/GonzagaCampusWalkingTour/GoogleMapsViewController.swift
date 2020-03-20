@@ -11,9 +11,11 @@
 import UIKit
 import GoogleMaps
 
-class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate{
+class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate, UIApplicationDelegate{
     static let CAMERA_ANGLE = 45.0
     static let DEFAULT_ZOOM: Float = 19.0
+    
+    var settingsButton: UIBarButtonItem = UIBarButtonItem()
     
     var databaseReference: DatabaseAccessible?
     let locationManager = CLLocationManager()
@@ -27,21 +29,97 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     var currentZoom: Float = DEFAULT_ZOOM
     var centerOnUser = true
     var waypointCounter = 0
+    var tourProgress: TourProgress?
+    var tourProgressRetriever: TourProgressRetrievable = UserDefaultsProgressRetrieval()
+    
+    var progressLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        label.textAlignment = .center
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingsButtonSetup()
         // Do any additional setup after loading the view.
         // check to make sure the user has location enabled
         if CLLocationManager.locationServicesEnabled() {
             print("Location services enabled")
             setupLocationServices()
             setUpMapView()
+            addProgressLabel()
             setupMapWithTourStops()
         }
         else {
             // the user turned off location, phone is airplane mode, lack of hardware, hardware failure,...
             print("Location services disabled")
         }
+    }
+    
+    func settingsButtonSetup() {
+        self.settingsButton = addSettingsButtonToNavBar()
+        self.settingsButton.action = #selector(settingsPressed)
+    }
+    
+    @objc func settingsPressed() {
+        print("settings pressed!")
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        //instatiate Settings view controller
+        if let vc = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController {
+            if let progress = self.tourProgress {
+                vc.tourProgress = progress
+            }
+            vc.tourProgressRetriever = self.tourProgressRetriever
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        //make sure to save a users progress when the application is about to exit
+        print("did enter background")
+        saveProgress()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        //make sure to save a users progress when the application is about to exit
+        print("will disappear")
+        saveProgress()
+    }
+    
+    func saveProgress() {
+        guard let tour = self.activeTour else {return}
+        guard let progress = self.tourProgress else {return}
+        self.tourProgressRetriever.saveTourProgress(progress: progress, tourId: tour.id)
+    }
+    
+    func setUpTourProgress() {
+        guard let tour = activeTour else {return}
+        //update the tour progress stops because their may be a change from the database
+        tourProgressRetriever.updateStopsInTour(stops: tour.tourStops, tourId: tour.id)
+        if let progress = tourProgressRetriever.getTourProgress(tourId: tour.id) {
+             self.tourProgress = progress
+        }
+    }
+    
+    func addProgressLabel() {
+        self.view.addSubview(self.progressLabel)
+        let safeAreaGuide = self.view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            self.progressLabel.topAnchor.constraint(equalTo: safeAreaGuide.topAnchor, constant: 5),
+            self.progressLabel.rightAnchor.constraint(equalTo: safeAreaGuide.rightAnchor, constant: -5),
+            self.progressLabel.widthAnchor.constraint(equalToConstant: 150),
+            self.progressLabel.heightAnchor.constraint(equalToConstant: 35),
+        ])
+    }
+    
+    func setProgressLabel() {
+        let numStops = self.activeTour?.tourStops.count ?? 0
+        let text = "\(self.tourProgress?.currentStop ?? 0)/\(numStops) Stops"
+        self.progressLabel.text = text
     }
     
     func centerUserLocationOnMap(location: CLLocation) {
@@ -82,7 +160,9 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
             databaseReference?.getStopsForTour(id: tour.id, callback: {(stops) in
                 //we have recieved the stops in sorted order
                 tour.tourStops = stops
+                self.setUpTourProgress()
                 self.createMarkersForTourStops(tour: tour)
+                self.setProgressLabel()
                 indicator.stopAnimating()
                 self.addDirectionsPath()
             })
@@ -108,8 +188,8 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         if let stops = self.activeTour?.tourStops {
             guard let myLocation = self.locationManager.location else { return }
             var destination = CLLocation()
-            if stops.count > 0 && self.tourStopCounter < stops.count {
-                destination = CLLocation(latitude: stops[self.tourStopCounter].stopLatitude, longitude: stops[self.tourStopCounter].stopLongitude)
+            if stops.count > 0 && self.tourProgress?.currentStop ?? 0 < stops.count {
+                destination = CLLocation(latitude: stops[self.tourProgress?.currentStop ?? 0].stopLatitude, longitude: stops[self.tourProgress?.currentStop ?? 0].stopLongitude)
             } else { return }
             
             self.path.removePolyline()
@@ -198,8 +278,15 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                 self.navigationController?.pushViewController(tabBarController, animated: true)
                 
                 //draw the route to the next stop
-                if self.tourStopCounter == stop.order - 1 {
-                    self.tourStopCounter += 1
+                if self.tourProgress?.currentStop ?? 0 == stop.order - 1 {
+                    if let progress = self.tourProgress {
+                        progress.currentStop += 1
+                    }
+                    //update tour progress
+                    if self.tourProgress != nil {
+                        self.tourProgress?.stopProgress[stop.id] = true
+                    }
+                    self.setProgressLabel()
                     self.addDirectionsPath()
                 }
                 
@@ -213,6 +300,12 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         for i in 0 ..< tour.tourStops.count {
             let stop = tour.tourStops[i]
             stop.map = self.mapView
+            /*if self.tourProgress != nil {
+                //increase the stop counter if the stop ahs been visited
+                if self.tourProgress?.stopProgress[stop.id] == true {
+                    self.tourProgress?.currentStop += 1
+                }
+            }*/
             //only 20 monitored regions allowed
             self.createMonitoredRegion(center: CLLocationCoordinate2D(latitude: stop.stopLatitude, longitude: stop.stopLongitude), radius: 30, id: "stop_\(i + 1)")
         }

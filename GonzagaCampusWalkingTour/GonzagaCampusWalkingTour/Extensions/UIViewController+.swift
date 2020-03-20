@@ -21,4 +21,19 @@ extension UIViewController {
         
         return indicator
     }
+    
+    func getHeightNavigationController() -> CGFloat {
+        if let nav = self.navigationController {
+            return nav.navigationBar.frame.height
+        }
+        return 0.0
+    }
+    
+    func addSettingsButtonToNavBar() -> UIBarButtonItem {
+        let button = UIBarButtonItem()
+        button.title = "Settings"
+        button.target = self
+        navigationItem.rightBarButtonItem = button
+        return button
+    }
 }
