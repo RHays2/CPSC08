@@ -24,6 +24,10 @@
 		8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */; };
 		8D87DF9F23D92D2C00FB30C2 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87DF9E23D92D2C00FB30C2 /* Directions.swift */; };
 		8D886E4B23D7D26F0099449E /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D886E4A23D7D26F0099449E /* Path.swift */; };
+		8D8D5CA32413505F00AB2DF1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */; };
+		8DA606B02408B88D00403321 /* TourProgressRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606AF2408B88D00403321 /* TourProgressRetrievable.swift */; };
+		8DA606B22408BACA00403321 /* UserDefaultsProgressRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B12408BACA00403321 /* UserDefaultsProgressRetrieval.swift */; };
+		8DA606B42408BC7500403321 /* TourProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B32408BC7500403321 /* TourProgress.swift */; };
 		8DA94B1823DE3D1D006A5D5F /* OrderedCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */; };
 		8DB1DE4C23F492C0003E072D /* FirebaseStorageAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */; };
 		8DFF3D4D238E1BF3006D527A /* StopViewTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D4C238E1BF3006D527A /* StopViewTabBarController.swift */; };
@@ -74,6 +78,10 @@
 		8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		8D87DF9E23D92D2C00FB30C2 /* Directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
 		8D886E4A23D7D26F0099449E /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8DA606AF2408B88D00403321 /* TourProgressRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgressRetrievable.swift; sourceTree = "<group>"; };
+		8DA606B12408BACA00403321 /* UserDefaultsProgressRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProgressRetrieval.swift; sourceTree = "<group>"; };
+		8DA606B32408BC7500403321 /* TourProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgress.swift; sourceTree = "<group>"; };
 		8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedCoordinate.swift; sourceTree = "<group>"; };
 		8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageAccess.swift; sourceTree = "<group>"; };
 		8DFF3D4C238E1BF3006D527A /* StopViewTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopViewTabBarController.swift; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 				A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */,
 				8D81D944236E0B0300D1CB79 /* Extensions */,
 				8D4262E5236127540075D46C /* AppDelegate.swift */,
+				8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */,
 				8D4262E7236127540075D46C /* ViewController.swift */,
 				E44422A62369556B0035C938 /* AdminLoginViewController.swift */,
 				8D4262E9236127540075D46C /* Main.storyboard */,
@@ -173,6 +182,7 @@
 				8DFF3D502393653D006D527A /* StopCollectionViewCell.swift */,
 				8DFF3D5223937865006D527A /* FullImageViewController.swift */,
 				8D2C42FA23F283F00090E830 /* TourInfo.swift */,
+				8DA606B32408BC7500403321 /* TourProgress.swift */,
 			);
 			path = GonzagaCampusWalkingTour;
 			sourceTree = "<group>";
@@ -192,6 +202,8 @@
 				8D5C33CD23F0E68A0077FFAF /* DatabaseAccessible.swift */,
 				8D5C33CF23F0E7000077FFAF /* FirebaseDataAccess.swift */,
 				8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */,
+				8DA606AF2408B88D00403321 /* TourProgressRetrievable.swift */,
+				8DA606B12408BACA00403321 /* UserDefaultsProgressRetrieval.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -389,7 +401,9 @@
 			files = (
 				8D886E4B23D7D26F0099449E /* Path.swift in Sources */,
 				A71A088323775E6700AF7BA0 /* Stop.swift in Sources */,
+				8DA606B22408BACA00403321 /* UserDefaultsProgressRetrieval.swift in Sources */,
 				8D1DD4B923FCC77F001A54B2 /* UIViewController+.swift in Sources */,
+				8DA606B42408BC7500403321 /* TourProgress.swift in Sources */,
 				8D81D946236E0B1900D1CB79 /* UIView+.swift in Sources */,
 				8D4262E8236127540075D46C /* ViewController.swift in Sources */,
 				8D5C33CE23F0E68A0077FFAF /* DatabaseAccessible.swift in Sources */,
@@ -408,6 +422,8 @@
 				8DB1DE4C23F492C0003E072D /* FirebaseStorageAccess.swift in Sources */,
 				8DFF3D512393653D006D527A /* StopCollectionViewCell.swift in Sources */,
 				8DFF3D4F238E2C62006D527A /* StopViewImagesViewController.swift in Sources */,
+				8D8D5CA32413505F00AB2DF1 /* SettingsViewController.swift in Sources */,
+				8DA606B02408B88D00403321 /* TourProgressRetrievable.swift in Sources */,
 				8DFF3D5323937865006D527A /* FullImageViewController.swift in Sources */,
 				8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */,
 				A71A0887237760B000AF7BA0 /* Tour.swift in Sources */,
