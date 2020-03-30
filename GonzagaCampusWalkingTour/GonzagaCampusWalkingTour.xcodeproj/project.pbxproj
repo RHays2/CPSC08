@@ -42,6 +42,8 @@
 		A7C06E162384C4C200DD197B /* GonzagaGPX.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */; };
 		E438381A238793E700858C8B /* TourStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383819238793E700858C8B /* TourStopViewController.swift */; };
 		E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44422A62369556B0035C938 /* AdminLoginViewController.swift */; };
+		E4E9A04D2431AB4F00C6D010 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9A04C2431AB4F00C6D010 /* AboutViewController.swift */; };
+		E4E9A04F2431BD4700C6D010 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9A04E2431BD4700C6D010 /* StatisticsViewController.swift */; };
 		E9D91F53D16AE135D9D12050 /* libPods-GonzagaCampusWalkingTourTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5780B5EE98E5FB2053290B14 /* libPods-GonzagaCampusWalkingTourTests.a */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +102,8 @@
 		C4641F10C79A8E3220B02C21 /* Pods-GonzagaCampusWalkingTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.release.xcconfig"; sourceTree = "<group>"; };
 		E4383819238793E700858C8B /* TourStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourStopViewController.swift; sourceTree = "<group>"; };
 		E44422A62369556B0035C938 /* AdminLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginViewController.swift; sourceTree = "<group>"; };
+		E4E9A04C2431AB4F00C6D010 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E4E9A04E2431BD4700C6D010 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,8 @@
 				8D4262E7236127540075D46C /* ViewController.swift */,
 				E44422A62369556B0035C938 /* AdminLoginViewController.swift */,
 				8D4262E9236127540075D46C /* Main.storyboard */,
+				E4E9A04E2431BD4700C6D010 /* StatisticsViewController.swift */,
+				E4E9A04C2431AB4F00C6D010 /* AboutViewController.swift */,
 				A71A088A2377713700AF7BA0 /* TourTableViewController.swift */,
 				A71A0888237766BD00AF7BA0 /* TourTableViewCell.swift */,
 				A71A088423775EBF00AF7BA0 /* Asset.swift */,
@@ -416,9 +422,11 @@
 				E438381A238793E700858C8B /* TourStopViewController.swift in Sources */,
 				E44422A72369556B0035C938 /* AdminLoginViewController.swift in Sources */,
 				8DA94B1823DE3D1D006A5D5F /* OrderedCoordinate.swift in Sources */,
+				E4E9A04D2431AB4F00C6D010 /* AboutViewController.swift in Sources */,
 				8DFF3D4D238E1BF3006D527A /* StopViewTabBarController.swift in Sources */,
 				A71A088523775EBF00AF7BA0 /* Asset.swift in Sources */,
 				8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */,
+				E4E9A04F2431BD4700C6D010 /* StatisticsViewController.swift in Sources */,
 				8DB1DE4C23F492C0003E072D /* FirebaseStorageAccess.swift in Sources */,
 				8DFF3D512393653D006D527A /* StopCollectionViewCell.swift in Sources */,
 				8DFF3D4F238E2C62006D527A /* StopViewImagesViewController.swift in Sources */,
