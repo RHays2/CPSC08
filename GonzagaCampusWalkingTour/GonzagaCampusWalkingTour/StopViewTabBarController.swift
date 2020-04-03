@@ -48,6 +48,7 @@ class StopViewTabBarController: UITabBarController {
             return nil
         }
         stopViewController.currentStop = self.curStop
+        stopViewController.databaseReference = self.databaseReference
         return stopViewController
     }
 }

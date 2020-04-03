@@ -82,12 +82,19 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         //make sure to save a users progress when the application is about to exit
         print("did enter background")
         saveProgress()
+        //delete all images from the tmp file directory
+        FileManager.default.clearTmpDirectory()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         //make sure to save a users progress when the application is about to exit
         print("will disappear")
         saveProgress()
+        //check if this viewCOntroller is being popped from navigation
+        if self.isMovingFromParentViewController {
+            //delete all images from the tmp file directory
+            FileManager.default.clearTmpDirectory()
+        }
     }
     
     func saveProgress() {

@@ -14,12 +14,21 @@ class Asset {
     var assetName: String
     var asset: UIImage? // will need to later add video capabilities
     var assetDescription: String?
+    var assetURL: String?
+    var id: String
     
-    init(assetName: String, asset: UIImage?, assetDescription: String) {
+    init(assetName: String, asset: UIImage?, assetDescription: String, id:String) {
         self.assetName = assetName
         self.asset = asset
         self.assetDescription = assetDescription
+        self.id = id
     }
     
+    init(assetName: String, assetURL: String?, assetDescription: String, id:String) {
+        self.assetName = assetName
+        self.assetURL = assetURL
+        self.assetDescription = assetDescription
+        self.id = id
+    }
 }
 

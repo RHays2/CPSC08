@@ -1,4 +1,4 @@
-framework module Pods_GonzagaCampusWalkingTour {
+module Pods_GonzagaCampusWalkingTour {
   umbrella header "Pods-GonzagaCampusWalkingTour-umbrella.h"
 
   export *

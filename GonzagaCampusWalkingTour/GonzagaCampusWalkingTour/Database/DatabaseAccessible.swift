@@ -12,4 +12,5 @@ protocol DatabaseAccessible {
     func getStopsForTour(id: String, callback: @escaping ([Stop]) -> Void)
     func getAllTourInfo(callback: @escaping ([TourInfo]) -> Void)
     func getStopAssets(stopId: String, callback: @escaping ([Asset]) -> Void)
+    func locallyDownloadAssets(stopId:String, callback: @escaping ([Asset]) -> Void)
 }

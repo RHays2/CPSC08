@@ -12,12 +12,15 @@
 		8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */; };
 		8D1DD4B923FCC77F001A54B2 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DD4B823FCC77F001A54B2 /* UIViewController+.swift */; };
 		8D2C42FB23F283F00090E830 /* TourInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C42FA23F283F00090E830 /* TourInfo.swift */; };
+		8D3E276B242ED2DC000FD337 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E276A242ED2DC000FD337 /* String+.swift */; };
 		8D4262E6236127540075D46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262E5236127540075D46C /* AppDelegate.swift */; };
 		8D4262E8236127540075D46C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262E7236127540075D46C /* ViewController.swift */; };
 		8D4262EB236127540075D46C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262E9236127540075D46C /* Main.storyboard */; };
 		8D4262ED236127540075D46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262EC236127540075D46C /* Assets.xcassets */; };
 		8D4262F0236127540075D46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4262EE236127540075D46C /* LaunchScreen.storyboard */; };
 		8D4262FB236127540075D46C /* GonzagaCampusWalkingTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */; };
+		8D57B4652436695A006F41D3 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D57B4642436695A006F41D3 /* UITextView+.swift */; };
+		8D57B4672436A154006F41D3 /* FileManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D57B4662436A154006F41D3 /* FileManager+.swift */; };
 		8D5C33CE23F0E68A0077FFAF /* DatabaseAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C33CD23F0E68A0077FFAF /* DatabaseAccessible.swift */; };
 		8D5C33D023F0E7000077FFAF /* FirebaseDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C33CF23F0E7000077FFAF /* FirebaseDataAccess.swift */; };
 		8D81D946236E0B1900D1CB79 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81D945236E0B1900D1CB79 /* UIView+.swift */; };
@@ -62,6 +65,7 @@
 		8D13ED872379055700B9AF7B /* TourDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDescriptionViewController.swift; sourceTree = "<group>"; };
 		8D1DD4B823FCC77F001A54B2 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		8D2C42FA23F283F00090E830 /* TourInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourInfo.swift; sourceTree = "<group>"; };
+		8D3E276A242ED2DC000FD337 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		8D4262E2236127540075D46C /* GonzagaCampusWalkingTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GonzagaCampusWalkingTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4262E5236127540075D46C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D4262E7236127540075D46C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 		8D4262F6236127540075D46C /* GonzagaCampusWalkingTourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GonzagaCampusWalkingTourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4262FA236127540075D46C /* GonzagaCampusWalkingTourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GonzagaCampusWalkingTourTests.swift; sourceTree = "<group>"; };
 		8D4262FC236127540075D46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D57B4642436695A006F41D3 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
+		8D57B4662436A154006F41D3 /* FileManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+.swift"; sourceTree = "<group>"; };
 		8D5C33CD23F0E68A0077FFAF /* DatabaseAccessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseAccessible.swift; sourceTree = "<group>"; };
 		8D5C33CF23F0E7000077FFAF /* FirebaseDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataAccess.swift; sourceTree = "<group>"; };
 		8D81D945236E0B1900D1CB79 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -213,6 +219,9 @@
 			children = (
 				8D81D945236E0B1900D1CB79 /* UIView+.swift */,
 				8D1DD4B823FCC77F001A54B2 /* UIViewController+.swift */,
+				8D3E276A242ED2DC000FD337 /* String+.swift */,
+				8D57B4642436695A006F41D3 /* UITextView+.swift */,
+				8D57B4662436A154006F41D3 /* FileManager+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -409,6 +418,7 @@
 				8D5C33CE23F0E68A0077FFAF /* DatabaseAccessible.swift in Sources */,
 				A71A0889237766BD00AF7BA0 /* TourTableViewCell.swift in Sources */,
 				8D4262E6236127540075D46C /* AppDelegate.swift in Sources */,
+				8D57B4672436A154006F41D3 /* FileManager+.swift in Sources */,
 				A71A088B2377713700AF7BA0 /* TourTableViewController.swift in Sources */,
 				8D5C33D023F0E7000077FFAF /* FirebaseDataAccess.swift in Sources */,
 				8D2C42FB23F283F00090E830 /* TourInfo.swift in Sources */,
@@ -424,6 +434,8 @@
 				8DFF3D4F238E2C62006D527A /* StopViewImagesViewController.swift in Sources */,
 				8D8D5CA32413505F00AB2DF1 /* SettingsViewController.swift in Sources */,
 				8DA606B02408B88D00403321 /* TourProgressRetrievable.swift in Sources */,
+				8D57B4652436695A006F41D3 /* UITextView+.swift in Sources */,
+				8D3E276B242ED2DC000FD337 /* String+.swift in Sources */,
 				8DFF3D5323937865006D527A /* FullImageViewController.swift in Sources */,
 				8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */,
 				A71A0887237760B000AF7BA0 /* Tour.swift in Sources */,
