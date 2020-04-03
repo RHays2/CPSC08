@@ -7,12 +7,37 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseUI
 
 class ViewController: UIViewController {
     var databaseReference: DatabaseAccessible?
 
     @IBAction func buttonPressed(_ sender: Any) {
         // moves to the tourList when begin it tapped.
+        self.showTourListVC()
+    }
+    
+    @IBAction func AdminLoginButtonPressed(_ sender: Any) {
+        // get the default auth ui object
+        let authUI = FUIAuth.defaultAuthUI()
+        
+        guard authUI != nil else {
+            //Log the error
+            return
+        }
+        
+        // set ourselves as delegate
+        authUI?.delegate = self
+        authUI?.providers = [FUIEmailAuth()]
+        // get a reference to the auth ui view controller
+        let authViewController = authUI!.authViewController()
+        //show it
+        present(authViewController, animated: true, completion: nil)
+        
+    }
+    
+    func showTourListVC() {
         let test = UIStoryboard(name: "Main", bundle: nil)
         if let tourList = test.instantiateViewController(withIdentifier: "TourTableViewController") as? TourTableViewController {
             tourList.modalPresentationStyle = .fullScreen
@@ -22,12 +47,6 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func AdminLoginButtonPressed(_ sender: Any) {
-        //self.performSegue(withIdentifier: "AdminLoginSegue", sender: self)
-        let test = UIStoryboard(name: "Main", bundle: nil)
-        let admin = test.instantiateViewController(withIdentifier: "AdminLoginViewController")
-        self.present(admin, animated: true, completion: nil)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -48,7 +67,20 @@ class ViewController: UIViewController {
         //set the nav bar visible for all future views
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+}
 
-
+extension ViewController: FUIAuthDelegate {
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        // check if there was an error
+        guard error == nil else {
+            // Log error
+            return
+        }
+        
+        //we would use the below command to get a user id if we needed it to send them on different tours or something
+        //authDataResult?.user.uid
+        
+        self.showTourListVC()
+    }
 }
 
