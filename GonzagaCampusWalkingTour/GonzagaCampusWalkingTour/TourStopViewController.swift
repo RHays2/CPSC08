@@ -127,7 +127,6 @@ class TourStopViewController: UIViewController {
                     do {
                         //try to convert back to string
                         self.middleHtml = try doc.body()?.outerHtml() ?? ""
-                        print(self.middleHtml)
                         self.stopDescription.attributedText = self.convertDescriptionToHtml(description: self.middleHtml)
                     } catch { print(error) }
                     //stop animating progress indicator
