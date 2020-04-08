@@ -33,6 +33,7 @@
 		8DA606B42408BC7500403321 /* TourProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B32408BC7500403321 /* TourProgress.swift */; };
 		8DA94B1823DE3D1D006A5D5F /* OrderedCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */; };
 		8DB1DE4C23F492C0003E072D /* FirebaseStorageAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */; };
+		8DEF8516243E90D800095687 /* AdminInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF8515243E90D800095687 /* AdminInfoViewController.swift */; };
 		8DFF3D4D238E1BF3006D527A /* StopViewTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D4C238E1BF3006D527A /* StopViewTabBarController.swift */; };
 		8DFF3D4F238E2C62006D527A /* StopViewImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D4E238E2C62006D527A /* StopViewImagesViewController.swift */; };
 		8DFF3D512393653D006D527A /* StopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF3D502393653D006D527A /* StopCollectionViewCell.swift */; };
@@ -89,6 +90,7 @@
 		8DA606B32408BC7500403321 /* TourProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgress.swift; sourceTree = "<group>"; };
 		8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedCoordinate.swift; sourceTree = "<group>"; };
 		8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageAccess.swift; sourceTree = "<group>"; };
+		8DEF8515243E90D800095687 /* AdminInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminInfoViewController.swift; sourceTree = "<group>"; };
 		8DFF3D4C238E1BF3006D527A /* StopViewTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopViewTabBarController.swift; sourceTree = "<group>"; };
 		8DFF3D4E238E2C62006D527A /* StopViewImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopViewImagesViewController.swift; sourceTree = "<group>"; };
 		8DFF3D502393653D006D527A /* StopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				8D4262E5236127540075D46C /* AppDelegate.swift */,
 				8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */,
 				8D4262E7236127540075D46C /* ViewController.swift */,
+				8DEF8515243E90D800095687 /* AdminInfoViewController.swift */,
 				8D4262E9236127540075D46C /* Main.storyboard */,
 				A71A088A2377713700AF7BA0 /* TourTableViewController.swift */,
 				A71A0888237766BD00AF7BA0 /* TourTableViewCell.swift */,
@@ -432,6 +435,7 @@
 				8DA606B02408B88D00403321 /* TourProgressRetrievable.swift in Sources */,
 				8D57B4652436695A006F41D3 /* UITextView+.swift in Sources */,
 				8D3E276B242ED2DC000FD337 /* String+.swift in Sources */,
+				8DEF8516243E90D800095687 /* AdminInfoViewController.swift in Sources */,
 				8DFF3D5323937865006D527A /* FullImageViewController.swift in Sources */,
 				8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */,
 				A71A0887237760B000AF7BA0 /* Tour.swift in Sources */,
