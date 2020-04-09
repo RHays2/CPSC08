@@ -27,14 +27,25 @@ class ViewController: UIViewController {
             return
         }
         
-        // set ourselves as delegate
-        authUI?.delegate = self
-        authUI?.providers = [FUIEmailAuth()]
-        // get a reference to the auth ui view controller
-        let authViewController = authUI!.authViewController()
-        //show it
-        present(authViewController, animated: true, completion: nil)
-        
+        if authUI?.auth?.currentUser != nil {
+            //if user already logged in display another VC with account info
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            if let adminInfoVC = storyBoard.instantiateViewController(withIdentifier: "AdminInfoViewController") as? AdminInfoViewController{
+                adminInfoVC.user = authUI?.auth?.currentUser
+                self.navigationController?.pushViewController(adminInfoVC, animated: true)
+            }
+        }
+        else {
+            //display the login view controller
+            // set ourselves as delegate
+            authUI?.delegate = self
+            authUI?.providers = [FUIEmailAuth()]
+            // get a reference to the auth ui view controller
+            let authViewController = authUI!.authViewController()
+            //show it
+            present(authViewController, animated: true, completion: nil)
+        }
+
     }
     
     func showTourListVC() {

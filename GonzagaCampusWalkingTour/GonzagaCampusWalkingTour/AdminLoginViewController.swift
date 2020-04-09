@@ -37,6 +37,13 @@ class AdminLoginViewController: UIViewController {
             return
         }
         
+        if authUI?.auth?.currentUser != nil {
+            print("yes")
+        }
+        else {
+            print("no")
+        }
+        
         // set ourselves as delegate
         
         authUI?.delegate = self
@@ -44,6 +51,7 @@ class AdminLoginViewController: UIViewController {
         // get a reference to the auth ui view controller
         
         let authViewController = authUI!.authViewController()
+        
         //show it
         
         present(authViewController, animated: true, completion: nil)

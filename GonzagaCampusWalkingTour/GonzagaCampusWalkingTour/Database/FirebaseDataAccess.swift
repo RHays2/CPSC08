@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 public class FirebaseDataAccess: DatabaseAccessible {
     static let TOURS_CHILD = "tours"
+    static let ADMIN_ONLY_TOURS_CHILD = "admin_only_tour"
     static let NAME = "name"
     static let DESCRIPTION = "description"
     static let ADMIN_ONLY = "admin_only"
@@ -150,7 +151,84 @@ public class FirebaseDataAccess: DatabaseAccessible {
         }
     }
     
+    func getTourInfoFrom(child: String, callback: @escaping ([TourInfo]?) -> Void) {
+        //make sure we have a db reference
+        if self.databaseReference != nil {
+            //fetch all the data in the tours child
+            self.databaseReference?.child(child).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let data = snapshot.value as? NSDictionary {
+                    //iterate through all the keys and create an array of Tours
+                    var tours = [TourInfo]()
+                    //create a dispatch group to make sure we get all preview images
+                    let dispatchGroup = DispatchGroup()
+                    
+                    for key in data.allKeys {
+                        //get the inner dictionary
+                        if let innerData = data[key] as? NSDictionary {
+                            let id = key as? String ?? ""
+                            let name = innerData[FirebaseDataAccess.NAME] as? String ?? ""
+                            let description = innerData[FirebaseDataAccess.DESCRIPTION] as? String ?? ""
+                            let admin_only = innerData[FirebaseDataAccess.ADMIN_ONLY] as? Bool ?? false
+                            let length = innerData[FirebaseDataAccess.LENGTH] as? Double ?? 0.0
+                            let preview_img = innerData[FirebaseDataAccess.PREVIEW_IMAGE] as? String ?? ""
+                            
+                            //create a tour object and add it to the list
+                            let tour = TourInfo(id: id, tourName: name, tourDescription: description, tourLength: length, adminOnly: admin_only, previewImagePath: preview_img)
+                            
+                            //attempt to get the preview image
+                            dispatchGroup.enter()
+                            self.storageReference.getImageNamed(name: preview_img, callback: {(image, errorMsg) in
+                                if image != nil {
+                                  tour.previewImage = image
+                                }
+                                else {
+                                    print(errorMsg ?? "")
+                                }
+                                //we have recieved a response, leave the dispatch group
+                                dispatchGroup.leave()
+                            })
+                            
+                            tours.append(tour)
+                        }
+                    }
+                    //send the tour information back to the caller
+                    dispatchGroup.notify(queue: .main, execute: { ()
+                        callback(tours)
+                    })
+                }
+            }){ (error) in
+                print(error.localizedDescription)
+                callback(nil)
+            }
+        }
+    }
+    
     func getAllTourInfo(callback: @escaping ([TourInfo]) -> Void) {
+        //attempt to get both admin tours and non admin tours
+        //create a master list of tours
+        var masterTourList:[TourInfo] = []
+        //create a dispatch group to make sure you wait for both responses
+        let dispatchGroup = DispatchGroup()
+        //create a callback function for both calls to use
+        func addToursToList(tours: [TourInfo]?) {
+            if let tourList = tours {
+                //add all of the returned tours to the list
+                masterTourList.append(contentsOf: tourList)
+            }
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        self.getTourInfoFrom(child: FirebaseDataAccess.TOURS_CHILD, callback: addToursToList(tours:))
+        dispatchGroup.enter()
+        self.getTourInfoFrom(child: FirebaseDataAccess.ADMIN_ONLY_TOURS_CHILD, callback: addToursToList(tours:))
+        
+        dispatchGroup.notify(queue: .main, execute: {
+            callback(masterTourList)
+        })
+    }
+    
+    /*func getAllTourInfo(callback: @escaping ([TourInfo]) -> Void) {
         //make sure we have a db reference
         if self.databaseReference != nil {
             //fetch all the data in the tours child
@@ -197,5 +275,5 @@ public class FirebaseDataAccess: DatabaseAccessible {
                 }
             })
         }
-    }
+    }*/
 }
