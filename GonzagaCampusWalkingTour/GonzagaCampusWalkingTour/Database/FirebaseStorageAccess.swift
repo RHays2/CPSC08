@@ -40,4 +40,34 @@ class FirebaseStorageAccess {
             })
         }
     }
+    
+    func downloadImageLocally(name: String, id: String, callback: @escaping(String?, String?) -> Void) {
+        //create a URL to a local file in the apps tmp directory
+        let tempDir = FileManager.default.temporaryDirectory
+        let localURL = tempDir.appendingPathComponent(id + "_" + name)
+        
+        //check to see if the image is already downloaded
+        if FileManager.default.fileExists(atPath: localURL.path) {
+            //return the path and id to the callback function
+            callback(localURL.absoluteString, nil)
+        }
+        //the file does not already exist
+        else if self.imagesRef != nil {
+
+            let curImageRef = self.imagesRef?.child(name)
+            //write the image URL
+            curImageRef?.write(toFile: localURL, completion: {(url,error) in
+                if let imageURL = url {
+                    //return the path and id to the callback function
+                    callback(imageURL.absoluteString, nil)
+                }
+                else {
+                    if let e = error {
+                        print(e)
+                        callback(nil, e.localizedDescription)
+                    }
+                }
+            })
+        }
+    }
 }

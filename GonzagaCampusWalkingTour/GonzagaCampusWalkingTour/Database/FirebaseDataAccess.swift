@@ -78,9 +78,10 @@ public class FirebaseDataAccess: DatabaseAccessible {
                             let name = innerData[FirebaseDataAccess.NAME] as? String ?? ""
                             let description = innerData[FirebaseDataAccess.DESCRIPTION] as? String ?? ""
                             let storage_name = innerData[FirebaseDataAccess.STORAGE_NAME] as? String ?? ""
+                            let id = key as? String ?? ""
                             
                             //create the asset object
-                            let asset = Asset(assetName: name, asset: nil, assetDescription: description)
+                            let asset = Asset(assetName: name, asset: nil, assetDescription: description, id: id)
                             
                             //get the image
                             if storage_name != "" {
@@ -93,6 +94,51 @@ public class FirebaseDataAccess: DatabaseAccessible {
                                     dispatchGroup.leave()
                                 })
                             }
+                            assets.append(asset)
+                        }
+                    }
+                    dispatchGroup.notify(queue: .main, execute: { ()
+                        callback(assets)
+                    })
+                }
+            })
+        }
+    }
+    
+    func locallyDownloadAssets(stopId: String, callback: @escaping ([Asset]) -> Void) {
+        if self.databaseReference != nil {
+            //get the stop asset ids from the database
+            self.databaseReference?.child(FirebaseDataAccess.ASSETS_CHILD).child(stopId).observe(.value, with: {(snapshot) in
+                if let data = snapshot.value as? NSDictionary {
+                    //create dispatch group to makesure we get all images for stops
+                    let dispatchGroup = DispatchGroup()
+                    var assets = [Asset]()
+                    //iterate through all of the keys
+                    for key in data.allKeys {
+                        //cast the inner data as a dictionary
+                        if let innerData = data[key] as? NSDictionary {
+                            let name = innerData[FirebaseDataAccess.NAME] as? String ?? ""
+                            let description = innerData[FirebaseDataAccess.DESCRIPTION] as? String ?? ""
+                            let storage_name = innerData[FirebaseDataAccess.STORAGE_NAME] as? String ?? ""
+                            let id = key as? String ?? ""
+                            
+                            //create the asset object
+                            let asset = Asset(assetName: name, assetURL: nil, assetDescription: description, id: id)
+                            //get the image URL
+                            if storage_name != "" {
+                                dispatchGroup.enter()
+                                self.storageReference.downloadImageLocally(name: storage_name, id: stopId, callback: {(url, error) in
+                                    if let localURL = url {
+                                        asset.assetURL = localURL
+                                    }
+                                    else {
+                                        //there was an error
+                                        print(error ?? "")
+                                    }
+                                    dispatchGroup.leave()
+                                })
+                            }
+                            //append the asset to the list
                             assets.append(asset)
                         }
                     }

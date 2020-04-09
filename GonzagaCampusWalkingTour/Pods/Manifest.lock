@@ -106,6 +106,7 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
+  - SwiftSoup (2.3.1)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -115,6 +116,7 @@ DEPENDENCIES:
   - FirebaseUI/Email
   - GoogleMaps
   - GooglePlaces
+  - SwiftSoup
 
 SPEC REPOS:
   trunk:
@@ -140,6 +142,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SwiftSoup
 
 SPEC CHECKSUMS:
   Firebase: 2672e5636b42f977177716317e68346ae5e9de25
@@ -164,7 +167,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  SwiftSoup: e5af192bc99be8398d5f93e15ff6a3c80ba81de1
 
-PODFILE CHECKSUM: e3e081431fb98822b7761a01c0b7d3a60ecbf3a0
+PODFILE CHECKSUM: 8c437f946cd4f492fc3a9119a222b3f9d51f8186
 
 COCOAPODS: 1.8.4
