@@ -45,6 +45,7 @@ class ViewController: UIViewController {
             //show it
             present(authViewController, animated: true, completion: nil)
         }
+
     }
     
     func showTourListVC() {
