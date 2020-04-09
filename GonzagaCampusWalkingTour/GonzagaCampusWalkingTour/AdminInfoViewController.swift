@@ -29,7 +29,7 @@ class AdminInfoViewController: UIViewController {
     }
     
     @IBAction func logOutButtonPressed(_ sender: Any) {
-        let alertMsg = "Are you sure you want to reset log out?"
+        let alertMsg = "Are you sure you want to log out?"
         let alert = UIAlertController(title: "Log Out", message: alertMsg, preferredStyle: .alert)
         //create an action for if the reset button is pressed
         let yesAction = UIAlertAction(title: "Yes", style: .default, handler: {(alertAction) in
