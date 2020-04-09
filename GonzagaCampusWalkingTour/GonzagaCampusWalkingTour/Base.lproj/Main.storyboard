@@ -65,7 +65,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EOW-cz-SKK" kind="show" id="Ahm-S0-5rj"/>
+                                    <action selector="statsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gxP-mV-dgc"/>
+                                    <action selector="statsButtonPresssed:" destination="J48-Y7-IVQ" eventType="touchUpInside" id="4Is-xg-fNX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -91,19 +92,20 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="J48-Y7-IVQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="471" y="-136"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="gsS-CQ-coN">
             <objects>
-                <viewController id="EOW-cz-SKK" customClass="StatisticsViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StatisticsViewController" id="EOW-cz-SKK" customClass="StatisticsViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Qv-me-TCa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tours Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f98-aJ-gJx">
-                                <rect key="frame" x="30" y="79" width="148" height="24"/>
+                                <rect key="frame" x="30" y="35" width="148" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

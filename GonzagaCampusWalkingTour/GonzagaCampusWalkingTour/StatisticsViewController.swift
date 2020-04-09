@@ -9,8 +9,11 @@
 import UIKit
 
 class StatisticsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+    var databaseReference: DatabaseAccessible?
+    var tourProgressRetriever: TourProgressRetrievable = UserDefaultsProgressRetrieval()
     let tempList = ["tour 1", "Tour 2", "Tour 3"]
+    var tourProgress: [TourProgress] = []
+    var tourInfo: [TourInfo] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(tempList.count)
@@ -21,23 +24,26 @@ class StatisticsViewController: UIViewController, UITableViewDataSource, UITable
         cell.textLabel?.text = tempList[indexPath.row]
         return(cell)
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        getTourInfo()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getTourInfo() {
+        if self.databaseReference != nil {
+            self.databaseReference?.getAllTourInfo(callback: {(tours) in
+                self.tourInfo = tours
+                self.getTourProgress()
+            })
+        }
     }
-    */
-
+    
+    func getTourProgress() {
+        for tour in self.tourInfo {
+            if let progress = self.tourProgressRetriever.getTourProgress(tourId: tour.id) {
+                self.tourProgress.append(progress)
+            }
+        }
+    }
 }
