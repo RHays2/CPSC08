@@ -31,6 +31,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     var waypointCounter = 0
     var tourProgress: TourProgress?
     var tourProgressRetriever: TourProgressRetrievable = UserDefaultsProgressRetrieval()
+    var distanceTracker: DistanceTracker?
     
     var progressLabel: UILabel = {
         let label = UILabel()
@@ -100,6 +101,9 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     func saveProgress() {
         guard let tour = self.activeTour else {return}
         guard let progress = self.tourProgress else {return}
+        if let dist = self.distanceTracker {
+            progress.distanceTraveled = dist.currentDistance
+        }
         self.tourProgressRetriever.saveTourProgress(progress: progress, tourId: tour.id)
     }
     
@@ -108,7 +112,9 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         //update the tour progress stops because their may be a change from the database
         tourProgressRetriever.updateStopsInTour(stops: tour.tourStops, tourId: tour.id)
         if let progress = tourProgressRetriever.getTourProgress(tourId: tour.id) {
-             self.tourProgress = progress
+            self.tourProgress = progress
+            //initialize distance tracker
+            self.distanceTracker = DistanceTracker(initialDistance: progress.distanceTraveled)
         }
     }
     
@@ -237,6 +243,19 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         //move map to center around user if centerOnUser == true
         if (self.centerOnUser == true) {
           self.centerUserLocationOnMap(location: locations.last ?? CLLocation())
+        }
+        if let location = locations.last {
+            //if the initial location of distance tracker is nil, add it as the initial
+            if self.distanceTracker != nil {
+                if self.distanceTracker?.currentPosition == nil {
+                    //init the starting postion
+                    self.distanceTracker?.currentPosition = location
+                }
+                else {
+                    //we have an initial location, we need to update the current location
+                    self.distanceTracker?.updateCurrentPosition(newPosition: location)
+                }
+            }
         }
     }
     
