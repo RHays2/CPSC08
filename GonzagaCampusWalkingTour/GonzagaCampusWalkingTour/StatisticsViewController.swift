@@ -35,6 +35,11 @@ class StatisticsViewController: UIViewController, UITableViewDataSource, UITable
             self.databaseReference?.getAllTourInfo(callback: {(tours) in
                 self.tourInfo = tours
                 self.getTourProgress()
+                
+                print("PRINTING TOUR INFO")
+                for tour in tours {
+                    print("name: \(tour.tourName) \nid: \(tour.id)\n")
+                }
             })
         }
         print("END GETTOURINFO")
@@ -45,6 +50,11 @@ class StatisticsViewController: UIViewController, UITableViewDataSource, UITable
             if let progress = self.tourProgressRetriever.getTourProgress(tourId: tour.id) {
                 self.tourProgress.append(progress)
             }
+        }
+        
+        print("PRINTING TOUR PROGRESS")
+        for tourProgress in self.tourProgress {
+            print("id: \(tourProgress.id) \nstop progress: \(tourProgress.stopProgress)\n")
         }
         print("END GETTOURPROGRESS")
     }
