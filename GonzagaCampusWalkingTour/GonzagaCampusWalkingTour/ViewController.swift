@@ -48,6 +48,14 @@ class ViewController: UIViewController {
         //set the nav bar visible for all future views
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    @IBAction func statsButtonPressed(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let statsVC = storyBoard.instantiateViewController(withIdentifier: "StatisticsViewController") as? StatisticsViewController {
+            statsVC.databaseReference = self.databaseReference
+            self.navigationController?.pushViewController(statsVC, animated: true)
+        }
+    }
 
 
 }
