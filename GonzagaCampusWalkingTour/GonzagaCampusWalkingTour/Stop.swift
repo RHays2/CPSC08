@@ -18,7 +18,7 @@ class Stop: GMSMarker {
     var stopLongitude: Double
     var order: Int
     var id: String
-    
+    var isInCloseProximity: Bool
     
     
     //MARK: Initialization
@@ -30,6 +30,7 @@ class Stop: GMSMarker {
         self.stopLongitude = stopLongitude
         self.order = order
         self.id = id
+        self.isInCloseProximity = false
         
         super.init()
         self.position = CLLocationCoordinate2D(latitude: stopLatitude, longitude: stopLongitude)
