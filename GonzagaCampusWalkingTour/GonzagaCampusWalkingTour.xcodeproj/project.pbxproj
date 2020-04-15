@@ -28,6 +28,7 @@
 		8D87DF9F23D92D2C00FB30C2 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87DF9E23D92D2C00FB30C2 /* Directions.swift */; };
 		8D886E4B23D7D26F0099449E /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D886E4A23D7D26F0099449E /* Path.swift */; };
 		8D8D5CA32413505F00AB2DF1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */; };
+		8DA5677B2446968F002D00EC /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA5677A2446968F002D00EC /* Date+.swift */; };
 		8DA606B02408B88D00403321 /* TourProgressRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606AF2408B88D00403321 /* TourProgressRetrievable.swift */; };
 		8DA606B22408BACA00403321 /* UserDefaultsProgressRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B12408BACA00403321 /* UserDefaultsProgressRetrieval.swift */; };
 		8DA606B42408BC7500403321 /* TourProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B32408BC7500403321 /* TourProgress.swift */; };
@@ -88,6 +89,7 @@
 		8D886E4A23D7D26F0099449E /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8DA56779244677C0002D00EC /* GonzagaCampusWalkingTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GonzagaCampusWalkingTour.entitlements; sourceTree = "<group>"; };
+		8DA5677A2446968F002D00EC /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		8DA606AF2408B88D00403321 /* TourProgressRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgressRetrievable.swift; sourceTree = "<group>"; };
 		8DA606B12408BACA00403321 /* UserDefaultsProgressRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProgressRetrieval.swift; sourceTree = "<group>"; };
 		8DA606B32408BC7500403321 /* TourProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgress.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				8D3E276A242ED2DC000FD337 /* String+.swift */,
 				8D57B4642436695A006F41D3 /* UITextView+.swift */,
 				8D57B4662436A154006F41D3 /* FileManager+.swift */,
+				8DA5677A2446968F002D00EC /* Date+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				8DA606B02408B88D00403321 /* TourProgressRetrievable.swift in Sources */,
 				8D57B4652436695A006F41D3 /* UITextView+.swift in Sources */,
 				8D3E276B242ED2DC000FD337 /* String+.swift in Sources */,
+				8DA5677B2446968F002D00EC /* Date+.swift in Sources */,
 				8DEF8516243E90D800095687 /* AdminInfoViewController.swift in Sources */,
 				8DFF3D5323937865006D527A /* FullImageViewController.swift in Sources */,
 				8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */,

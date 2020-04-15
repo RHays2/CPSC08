@@ -13,12 +13,16 @@ class TourProgress: Codable {
     var distanceTraveled: Double
     var stopProgress:[String:Bool]
     var currentStop: Int
+    var dateCompleted: String
+    var tourCompleted: Bool
     
-    init(id: String, distanceTravled: Double, stopProgress: [String:Bool], currentStop: Int) {
+    init(id: String, distanceTravled: Double, stopProgress: [String:Bool], currentStop: Int, dateCompleted: String, tourCompleted: Bool) {
         self.id = id
         self.distanceTraveled = distanceTravled
         self.stopProgress = stopProgress
         self.currentStop = currentStop
+        self.dateCompleted = dateCompleted
+        self.tourCompleted = tourCompleted
     }
     
     func toString() -> String{

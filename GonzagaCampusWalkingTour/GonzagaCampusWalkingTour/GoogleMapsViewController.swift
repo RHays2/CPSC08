@@ -314,6 +314,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         //TODO: make sure user is accessing stops in order
         if let stop = marker as? Stop {
             guard let progress = self.tourProgress else { return false }
+            guard let tourInfo = self.activeTour else { return false }
             //determine if the user is within the region of the stop and if this is the stop that they are one
             //or if this stop is already visited
             if (stop.isInCloseProximity == true && progress.currentStop == stop.order - 1)  || progress.stopProgress[stop.id] == true {
@@ -327,27 +328,68 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                     self.navigationController?.pushViewController(tabBarController, animated: true)
                     
                     //draw the route to the next stop
-                    if self.tourProgress?.currentStop ?? 0 == stop.order - 1 {
-                        if let progress = self.tourProgress {
-                            progress.currentStop += 1
-                        }
+                    if progress.currentStop == stop.order - 1 {
+                        progress.currentStop += 1
                         //update tour progress
-                        if self.tourProgress != nil {
-                            self.tourProgress?.stopProgress[stop.id] = true
-                        }
+                        progress.stopProgress[stop.id] = true
+                        //update the progress label
                         self.setProgressLabel()
-                        self.addDirectionsPath()
+                        if tourInfo.tourStops.count == progress.currentStop {
+                            //this is the last tour stop
+                            //make sure that the tour has not alread been completed
+                            if progress.tourCompleted == false  {
+                                progress.tourCompleted = true
+                                progress.dateCompleted = Date().toString(format: "MMMM d, yyyy")
+                                //display alert dialog congratulating user on completing the tour
+                                displayTourCompletedAlertDialog()
+                                //clear the path
+                                self.path.removePolyline()
+                            }
+                        }
+                        else {
+                            self.addDirectionsPath()
+                        }
                     }
                     
                     return true
                 }
             }
             else {
-                //display message that you are not close enough to visit this stop
-                self.displayOutOfRangeAlertDialog()
+                if progress.currentStop != stop.order - 1 {
+                    //trying to visit a stop they are not on
+                    //display message saying they need to visit stops in order
+                    self.displayVisitStopsInOrderAlertDialog()
+                }
+                else {
+                    //display message that you are not close enough to visit this stop
+                    self.displayOutOfRangeAlertDialog()
+                }
             }
         }
         return false
+    }
+    
+    func displayVisitStopsInOrderAlertDialog() {
+        let curStop = (self.tourProgress?.currentStop ?? 1) + 1
+        let alertMsg = "Please visit the stops in order. You are currently on stop number \(curStop)."
+        let alert = UIAlertController(title: "Stop Visited Out of Order", message: alertMsg, preferredStyle: .alert)
+        //create an action for a cancel button
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        
+        alert.addAction(okAction)
+        //present alert dialog
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func displayTourCompletedAlertDialog() {
+        let alertMsg = "Congratulations! You have completed this tour. You can restart your tour progress by visiting the settings page accessible by the \"settings\" button on the map page. You can also view your all of your other tour progress on the Stats page accessible by home page."
+        let alert = UIAlertController(title: "Tour Completed", message: alertMsg, preferredStyle: .alert)
+        //create an action for a cancel button
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        
+        alert.addAction(okAction)
+        //present alert dialog
+        self.present(alert, animated: true, completion: nil)
     }
     
     func displayOutOfRangeAlertDialog() {
