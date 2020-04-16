@@ -15,11 +15,13 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var keys: NSDictionary?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey("AIzaSyCMJ2Xei03qznK4Bg_g0RsnmNvWUl6sd78")
+        //GMSServices.provideAPIKey("AIzaSyCMJ2Xei03qznK4Bg_g0RsnmNvWUl6sd78")
+        GMSServices.provideAPIKey(getValue(key: "GOOGLE_MAPS_API_KEY"))
         FirebaseApp.configure()
         injectDatabaseDependancy()
         return true
@@ -37,6 +39,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //should change this
             fatalError("cannot initialize database")
         }
+    }
+    
+    func getValue(key: String) -> String {
+        if keys == nil {
+            if let path = Bundle.main.path(forResource: "config", ofType: "plist") {
+                keys = NSDictionary(contentsOfFile: path)
+            }
+        }
+        if keys != nil {
+            if let val = keys?[key] as? String {
+                return val
+            }
+        }
+        return ""
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -1,0 +1,14 @@
+//
+//  Config.xcconfig
+//  GonzagaCampusWalkingTour
+//
+//  Created by Max Heinzelman on 4/14/20.
+//  Copyright © 2020 Senior Design Group 8. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+GOOGLE_MAPS_API_KEY = AIzaSyCMJ2Xei03qznK4Bg_g0RsnmNvWUl6sd78
+
+

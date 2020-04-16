@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We need your location so that we can guide you on tours</string>
+	<string>We need your location so that we can guide you on tours, and alert you when you are coming near a tour stop</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location so that we can guide you on tours</string>
 	<key>UILaunchStoryboardName</key>

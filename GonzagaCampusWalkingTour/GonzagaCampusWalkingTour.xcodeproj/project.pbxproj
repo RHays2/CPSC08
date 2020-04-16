@@ -28,6 +28,7 @@
 		8D87DF9F23D92D2C00FB30C2 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87DF9E23D92D2C00FB30C2 /* Directions.swift */; };
 		8D886E4B23D7D26F0099449E /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D886E4A23D7D26F0099449E /* Path.swift */; };
 		8D8D5CA32413505F00AB2DF1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */; };
+		8DA5677E2446C898002D00EC /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DA5677D2446C898002D00EC /* config.plist */; };
 		8DA606B02408B88D00403321 /* TourProgressRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606AF2408B88D00403321 /* TourProgressRetrievable.swift */; };
 		8DA606B22408BACA00403321 /* UserDefaultsProgressRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B12408BACA00403321 /* UserDefaultsProgressRetrieval.swift */; };
 		8DA606B42408BC7500403321 /* TourProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B32408BC7500403321 /* TourProgress.swift */; };
@@ -87,6 +88,7 @@
 		8D87DF9E23D92D2C00FB30C2 /* Directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
 		8D886E4A23D7D26F0099449E /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8DA5677D2446C898002D00EC /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		8DA606AF2408B88D00403321 /* TourProgressRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgressRetrievable.swift; sourceTree = "<group>"; };
 		8DA606B12408BACA00403321 /* UserDefaultsProgressRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProgressRetrieval.swift; sourceTree = "<group>"; };
 		8DA606B32408BC7500403321 /* TourProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgress.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				8D4262EC236127540075D46C /* Assets.xcassets */,
 				8D4262EE236127540075D46C /* LaunchScreen.storyboard */,
 				25CE8B7123EB7F2800519FDC /* GoogleService-Info.plist */,
+				8DA5677D2446C898002D00EC /* config.plist */,
 				8D4262F1236127540075D46C /* Info.plist */,
 				8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */,
 				8DEF851724439E0E00095687 /* DistanceTracker.swift */,
@@ -331,6 +334,7 @@
 			files = (
 				8D4262F0236127540075D46C /* LaunchScreen.storyboard in Resources */,
 				8D4262ED236127540075D46C /* Assets.xcassets in Resources */,
+				8DA5677E2446C898002D00EC /* config.plist in Resources */,
 				25CE8B7223EB7F2800519FDC /* GoogleService-Info.plist in Resources */,
 				A7C06E162384C4C200DD197B /* GonzagaGPX.gpx in Resources */,
 				8D4262EB236127540075D46C /* Main.storyboard in Resources */,
