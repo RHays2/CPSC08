@@ -60,6 +60,10 @@ class UserDefaultsProgressRetrieval: TourProgressRetrievable {
         progress.distanceTraveled = 0.0
         //reset current stop
         progress.currentStop = 0
+        //reset the date completed
+        progress.dateCompleted = ""
+        //reset the tour completed
+        progress.tourCompleted = false
         //save the progress
         self.saveTourProgress(progress: progress, tourId: progress.id)
     }
@@ -104,7 +108,7 @@ class UserDefaultsProgressRetrieval: TourProgressRetrievable {
                 //add each stop to the stopProgress
                 stopProgress[stop.id] = false
             }
-            let tourProgress = TourProgress(id: tourId, distanceTravled: 0.0, stopProgress: stopProgress, currentStop: 0)
+            let tourProgress = TourProgress(id: tourId, distanceTravled: 0.0, stopProgress: stopProgress, currentStop: 0, dateCompleted: "", tourCompleted: false)
             //save the progress
             self.saveTourProgress(progress: tourProgress, tourId: tourId)
         }
