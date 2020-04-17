@@ -31,6 +31,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     var waypointCounter = 0
     var tourProgress: TourProgress?
     var tourProgressRetriever: TourProgressRetrievable = UserDefaultsProgressRetrieval()
+    var currentMonitoredRegion: CLCircularRegion?
     var distanceTracker: DistanceTracker?
     
     var progressLabel: UILabel = {
@@ -67,7 +68,6 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     }
     
     @objc func settingsPressed() {
-        print("settings pressed!")
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         //instatiate Settings view controller
         if let vc = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController {
@@ -113,6 +113,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         tourProgressRetriever.updateStopsInTour(stops: tour.tourStops, tourId: tour.id)
         if let progress = tourProgressRetriever.getTourProgress(tourId: tour.id) {
             self.tourProgress = progress
+            updateMonitoredRegion()
             //initialize distance tracker
             self.distanceTracker = DistanceTracker(initialDistance: progress.distanceTraveled)
         }
@@ -160,7 +161,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         locationManager.requestAlwaysAuthorization()
         //begin getting the location and heading
         locationManager.startUpdatingLocation()
-        locationManager.startUpdatingHeading();
+        locationManager.startUpdatingHeading()
     }
     
     func setupMapWithTourStops() {
@@ -286,60 +287,124 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         //this function will run when user enters the region of a tour stop
-        if region.identifier.contains("stop_") {
-            print("you have reached \(region.identifier)")
+        if self.activeTour != nil && self.activeTour?.tourStops != nil {
+            if let index = Int(region.identifier) {
+                if index < self.activeTour?.tourStops.count ?? 0 {
+                    //we are close enough to the stop that a user can visit it
+                    self.activeTour?.tourStops[index].isInCloseProximity = true
+                    //alert the user that they have entered a stop area
+                }
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        //this function will run when a user exits the region of a tour stop
+        if self.activeTour != nil && self.activeTour?.tourStops != nil {
+            if let index = Int(region.identifier) {
+                if index < self.activeTour?.tourStops.count ?? 0 {
+                    //we left the area close that contains the stop
+                    self.activeTour?.tourStops[index].isInCloseProximity = false
+                }
+            }
         }
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        //make sure user is accessing stops in order
+        //TODO: make sure user is accessing stops in order
         if let stop = marker as? Stop {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            //create the tabBarController
-            if let tabBarController = storyBoard.instantiateViewController(withIdentifier: "StopViewTabBarController") as? StopViewTabBarController{
-                tabBarController.curStop = stop
-                tabBarController.databaseReference = self.databaseReference
-                tabBarController.modalPresentationStyle = .pageSheet
-                //show the new tabViewController
-                self.navigationController?.pushViewController(tabBarController, animated: true)
-                
-                //draw the route to the next stop
-                if self.tourProgress?.currentStop ?? 0 == stop.order - 1 {
-                    if let progress = self.tourProgress {
-                        progress.currentStop += 1
+            guard let progress = self.tourProgress else { return false }
+            //determine if the user is within the region of the stop and if this is the stop that they are one
+            //or if this stop is already visited
+            if (stop.isInCloseProximity == true && progress.currentStop == stop.order - 1)  || progress.stopProgress[stop.id] == true {
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                //create the tabBarController
+                if let tabBarController = storyBoard.instantiateViewController(withIdentifier: "StopViewTabBarController") as? StopViewTabBarController{
+                    tabBarController.curStop = stop
+                    tabBarController.databaseReference = self.databaseReference
+                    tabBarController.modalPresentationStyle = .pageSheet
+                    //show the new tabViewController
+                    self.navigationController?.pushViewController(tabBarController, animated: true)
+                    
+                    //draw the route to the next stop
+                    if self.tourProgress?.currentStop ?? 0 == stop.order - 1 {
+                        if let progress = self.tourProgress {
+                            progress.currentStop += 1
+                        }
+                        //update tour progress
+                        if self.tourProgress != nil {
+                            self.tourProgress?.stopProgress[stop.id] = true
+                        }
+                        self.setProgressLabel()
+                        self.addDirectionsPath()
                     }
-                    //update tour progress
-                    if self.tourProgress != nil {
-                        self.tourProgress?.stopProgress[stop.id] = true
-                    }
-                    self.setProgressLabel()
-                    self.addDirectionsPath()
+                    
+                    return true
                 }
-                
-                return true
+            }
+            else {
+                //display message that you are not close enough to visit this stop
+                self.displayOutOfRangeAlertDialog()
             }
         }
         return false
+    }
+    
+    func displayOutOfRangeAlertDialog() {
+        let alertMsg = "You cannot visit this tour stop because you are out of range. Please walk toward the stop, and when you are close enough you can visit it!"
+        let alert = UIAlertController(title: "Out of Range", message: alertMsg, preferredStyle: .alert)
+        //create an action for a cancel button
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        
+        alert.addAction(okAction)
+        //present alert dialog
+        self.present(alert, animated: true, completion: nil)
     }
 
     func createMarkersForTourStops(tour: TourInfo) {
         for i in 0 ..< tour.tourStops.count {
             let stop = tour.tourStops[i]
             stop.map = self.mapView
-            /*if self.tourProgress != nil {
-                //increase the stop counter if the stop ahs been visited
-                if self.tourProgress?.stopProgress[stop.id] == true {
-                    self.tourProgress?.currentStop += 1
-                }
-            }*/
-            //only 20 monitored regions allowed
-            self.createMonitoredRegion(center: CLLocationCoordinate2D(latitude: stop.stopLatitude, longitude: stop.stopLongitude), radius: 30, id: "stop_\(i + 1)")
         }
     }
     
     func createMonitoredRegion(center: CLLocationCoordinate2D, radius: Double, id: String) {
         let region = CLCircularRegion(center: center, radius: radius, identifier: id)
         self.locationManager.startMonitoring(for: region)
+        self.currentMonitoredRegion = region
+    }
+    
+    func updateMonitoredRegion() {
+        if self.tourProgress != nil && self.activeTour?.tourStops != nil {
+            if let curStop = self.tourProgress?.currentStop, let stops = self.activeTour?.tourStops {
+                if curStop < stops.count {
+                    //stop monitoring old region
+                    if let reg = self.currentMonitoredRegion {
+                        if self.locationManager.monitoredRegions.contains(reg) {
+                            self.locationManager.stopMonitoring(for: reg)
+                        }
+                    }
+                    //create a monitored region for the current stop
+                    self.createMonitoredRegion(center: CLLocationCoordinate2D(latitude: stops[curStop].stopLatitude, longitude: stops[curStop].stopLongitude), radius: 30, id: String(curStop))
+                    //determine if user is in the region
+                    self.isUserInRegion()
+                }
+            }
+        }
+    }
+    
+    func isUserInRegion() {
+        if let reg = self.currentMonitoredRegion {
+            if reg.contains(self.currentLocation.coordinate) {
+                if self.activeTour?.tourStops != nil {
+                    if let index = Int(reg.identifier), index < self.activeTour?.tourStops.count ?? 0 {
+                        //set the stops isInProximity to true
+                        self.activeTour?.tourStops[index].isInCloseProximity = true
+                    }
+                }
+            }
+        }
+        
     }
     
     /*func createMarkerForStop(currentStop: Stop) {

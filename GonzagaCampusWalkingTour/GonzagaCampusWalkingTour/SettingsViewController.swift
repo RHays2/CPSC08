@@ -47,6 +47,8 @@ class SettingsViewController: UIViewController {
             parentVC.setProgressLabel()
             //reset the directions path
             parentVC.addDirectionsPath()
+            //update monitored region
+            parentVC.updateMonitoredRegion()
         }
     }
 }
