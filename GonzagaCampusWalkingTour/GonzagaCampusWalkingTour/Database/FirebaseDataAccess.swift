@@ -177,6 +177,7 @@ public class FirebaseDataAccess: DatabaseAccessible {
                             
                             //attempt to get the preview image
                             dispatchGroup.enter()
+                            var exit = false;
                             self.storageReference.getImageNamed(name: preview_img, callback: {(image, errorMsg) in
                                 if image != nil {
                                   tour.previewImage = image
@@ -185,7 +186,10 @@ public class FirebaseDataAccess: DatabaseAccessible {
                                     print(errorMsg ?? "")
                                 }
                                 //we have recieved a response, leave the dispatch group
-                                dispatchGroup.leave()
+                                if exit == false {
+                                    dispatchGroup.leave()
+                                    exit = true;
+                                }
                             })
                             
                             tours.append(tour)
