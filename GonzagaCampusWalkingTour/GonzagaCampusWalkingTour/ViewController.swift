@@ -78,6 +78,30 @@ class ViewController: UIViewController {
         //set the nav bar visible for all future views
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    @IBAction func StatsButtonPressed(_ sender: Any) {
+//        let statsTabBarController = storyboard?.instantiateViewController(withIdentifier: "StatsTabBarController") as! StatsTabBarController
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let statsVC = storyBoard.instantiateViewController(withIdentifier: "StatsTabBarController") as? StatsTabBarController {
+            statsVC.modalPresentationStyle = .fullScreen
+            statsVC.databaseReference = self.databaseReference
+            self.navigationController?.pushViewController(statsVC, animated: true)
+        }
+        
+    }
+    @IBAction func aboutButtonPressed(_ sender: Any) {
+//        let aboutViewController = storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
+//
+//        present(aboutViewController, animated: true, completion: nil)
+        
+        let aboutViewController = UIStoryboard(name: "Main", bundle: nil)
+        if let aboutView = aboutViewController.instantiateViewController(withIdentifier: "AboutViewController") as? AboutViewController {
+            aboutView.modalPresentationStyle = .fullScreen
+            //self.present(tourList, animated: true, completion: nil)
+            self.navigationController?.pushViewController(aboutView, animated: true)
+        }
+        
+    }
 }
 
 extension ViewController: FUIAuthDelegate {

@@ -9,6 +9,116 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--User Progress-->
+        <scene sceneID="70T-jb-oEh">
+            <objects>
+                <viewController storyboardIdentifier="UserProgressViewController" id="Ve1-wR-KAt" customClass="UserProgressViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S24-fH-EkX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.043137254899999998" green="0.21960784310000001" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Ehh-fh-jgy"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="User Progress" id="J3n-nr-PD5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1VS-Bm-rdS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183" y="-1500"/>
+        </scene>
+        <!--Stats Tab Bar Controller-->
+        <scene sceneID="BLv-am-DgR">
+            <objects>
+                <tabBarController storyboardIdentifier="StatsTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fuX-N6-BA3" customClass="StatsTabBarController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gbz-WJ-Hhw"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zqf-Sc-UyT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ve1-wR-KAt" kind="relationship" relationship="viewControllers" id="INM-p3-37p"/>
+                        <segue destination="u7x-vI-uQg" kind="relationship" relationship="viewControllers" id="dOs-oh-f6J"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ShO-fj-JsI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1137" y="-1169"/>
+        </scene>
+        <!--Tour Progress-->
+        <scene sceneID="JUC-nj-004">
+            <objects>
+                <tableViewController storyboardIdentifier="TourProgressTableViewController" id="u7x-vI-uQg" customClass="TourProgressTableViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="egS-o1-uqM" customClass="Tour">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.043137254899999998" green="0.21960784310000001" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TourCell" textLabel="KqJ-Cv-Cyw" detailTextLabel="8fe-cq-i1F" style="IBUITableViewCellStyleValue1" id="OmD-bm-nWA">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OmD-bm-nWA" id="Bg0-Os-nmf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="KqJ-Cv-Cyw">
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="8fe-cq-i1F">
+                                            <rect key="frame" x="315" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="u7x-vI-uQg" id="KaL-v3-F81"/>
+                            <outlet property="delegate" destination="u7x-vI-uQg" id="0bk-B8-Qic"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Tour Progress" id="ZOJ-lR-XLN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OnU-bx-ELb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183" y="-802"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="eKD-ob-n4x">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lHA-B6-XfG" customClass="AboutViewController" customModule="GonzagaCampusWalkingTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ztL-ob-94K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sG-MZ-JdC">
+                                <rect key="frame" x="16" y="50" width="343" height="162.5"/>
+                                <string key="text">This application was created by Alexa Andrews, Mason Dellutri, Ryan Hays, and Maxwell Heinzelman. It was created as a Senior Design Project in accordance with the Gonzaga History Department. It was created as a way to show the students, faculty, and other attendees of Gonzaga the rich history and images of Gonzaga University.	</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.043137254899999998" green="0.21960784310000001" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5sG-MZ-JdC" firstAttribute="leading" secondItem="1XW-bb-N4Z" secondAttribute="leading" constant="16" id="BhM-UD-Tmi"/>
+                            <constraint firstItem="1XW-bb-N4Z" firstAttribute="trailing" secondItem="5sG-MZ-JdC" secondAttribute="trailing" constant="16" id="gns-I7-Tk6"/>
+                            <constraint firstItem="5sG-MZ-JdC" firstAttribute="top" secondItem="1XW-bb-N4Z" secondAttribute="top" constant="50" id="yfT-Ts-44c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1XW-bb-N4Z"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="fa7-9b-DUr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6hm-2F-POa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032.8" y="-802.848575712144"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -48,20 +158,42 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7a-UA-oKZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEj-aL-IG4">
+                                <rect key="frame" x="16" y="73" width="36" height="30"/>
+                                <state key="normal" title="Stats">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="StatsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VBC-1A-gim"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLd-8D-xZb">
+                                <rect key="frame" x="317" y="73" width="42" height="30"/>
+                                <state key="normal" title="About">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="aboutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SQI-aZ-ms8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.044875688850879669" green="0.21989923715591431" blue="0.36524432897567749" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="OLd-8D-xZb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="2AI-z6-5A4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d7W-KT-XTE" secondAttribute="trailing" constant="8" id="CXV-VB-5jq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oTf-MB-7td" secondAttribute="trailing" constant="20" id="EgO-C6-XHc"/>
                             <constraint firstItem="8uh-gW-APq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fhf-hb-TPl"/>
+                            <constraint firstItem="ZEj-aL-IG4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Iii-th-Pz1"/>
                             <constraint firstItem="8uh-gW-APq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Knp-93-ebt"/>
                             <constraint firstItem="8uh-gW-APq" firstAttribute="top" secondItem="oTf-MB-7td" secondAttribute="bottom" constant="8" id="Mma-RN-10t"/>
                             <constraint firstItem="rCg-1C-ESP" firstAttribute="top" secondItem="d7W-KT-XTE" secondAttribute="bottom" constant="8" id="O8E-I7-ayz"/>
                             <constraint firstItem="oTf-MB-7td" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cg3-ud-pVi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rCg-1C-ESP" secondAttribute="trailing" constant="8" id="dKf-sy-jux"/>
                             <constraint firstItem="d7W-KT-XTE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="gXN-w2-jhS"/>
+                            <constraint firstItem="ZEj-aL-IG4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="iDP-P8-PvU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rCg-1C-ESP" secondAttribute="bottom" constant="20" id="mmZ-PJ-heq"/>
                             <constraint firstItem="rCg-1C-ESP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="v2b-QD-Bb3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OLd-8D-xZb" secondAttribute="trailing" constant="16" id="xpU-gq-d8a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
