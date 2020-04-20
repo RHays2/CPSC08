@@ -14,6 +14,8 @@ class TourDescriptionViewController: UIViewController {
     @IBOutlet weak var tourDescription: UITextView!
     @IBOutlet weak var tourLength: UITextView!
     
+    @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    @IBOutlet weak var imageWidth: NSLayoutConstraint!
     var selected:Tour?
     var selectedTour: TourInfo?
     var databaseReference: DatabaseAccessible?
@@ -21,14 +23,26 @@ class TourDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationItemBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         initTourDetails()
     }
     
     func initTourDetails() {
         tourName.text = selectedTour?.tourName
         tourPreviewImage.image = selectedTour?.previewImage
+        if let width = tourPreviewImage.image?.size.width , let height = tourPreviewImage.image?.size.height {
+            if tourPreviewImage.frame.size.width < width {
+                 imageHeight.constant = tourPreviewImage.frame.size.width / width * height
+            }
+            else {
+                imageHeight.constant = tourPreviewImage.frame.size.width / width * height
+                imageWidth.constant = tourPreviewImage.frame.size.height / width * height
+            }
+        }
         tourDescription.text = selectedTour?.tourDescription
-        tourLength.text = "Tour Length: \(selectedTour?.tourLength ?? 0.0) mi"
+        tourLength.text = "Tour Length: \(Int(selectedTour?.tourLength ?? 0)) tour stops"
     }
     
     func initNavigationItemBar() {
