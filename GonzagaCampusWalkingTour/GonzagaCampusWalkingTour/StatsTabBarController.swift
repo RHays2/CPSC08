@@ -27,8 +27,9 @@ class StatsTabBarController : UITabBarController {
     
     func createTabBarItems() {
         //create a tab bar item for the stop view and images view
-        self.userProgressView?.tabBarItem = UITabBarItem(title: "User Progress", image: UIImage(imageLiteralResourceName: "bookicon"), tag: 0)
-        self.tourProgressView?.tabBarItem = UITabBarItem(title: "Tour Progress", image: UIImage(imageLiteralResourceName: "photoicon"), tag: 1)
+        self.userProgressView?.tabBarItem = UITabBarItem(title: "User Progress", image: UIImage(imageLiteralResourceName: "user"), tag: 0)
+        self.tourProgressView?.tabBarItem = UITabBarItem(title: "Tour Progress", image: UIImage(imageLiteralResourceName: "pin"), tag: 1)
+        
     }
     
     func createUserProgressView() -> UserProgressViewController? {

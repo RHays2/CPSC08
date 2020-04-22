@@ -12,7 +12,7 @@ class TourProgressTableViewController: UITableViewController {
     var databaseReference: DatabaseAccessible?
     var tourProgressRetriever: TourProgressRetrievable = UserDefaultsProgressRetrieval()
     let tempList = ["tour 1", "Tour 2", "Tour 3"]
-    var tourProgress: [TourProgress] = []
+    var tourProgress: [String:TourProgress] = [:]
     var toursInfo: [TourInfo] = []
     var testDict = [100: "Hundred", 200: "two", 300:"three"]
     var tourProgressDict: [String: String] = [:]
@@ -46,7 +46,7 @@ class TourProgressTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         //print("TOURSINFO.COUNT")
-        return(toursInfo.count)
+        return toursInfo.count
         //return(tempList.count)
     }
 
@@ -54,22 +54,32 @@ class TourProgressTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TourCell", for:indexPath)
+        let tour = toursInfo[indexPath.row]
+        let tourId = toursInfo[indexPath.row].id
         
-        let totalCount = tourProgress[indexPath.row].stopProgress.count
-        var stopsVisitedCount = 0
+        if let progress = self.tourProgress[tourId] {
+            let totalCount = Int(toursInfo[indexPath.row].tourLength)//tourProgress[indexPath.row].stopProgress.count
+            var stopsVisitedCount = 0
 
-        print(toursInfo[indexPath.row].tourName)
-        print(tourProgress[indexPath.row].stopProgress)
-        for (_, val) in tourProgress[indexPath.row].stopProgress {
-            if val == true {
-                stopsVisitedCount += 1
+            print(toursInfo[indexPath.row].tourName)
+            print(progress.stopProgress)
+            for (_, val) in progress.stopProgress {
+                if val == true {
+                    stopsVisitedCount += 1
+                }
             }
+            print(stopsVisitedCount)
+            print(progress.stopProgress.count)
+            cell.textLabel?.text = toursInfo[indexPath.row].tourName
+            cell.detailTextLabel?.text = "\(stopsVisitedCount) / \(totalCount)"
         }
-        print(stopsVisitedCount)
-        print(tourProgress[indexPath.row].stopProgress.count)
-        cell.textLabel?.text = toursInfo[indexPath.row].tourName
-        cell.detailTextLabel?.text = "\(stopsVisitedCount) / \(totalCount)"
-        return(cell)
+        else {
+            let total = Int(tour.tourLength)
+            cell.textLabel?.text = tour.tourName
+            cell.detailTextLabel?.text = "0 / \(total)"
+        }
+        
+        return cell
         
     }
     
@@ -98,13 +108,13 @@ class TourProgressTableViewController: UITableViewController {
     func getTourProgress() {
         for tour in self.toursInfo {
             if let progress = self.tourProgressRetriever.getTourProgress(tourId: tour.id) {
-                self.tourProgress.append(progress)
+                self.tourProgress[tour.id] = progress
             }
         }
         
         print("PRINTING TOUR PROGRESS")
-        for tourProgress in self.tourProgress {
-            print("id: \(tourProgress.id) \nstop progress: \(tourProgress.stopProgress)\n")
+        for key in self.tourProgress.keys {
+            print("id: \(tourProgress[key]?.id ?? "") \nstop progress: \(tourProgress[key]?.stopProgress)\n")
         }
         print("END GETTOURPROGRESS")
     }
