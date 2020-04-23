@@ -37,7 +37,7 @@ class StatsTabBarController : UITabBarController {
         guard let userProgressController = (storyBoard.instantiateViewController(withIdentifier: "UserProgressViewController") as? UserProgressViewController) else {
             return nil
         }
-        //userProgressController.databaseReference = self.databaseReference
+        userProgressController.databaseReference = self.databaseReference
         return userProgressController
         
     }

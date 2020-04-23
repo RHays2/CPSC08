@@ -70,8 +70,16 @@ class TourProgressTableViewController: UITableViewController {
             }
             print(stopsVisitedCount)
             print(progress.stopProgress.count)
+            print("RIGHT HERE")
+            print(progress.tourCompleted)
+            print(progress.dateCompleted)
             cell.textLabel?.text = toursInfo[indexPath.row].tourName
+            if progress.tourCompleted == true {
+                cell.detailTextLabel?.text = "Tour Completed on: \(progress.dateCompleted)"
+            }
+            else {
             cell.detailTextLabel?.text = "\(stopsVisitedCount) / \(totalCount)"
+            }
         }
         else {
             let total = Int(tour.tourLength)
