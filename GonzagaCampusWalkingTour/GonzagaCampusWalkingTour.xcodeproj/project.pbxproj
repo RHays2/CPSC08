@@ -34,6 +34,7 @@
 		8DA606B42408BC7500403321 /* TourProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B32408BC7500403321 /* TourProgress.swift */; };
 		8DA94B1823DE3D1D006A5D5F /* OrderedCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */; };
 		8DB1DE4C23F492C0003E072D /* FirebaseStorageAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */; };
+		8DE9D49924520FE0000F7DE5 /* TourProgressFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */; };
 		8DEF8516243E90D800095687 /* AdminInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF8515243E90D800095687 /* AdminInfoViewController.swift */; };
 		8DEF851824439E0E00095687 /* DistanceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF851724439E0E00095687 /* DistanceTracker.swift */; };
 		8DEF851A2443A3B600095687 /* DistanceConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF85192443A3B600095687 /* DistanceConverter.swift */; };
@@ -99,6 +100,7 @@
 		8DA606B32408BC7500403321 /* TourProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgress.swift; sourceTree = "<group>"; };
 		8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedCoordinate.swift; sourceTree = "<group>"; };
 		8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageAccess.swift; sourceTree = "<group>"; };
+		8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgressFullViewController.swift; sourceTree = "<group>"; };
 		8DEF8515243E90D800095687 /* AdminInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminInfoViewController.swift; sourceTree = "<group>"; };
 		8DEF851724439E0E00095687 /* DistanceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceTracker.swift; sourceTree = "<group>"; };
 		8DEF85192443A3B600095687 /* DistanceConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceConverter.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				8D4262E9236127540075D46C /* Main.storyboard */,
 				E46852C5244D5BDD00FDD00F /* AboutViewController.swift */,
 				E424E2B9244D1BF40061FE19 /* TourProgressTableViewController.swift */,
+				8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */,
 				E424E2B7244D1A090061FE19 /* StatsTabBarController.swift */,
 				E424E2BB244D2B7A0061FE19 /* UserProgressViewController.swift */,
 				A71A088A2377713700AF7BA0 /* TourTableViewController.swift */,
@@ -469,6 +472,7 @@
 				8DFF3D5323937865006D527A /* FullImageViewController.swift in Sources */,
 				8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */,
 				A71A0887237760B000AF7BA0 /* Tour.swift in Sources */,
+				8DE9D49924520FE0000F7DE5 /* TourProgressFullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

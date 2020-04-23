@@ -50,6 +50,21 @@ class TourProgressTableViewController: UITableViewController {
         //return(tempList.count)
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //TourProgressFullViewController
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let tourProgressVC = (storyBoard.instantiateViewController(withIdentifier: "TourProgressFullViewController") as? TourProgressFullViewController) {
+            tourProgressVC.selectedTour = self.toursInfo[indexPath.row]
+            if let progress = self.tourProgress[self.toursInfo[indexPath.row].id] {
+                tourProgressVC.selectedTourProgress = progress
+            }
+            else {
+                tourProgressVC.selectedTourProgress = TourProgress(id: self.toursInfo[indexPath.row].id, distanceTravled: 0, stopProgress: [:], currentStop: 0, dateCompleted: "", tourCompleted: false)
+            }
+            self.navigationController?.pushViewController(tourProgressVC, animated: true)
+        }
+        
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

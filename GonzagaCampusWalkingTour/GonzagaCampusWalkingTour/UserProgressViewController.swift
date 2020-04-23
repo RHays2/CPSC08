@@ -29,6 +29,9 @@ class UserProgressViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("VIEWWILLAPPEAR")
+    }
+    
+    func setUpView() {
         sumDistanceTravelled()
         sumToursCompleted()
         sumStopsVisited()
@@ -78,6 +81,7 @@ class UserProgressViewController: UIViewController {
             self.databaseReference?.getAllTourInfo(callback: {(tours) in
                 self.toursInfo = tours
                 self.getTourProgress()
+                self.setUpView()
                 
                 /*
                 print("PRINTING TOUR INFO")
