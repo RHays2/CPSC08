@@ -28,15 +28,12 @@ class UserProgressViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("VIEWWILLAPPEAR")
     }
     
     func setUpView() {
         sumDistanceTravelled()
         sumToursCompleted()
         sumStopsVisited()
-        //print(tourProgress)
-        //distanceTravelledLabel.text = "10 Miles"
         distanceTravelledLabel.text = "\(String(totalDistanceTravelled)) miles"
         toursCompletedLabel.text = "\(String(totalToursCompleted)) Tours"
         totalStopsVisitedLabel.text = "\(String(totalStopsVisited)) Stops"
@@ -44,7 +41,6 @@ class UserProgressViewController: UIViewController {
     
     func sumStopsVisited() {
         for key in self.tourProgress.keys {
-            print("id: \(tourProgress[key]?.id ?? "") \nstop progress: \(tourProgress[key]?.stopProgress)\n")
             for (_, val) in tourProgress[key]!.stopProgress {
                 if val == true {
                     totalStopsVisited += 1
@@ -54,20 +50,15 @@ class UserProgressViewController: UIViewController {
     }
     
     func sumToursCompleted() {
-        print("START SUMSTOPSVISITED")
         for key in self.tourProgress.keys {
-            //print("id: \(tourProgress[key]?.id ?? "") \nstop progress: \(tourProgress[key]?.stopProgress)\n")
             if tourProgress[key]?.tourCompleted == true {
                 totalToursCompleted += 1
             }
-            //print(tourProgress[key]?.tourCompleted)
         }
     }
     
     func sumDistanceTravelled() {
         for key in self.tourProgress.keys {
-            print("id: \(tourProgress[key]?.id ?? "") \ndistance travelled: \(tourProgress[key]?.distanceTraveled)\n")
-            print(tourProgress[key]!.distanceTraveled + 1.0)
             totalDistanceTravelled += tourProgress[key]!.distanceTraveled
         }
     }
@@ -82,21 +73,9 @@ class UserProgressViewController: UIViewController {
                 self.toursInfo = tours
                 self.getTourProgress()
                 self.setUpView()
-                
-                /*
-                print("PRINTING TOUR INFO")
-                for tour in tours {
-                    print("name: \(tour.tourName) \nid: \(tour.id)\n")
-                    //self.tourProgressDict[tour.tourName] = tour.id
-                }
- 
-                */
-                //print(self.tourProgressDict)
-                //self.tableView.reloadData() *******************************
                 indicator.stopAnimating()
             })
         }
-        print("END GETTOURINFO")
     }
     
     func getTourProgress() {
@@ -105,24 +84,5 @@ class UserProgressViewController: UIViewController {
                 self.tourProgress[tour.id] = progress
             }
         }
-        /*
-        print("PRINTING TOUR PROGRESS")
-        for key in self.tourProgress.keys {
-            print("id: \(tourProgress[key]?.id ?? "") \nstop progress: \(tourProgress[key]?.stopProgress)\n")
-        }
-         */
-        print("END GETTOURPROGRESS")
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
