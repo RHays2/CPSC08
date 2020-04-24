@@ -34,6 +34,7 @@
 		8DA606B42408BC7500403321 /* TourProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B32408BC7500403321 /* TourProgress.swift */; };
 		8DA94B1823DE3D1D006A5D5F /* OrderedCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */; };
 		8DB1DE4C23F492C0003E072D /* FirebaseStorageAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */; };
+		8DE9D49924520FE0000F7DE5 /* TourProgressFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */; };
 		8DEF8516243E90D800095687 /* AdminInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF8515243E90D800095687 /* AdminInfoViewController.swift */; };
 		8DEF851824439E0E00095687 /* DistanceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF851724439E0E00095687 /* DistanceTracker.swift */; };
 		8DEF851A2443A3B600095687 /* DistanceConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF85192443A3B600095687 /* DistanceConverter.swift */; };
@@ -47,7 +48,11 @@
 		A71A0889237766BD00AF7BA0 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A0888237766BD00AF7BA0 /* TourTableViewCell.swift */; };
 		A71A088B2377713700AF7BA0 /* TourTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A088A2377713700AF7BA0 /* TourTableViewController.swift */; };
 		A7C06E162384C4C200DD197B /* GonzagaGPX.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */; };
+		E424E2B8244D1A090061FE19 /* StatsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424E2B7244D1A090061FE19 /* StatsTabBarController.swift */; };
+		E424E2BA244D1BF40061FE19 /* TourProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424E2B9244D1BF40061FE19 /* TourProgressTableViewController.swift */; };
+		E424E2BC244D2B7A0061FE19 /* UserProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424E2BB244D2B7A0061FE19 /* UserProgressViewController.swift */; };
 		E438381A238793E700858C8B /* TourStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383819238793E700858C8B /* TourStopViewController.swift */; };
+		E46852C6244D5BDD00FDD00F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46852C5244D5BDD00FDD00F /* AboutViewController.swift */; };
 		E9D91F53D16AE135D9D12050 /* libPods-GonzagaCampusWalkingTourTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5780B5EE98E5FB2053290B14 /* libPods-GonzagaCampusWalkingTourTests.a */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +100,7 @@
 		8DA606B32408BC7500403321 /* TourProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgress.swift; sourceTree = "<group>"; };
 		8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedCoordinate.swift; sourceTree = "<group>"; };
 		8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageAccess.swift; sourceTree = "<group>"; };
+		8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgressFullViewController.swift; sourceTree = "<group>"; };
 		8DEF8515243E90D800095687 /* AdminInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminInfoViewController.swift; sourceTree = "<group>"; };
 		8DEF851724439E0E00095687 /* DistanceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceTracker.swift; sourceTree = "<group>"; };
 		8DEF85192443A3B600095687 /* DistanceConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceConverter.swift; sourceTree = "<group>"; };
@@ -112,7 +118,11 @@
 		A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GonzagaGPX.gpx; sourceTree = "<group>"; };
 		B47C547D339749E2C4E9C7B3 /* Pods-GonzagaCampusWalkingTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.debug.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.debug.xcconfig"; sourceTree = "<group>"; };
 		C4641F10C79A8E3220B02C21 /* Pods-GonzagaCampusWalkingTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.release.xcconfig"; sourceTree = "<group>"; };
+		E424E2B7244D1A090061FE19 /* StatsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTabBarController.swift; sourceTree = "<group>"; };
+		E424E2B9244D1BF40061FE19 /* TourProgressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgressTableViewController.swift; sourceTree = "<group>"; };
+		E424E2BB244D2B7A0061FE19 /* UserProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressViewController.swift; sourceTree = "<group>"; };
 		E4383819238793E700858C8B /* TourStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourStopViewController.swift; sourceTree = "<group>"; };
+		E46852C5244D5BDD00FDD00F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +186,11 @@
 				8D4262E7236127540075D46C /* ViewController.swift */,
 				8DEF8515243E90D800095687 /* AdminInfoViewController.swift */,
 				8D4262E9236127540075D46C /* Main.storyboard */,
+				E46852C5244D5BDD00FDD00F /* AboutViewController.swift */,
+				E424E2B9244D1BF40061FE19 /* TourProgressTableViewController.swift */,
+				8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */,
+				E424E2B7244D1A090061FE19 /* StatsTabBarController.swift */,
+				E424E2BB244D2B7A0061FE19 /* UserProgressViewController.swift */,
 				A71A088A2377713700AF7BA0 /* TourTableViewController.swift */,
 				A71A0888237766BD00AF7BA0 /* TourTableViewCell.swift */,
 				A71A088423775EBF00AF7BA0 /* Asset.swift */,
@@ -431,12 +446,15 @@
 				A71A0889237766BD00AF7BA0 /* TourTableViewCell.swift in Sources */,
 				8D4262E6236127540075D46C /* AppDelegate.swift in Sources */,
 				8D57B4672436A154006F41D3 /* FileManager+.swift in Sources */,
+				E424E2BC244D2B7A0061FE19 /* UserProgressViewController.swift in Sources */,
 				A71A088B2377713700AF7BA0 /* TourTableViewController.swift in Sources */,
 				8D5C33D023F0E7000077FFAF /* FirebaseDataAccess.swift in Sources */,
 				8D2C42FB23F283F00090E830 /* TourInfo.swift in Sources */,
 				8D87DF9F23D92D2C00FB30C2 /* Directions.swift in Sources */,
 				E438381A238793E700858C8B /* TourStopViewController.swift in Sources */,
 				8DA94B1823DE3D1D006A5D5F /* OrderedCoordinate.swift in Sources */,
+				E424E2BA244D1BF40061FE19 /* TourProgressTableViewController.swift in Sources */,
+				E424E2B8244D1A090061FE19 /* StatsTabBarController.swift in Sources */,
 				8DFF3D4D238E1BF3006D527A /* StopViewTabBarController.swift in Sources */,
 				A71A088523775EBF00AF7BA0 /* Asset.swift in Sources */,
 				8D87991D2363724B0005AF68 /* GoogleMapsViewController.swift in Sources */,
@@ -444,6 +462,7 @@
 				8DFF3D512393653D006D527A /* StopCollectionViewCell.swift in Sources */,
 				8DEF851A2443A3B600095687 /* DistanceConverter.swift in Sources */,
 				8DFF3D4F238E2C62006D527A /* StopViewImagesViewController.swift in Sources */,
+				E46852C6244D5BDD00FDD00F /* AboutViewController.swift in Sources */,
 				8D8D5CA32413505F00AB2DF1 /* SettingsViewController.swift in Sources */,
 				8DA606B02408B88D00403321 /* TourProgressRetrievable.swift in Sources */,
 				8D57B4652436695A006F41D3 /* UITextView+.swift in Sources */,
@@ -453,6 +472,7 @@
 				8DFF3D5323937865006D527A /* FullImageViewController.swift in Sources */,
 				8D13ED882379055700B9AF7B /* TourDescriptionViewController.swift in Sources */,
 				A71A0887237760B000AF7BA0 /* Tour.swift in Sources */,
+				8DE9D49924520FE0000F7DE5 /* TourProgressFullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
