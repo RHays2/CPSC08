@@ -52,7 +52,9 @@ class TourProgressFullViewController: UIViewController {
                     stopsVisitedCount += 1
                 }
             }
-            stopsVisitedLabel.text = "\(stopsVisitedCount) / \(Int(selectedTour!.tourLength))"
+            if let tour = self.selectedTour {
+               stopsVisitedLabel.text = "\(stopsVisitedCount) / \(Int(tour.tourLength))"
+            }
             distanceTravelledLabel.text = "\(progress.distanceTraveled) miles"
         }
     }
