@@ -33,6 +33,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     var tourProgressRetriever: TourProgressRetrievable = UserDefaultsProgressRetrieval()
     var currentMonitoredRegion: CLCircularRegion?
     var distanceTracker: DistanceTracker?
+    var notificationCenter: LocationNotificationCenter = LocationNotificationCenter()
     
     var progressLabel: UILabel = {
         let label = UILabel()
@@ -50,16 +51,45 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         // Do any additional setup after loading the view.
         // check to make sure the user has location enabled
         if CLLocationManager.locationServicesEnabled() {
-            print("Location services enabled")
-            setupLocationServices()
-            setUpMapView()
-            addProgressLabel()
-            setupMapWithTourStops()
+            print("Location services enabled for device")
+            //determine if the locations ervices are enabled for the application
+            switch CLLocationManager.authorizationStatus() {
+            case .authorizedAlways, .authorizedWhenInUse, .notDetermined:
+                setupLocationServices()
+                self.notificationCenter.requestLocationNotificationPermissions(callback: { (granted) in
+                    if granted { print("notifications granted") } else { print("notifications denied") }
+                })
+                setUpMapView()
+                addProgressLabel()
+                setupMapWithTourStops()
+                break
+            case .restricted, .denied:
+                displayLocationsNeededAlert()
+                break
+            }
+            
         }
         else {
             // the user turned off location, phone is airplane mode, lack of hardware, hardware failure,...
             print("Location services disabled")
+            displayLocationsNeededAlert()
         }
+    }
+    
+    func displayLocationsNeededAlert() {
+        let alertMsg = "Without location services, we cannot help you navigate around campus. Please go into settings and allow location tracking for this app."
+        let alert = UIAlertController(title: "Location Services Required", message: alertMsg, preferredStyle: .alert)
+        //create an action for a cancel button
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: {(alertAction) in
+            //exit this screen
+            if let nav = self.navigationController {
+                nav.popToRootViewController(animated: true)
+            }
+        })
+        
+        alert.addAction(okAction)
+        //present alert dialog
+        self.present(alert, animated: true, completion: nil)
     }
     
     func settingsButtonSetup() {
@@ -293,6 +323,9 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                     //we are close enough to the stop that a user can visit it
                     self.activeTour?.tourStops[index].isInCloseProximity = true
                     //alert the user that they have entered a stop area
+                    if self.notificationCenter.notificationsPermissions {
+                        self.notificationCenter.sendNotification(title: "Entering Tour Stop", body: "You are now close enough to a stop to visit it!")
+                    }
                 }
             }
         }

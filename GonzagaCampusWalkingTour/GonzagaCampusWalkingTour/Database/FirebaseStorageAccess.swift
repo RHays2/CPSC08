@@ -24,8 +24,8 @@ class FirebaseStorageAccess {
     func getImageNamed(name: String, callback: @escaping (UIImage?, String?) -> Void) {
         if self.imagesRef != nil {
             let curImage = self.imagesRef?.child(name)
-            //download image with a max size of 1 megabite
-            curImage?.getData(maxSize: 1 * 1024 * 1024, completion: {(data, error) in
+            //download image with a max size of 3 megabite
+            curImage?.getData(maxSize: 3 * 1024 * 1024, completion: {(data, error) in
                 if data != nil {
                     guard let unwrapped = data else {return}
                     let image = UIImage(data: unwrapped)
