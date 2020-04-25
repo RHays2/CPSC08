@@ -30,6 +30,7 @@ class StopViewImagesViewController: UIViewController, UICollectionViewDataSource
         else {
             //we have already loaded the assets
             //dont waste time and load again
+            self.getLocalImages()
             self.assets = self.curStop?.stopAssets
             self.collectionView.reloadData()
         }
@@ -49,6 +50,20 @@ class StopViewImagesViewController: UIViewController, UICollectionViewDataSource
             })
         }
     }
+    
+    
+    func getLocalImages() {
+        if let assets = self.assets{
+            for asset in assets {
+                if let url = asset.assetURL {
+                    if let image = FileManager.default.getImageFromPath(urlStr: url) {
+                        asset.asset = image
+                    }
+                }
+            }
+        }
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let count = assets?.count else { return 0 }
@@ -79,8 +94,9 @@ class StopViewImagesViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name:"Main", bundle:nil)
         if let fullImageView = storyBoard.instantiateViewController(withIdentifier: "FullImageViewController") as? FullImageViewController {
-            if let image = assets?[indexPath.item].asset {
+            if let image = assets?[indexPath.item].asset, let caption = assets?[indexPath.item].assetDescription {
                 fullImageView.image = image
+                fullImageView.captionString = caption
             }
             else {
                 fullImageView.image = UIImage(named: "default_preview_image")

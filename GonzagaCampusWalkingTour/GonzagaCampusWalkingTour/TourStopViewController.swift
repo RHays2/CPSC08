@@ -86,7 +86,29 @@ class TourStopViewController: UIViewController {
     
     func setUpStopView() {
         stopName.text = currentStop?.stopName
-        self.replaceImgSrc()
+        //determine if the assets have been downloaded
+        if self.currentStop?.stopAssets == nil {
+            downloadAssets()
+        }
+        else {
+            self.replaceImgSrc()
+        }
+    }
+    
+    func downloadAssets() {
+        //download all assets locally
+        if self.databaseReference != nil && self.currentStop != nil {
+            //add progress indicator
+            let progressIndicator = self.createCenteredProgressIndicator()
+            self.view.addSubview(progressIndicator)
+            progressIndicator.startAnimating()
+            self.databaseReference?.locallyDownloadAssets(stopId: self.currentStop?.id ?? "", callback: {(assets) in
+                //we have recieved the assets
+                self.currentStop?.stopAssets = assets
+                self.replaceImgSrc()
+                progressIndicator.stopAnimating()
+            })
+        }
     }
     
     func replaceImgSrc() {
@@ -101,8 +123,7 @@ class TourStopViewController: UIViewController {
                 let progressIndicator = self.createCenteredProgressIndicator()
                 self.view.addSubview(progressIndicator)
                 progressIndicator.startAnimating()
-                self.databaseReference?.locallyDownloadAssets(stopId: self.currentStop?.id ?? "", callback: {(assets) in
-                    //we have recieved the assets
+                if let assets = self.currentStop?.stopAssets {
                     for asset in assets {
                         //replace the image tag src with the downloaded image path
                         if let url = asset.assetURL {
@@ -131,7 +152,7 @@ class TourStopViewController: UIViewController {
                     } catch { print(error) }
                     //stop animating progress indicator
                     progressIndicator.stopAnimating()
-                })
+                }
             }
             catch {
                 print(error)

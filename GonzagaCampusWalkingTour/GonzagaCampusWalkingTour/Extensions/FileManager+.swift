@@ -22,6 +22,16 @@ extension FileManager {
         return nil
     }
     
+    func getImageFromPath(urlStr: String) -> UIImage? {
+        //make sure the file actually exists in the temporary dir
+        if let url = URL(string: urlStr) {
+            if FileManager.default.fileExists(atPath: url.path) {
+                return UIImage(contentsOfFile: url.path)
+            }
+        }
+        return nil
+    }
+    
     func clearTmpDirectory() {
         do {
             let tmpContents = try self.contentsOfDirectory(atPath: NSTemporaryDirectory())
