@@ -53,6 +53,21 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         if CLLocationManager.locationServicesEnabled() {
             print("Location services enabled for device")
             setupLocationServices()
+            switch CLLocationManager.authorizationStatus() {
+                case .authorizedAlways, .authorizedWhenInUse:
+                    self.notificationCenter.requestLocationNotificationPermissions(callback: { (granted) in
+                        if granted { print("notifications granted") } else { print("notifications denied") }
+                    })
+                    setUpMapView()
+                    addProgressLabel()
+                    setupMapWithTourStops()
+                    break
+                case .restricted, .denied:
+                    displayLocationsNeededAlert()
+                    break
+                case .notDetermined:
+                    break
+            }
         }
         else {
             // the user turned off location, phone is airplane mode, lack of hardware, hardware failure,...
