@@ -58,6 +58,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                     self.notificationCenter.requestLocationNotificationPermissions(callback: { (granted) in
                         if granted { print("notifications granted") } else { print("notifications denied") }
                     })
+                    startLocationServices()
                     setUpMapView()
                     addProgressLabel()
                     setupMapWithTourStops()
@@ -83,6 +84,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
             self.notificationCenter.requestLocationNotificationPermissions(callback: { (granted) in
                 if granted { print("notifications granted") } else { print("notifications denied") }
             })
+            startLocationServices()
             setUpMapView()
             addProgressLabel()
             setupMapWithTourStops()
@@ -206,8 +208,13 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         locationManager.delegate = self
         // shows the users location as accurate as possible. Will be battery intensive
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.allowsBackgroundLocationUpdates = true
         // requests users location always
         locationManager.requestAlwaysAuthorization()
+    }
+    
+    func startLocationServices() {
         //begin getting the location and heading
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
@@ -475,7 +482,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                         }
                     }
                     //create a monitored region for the current stop
-                    self.createMonitoredRegion(center: CLLocationCoordinate2D(latitude: stops[curStop].stopLatitude, longitude: stops[curStop].stopLongitude), radius: 30, id: String(curStop))
+                    self.createMonitoredRegion(center: CLLocationCoordinate2D(latitude: stops[curStop].stopLatitude, longitude: stops[curStop].stopLongitude), radius: 10, id: String(curStop))
                     //determine if user is in the region
                     self.isUserInRegion()
                 }
@@ -490,6 +497,16 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                     if let index = Int(reg.identifier), index < self.activeTour?.tourStops.count ?? 0 {
                         //set the stops isInProximity to true
                         self.activeTour?.tourStops[index].isInCloseProximity = true
+                        /*if self.notificationCenter.notificationsPermissions {
+                            self.notificationCenter.sendNotification(title: "Entering Tour Stop", body: "You are now close enough to a stop to visit it!")
+                        }*/
+                    }
+                }
+            } else {
+                if self.activeTour?.tourStops != nil {
+                    if let index = Int(reg.identifier), index < self.activeTour?.tourStops.count ?? 0 {
+                        //set the stops isInProximity to true
+                        self.activeTour?.tourStops[index].isInCloseProximity = false
                     }
                 }
             }
