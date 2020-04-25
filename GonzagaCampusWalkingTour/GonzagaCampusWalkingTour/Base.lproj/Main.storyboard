@@ -736,17 +736,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mlx-Wi-U8I">
+                                <rect key="frame" x="16" y="495" width="343" height="152"/>
+                                <color key="backgroundColor" white="0.64237933339999997" alpha="0.43010013200000002" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="lp3-zR-Jtb" firstAttribute="trailing" secondItem="Mlx-Wi-U8I" secondAttribute="trailing" constant="16" id="2Mr-7p-I7c"/>
                             <constraint firstItem="3en-4A-D1T" firstAttribute="leading" secondItem="lp3-zR-Jtb" secondAttribute="leading" id="7ER-Lq-Q7H"/>
                             <constraint firstItem="3en-4A-D1T" firstAttribute="bottom" secondItem="lp3-zR-Jtb" secondAttribute="bottom" id="Ui5-7e-LZL"/>
+                            <constraint firstItem="Mlx-Wi-U8I" firstAttribute="leading" secondItem="lp3-zR-Jtb" secondAttribute="leading" constant="16" id="Vzr-yK-RWM"/>
                             <constraint firstItem="3en-4A-D1T" firstAttribute="top" secondItem="lp3-zR-Jtb" secondAttribute="top" id="dMR-hz-sqH"/>
                             <constraint firstItem="3en-4A-D1T" firstAttribute="trailing" secondItem="lp3-zR-Jtb" secondAttribute="trailing" id="fu1-m6-4BB"/>
+                            <constraint firstItem="Mlx-Wi-U8I" firstAttribute="top" secondItem="lp3-zR-Jtb" secondAttribute="top" constant="495" id="iuv-Zh-gPd"/>
+                            <constraint firstItem="lp3-zR-Jtb" firstAttribute="bottom" secondItem="Mlx-Wi-U8I" secondAttribute="bottom" constant="20" id="zr6-h9-RFh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lp3-zR-Jtb"/>
                     </view>
                     <connections>
+                        <outlet property="caption" destination="Mlx-Wi-U8I" id="aPi-0E-nRL"/>
                         <outlet property="imageView" destination="3en-4A-D1T" id="8Y7-cH-T4l"/>
                     </connections>
                 </viewController>

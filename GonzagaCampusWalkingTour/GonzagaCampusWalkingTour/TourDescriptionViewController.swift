@@ -64,10 +64,6 @@ class TourDescriptionViewController: UIViewController {
     
     @objc func startTour() {
         //start the google maps view
-//        let googleMapsViewController = GoogleMapsViewController(nibName: nil, bundle: nil)
-//        googleMapsViewController.modalPresentationStyle = .fullScreen
-//        googleMapsViewController.activeTour = selectedTour
-//        self.present(googleMapsViewController, animated: true, completion: nil)
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if let mapView = storyBoard.instantiateViewController(withIdentifier: "GoogleMapsViewController") as? GoogleMapsViewController {
             mapView.active = selected
