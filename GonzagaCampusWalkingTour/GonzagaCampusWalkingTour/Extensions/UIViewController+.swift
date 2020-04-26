@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     func createCenteredProgressIndicator() -> UIActivityIndicatorView{
-        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.large)
         indicator.frame = self.view.frame
         indicator.color = .gray
         if let nav = self.navigationController {

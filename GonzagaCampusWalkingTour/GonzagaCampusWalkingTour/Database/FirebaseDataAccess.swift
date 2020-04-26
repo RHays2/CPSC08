@@ -147,7 +147,11 @@ public class FirebaseDataAccess: DatabaseAccessible {
                         callback(assets)
                     })
                 }
-            })
+                else { callback([]) }
+            }) { (error) in
+                print(error.localizedDescription)
+                callback([])
+            }
         }
     }
     
