@@ -35,6 +35,7 @@
 		8DA606B42408BC7500403321 /* TourProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B32408BC7500403321 /* TourProgress.swift */; };
 		8DA94B1823DE3D1D006A5D5F /* OrderedCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */; };
 		8DB1DE4C23F492C0003E072D /* FirebaseStorageAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */; };
+		8DD14B8C245557E60077B7B3 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD14B8B245557E60077B7B3 /* config.plist */; };
 		8DE9D49924520FE0000F7DE5 /* TourProgressFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */; };
 		8DEF8516243E90D800095687 /* AdminInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF8515243E90D800095687 /* AdminInfoViewController.swift */; };
 		8DEF851824439E0E00095687 /* DistanceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF851724439E0E00095687 /* DistanceTracker.swift */; };
@@ -102,6 +103,7 @@
 		8DA606B32408BC7500403321 /* TourProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgress.swift; sourceTree = "<group>"; };
 		8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedCoordinate.swift; sourceTree = "<group>"; };
 		8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageAccess.swift; sourceTree = "<group>"; };
+		8DD14B8B245557E60077B7B3 /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgressFullViewController.swift; sourceTree = "<group>"; };
 		8DEF8515243E90D800095687 /* AdminInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminInfoViewController.swift; sourceTree = "<group>"; };
 		8DEF851724439E0E00095687 /* DistanceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceTracker.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */,
 				8D81D944236E0B0300D1CB79 /* Extensions */,
 				8D4262E5236127540075D46C /* AppDelegate.swift */,
+				8DD14B8B245557E60077B7B3 /* config.plist */,
 				8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */,
 				8D7AFD0A244FBA8C00DF8393 /* LocationNotificationCenter.swift */,
 				8D4262E7236127540075D46C /* ViewController.swift */,
@@ -354,6 +357,7 @@
 			files = (
 				8D4262F0236127540075D46C /* LaunchScreen.storyboard in Resources */,
 				8D4262ED236127540075D46C /* Assets.xcassets in Resources */,
+				8DD14B8C245557E60077B7B3 /* config.plist in Resources */,
 				8D990654245371EF0083D821 /* GoogleService-Info.plist in Resources */,
 				A7C06E162384C4C200DD197B /* GonzagaGPX.gpx in Resources */,
 				8D4262EB236127540075D46C /* Main.storyboard in Resources */,
