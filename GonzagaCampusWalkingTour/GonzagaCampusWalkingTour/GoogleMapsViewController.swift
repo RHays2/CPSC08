@@ -32,6 +32,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     var tourProgress: TourProgress?
     var tourProgressRetriever: TourProgressRetrievable = UserDefaultsProgressRetrieval()
     var currentMonitoredRegion: CLCircularRegion?
+    var userInRegion: Bool = false
     var distanceTracker: DistanceTracker?
     var notificationCenter: LocationNotificationCenter = LocationNotificationCenter()
     
@@ -297,6 +298,18 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         if (self.centerOnUser == true) {
           self.centerUserLocationOnMap(location: locations.last ?? CLLocation())
         }
+        
+        //determine if the user has entered a region
+        if self.isUserInCurrentRegion() {
+            if self.userInRegion == false {
+                //alert the user they have just entered the region
+                if self.notificationCenter.notificationsPermissions {
+                    self.notificationCenter.sendNotification(title: "Entering Tour Stop", body: "You are now close enough to a stop to visit it!")
+                }
+            }
+        }
+        self.userInRegion = self.isUserInCurrentRegion()
+        
         if let location = locations.last {
             //if the initial location of distance tracker is nil, add it as the initial
             if self.distanceTracker != nil {
@@ -365,6 +378,10 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         }
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         //TODO: make sure user is accessing stops in order
         if let stop = marker as? Stop {
@@ -372,7 +389,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
             guard let tourInfo = self.activeTour else { return false }
             //determine if the user is within the region of the stop and if this is the stop that they are one
             //or if this stop is already visited
-            if (stop.isInCloseProximity == true && progress.currentStop == stop.order - 1)  || progress.stopProgress[stop.id] == true {
+            if (/*stop.isInCloseProximity == true*/self.isUserInCurrentRegion() && progress.currentStop == stop.order - 1)  || progress.stopProgress[stop.id] == true {
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 //create the tabBarController
                 if let tabBarController = storyBoard.instantiateViewController(withIdentifier: "StopViewTabBarController") as? StopViewTabBarController{
@@ -482,12 +499,21 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                         }
                     }
                     //create a monitored region for the current stop
-                    self.createMonitoredRegion(center: CLLocationCoordinate2D(latitude: stops[curStop].stopLatitude, longitude: stops[curStop].stopLongitude), radius: 10, id: String(curStop))
+                    self.createMonitoredRegion(center: CLLocationCoordinate2D(latitude: stops[curStop].stopLatitude, longitude: stops[curStop].stopLongitude), radius: 15, id: String(curStop))
                     //determine if user is in the region
                     self.isUserInRegion()
                 }
             }
         }
+    }
+    
+    func isUserInCurrentRegion() -> Bool {
+        if let reg = self.currentMonitoredRegion {
+            if reg.contains(self.currentLocation.coordinate) {
+                return true
+            }
+        }
+        return false
     }
     
     func isUserInRegion() {
