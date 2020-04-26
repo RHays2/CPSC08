@@ -350,7 +350,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         return true
     }
     
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+    /*func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         //this function will run when user enters the region of a tour stop
         if self.activeTour != nil && self.activeTour?.tourStops != nil {
             if let index = Int(region.identifier) {
@@ -380,7 +380,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
-    }
+    }*/
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         //TODO: make sure user is accessing stops in order
