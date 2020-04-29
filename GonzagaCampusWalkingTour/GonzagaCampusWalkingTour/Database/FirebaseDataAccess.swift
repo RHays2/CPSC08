@@ -60,6 +60,10 @@ public class FirebaseDataAccess: DatabaseAccessible {
                     stops.sort(by: {s1, s2 in return s1.order < s2.order})
                     callback(stops)
                 }
+                else {
+                    //return an empty list
+                    callback([])
+                }
             })
         }
     }
