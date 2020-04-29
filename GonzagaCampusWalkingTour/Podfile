@@ -9,7 +9,7 @@ use_modular_headers!
   # Pods for GonzagaCampusWalkingTour
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'Firebase/Core'
+  pod 'Firebase/CoreOnly'
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Email'
   pod 'Firebase/Database' 
