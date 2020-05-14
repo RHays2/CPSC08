@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController {
 
     var tourProgress: TourProgress?
     var tourProgressRetriever: TourProgressRetrievable?
+    var distanceTracker: DistanceTracker?
     
     @IBOutlet weak var progressResetButton: UIButton!
     
@@ -29,6 +30,9 @@ class SettingsViewController: UIViewController {
         let resetAction = UIAlertAction(title: "Reset", style: .default, handler: {(alertAction) in
             if let progress = self.tourProgress, let progressRetriever = self.tourProgressRetriever {
                 //reset the progress
+                if let dt = self.distanceTracker {
+                    dt.currentDistance = 0.0
+                }
                 progressRetriever.resetTourProgress(progress: progress)
             }
         })

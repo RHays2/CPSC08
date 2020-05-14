@@ -34,7 +34,7 @@ class UserProgressViewController: UIViewController {
         sumDistanceTravelled()
         sumToursCompleted()
         sumStopsVisited()
-        distanceTravelledLabel.text = "\(String(totalDistanceTravelled)) miles"
+        distanceTravelledLabel.text = "\(String(format: "%.2f",totalDistanceTravelled)) miles"
         toursCompletedLabel.text = "\(String(totalToursCompleted)) Tours"
         totalStopsVisitedLabel.text = "\(String(totalStopsVisited)) Stops"
     }

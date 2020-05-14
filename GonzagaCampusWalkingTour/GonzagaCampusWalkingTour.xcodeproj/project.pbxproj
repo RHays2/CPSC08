@@ -28,14 +28,14 @@
 		8D87DF9F23D92D2C00FB30C2 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87DF9E23D92D2C00FB30C2 /* Directions.swift */; };
 		8D886E4B23D7D26F0099449E /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D886E4A23D7D26F0099449E /* Path.swift */; };
 		8D8D5CA32413505F00AB2DF1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */; };
-		8D990654245371EF0083D821 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D990653245371EF0083D821 /* GoogleService-Info.plist */; };
 		8DA5677B2446968F002D00EC /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA5677A2446968F002D00EC /* Date+.swift */; };
 		8DA606B02408B88D00403321 /* TourProgressRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606AF2408B88D00403321 /* TourProgressRetrievable.swift */; };
 		8DA606B22408BACA00403321 /* UserDefaultsProgressRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B12408BACA00403321 /* UserDefaultsProgressRetrieval.swift */; };
 		8DA606B42408BC7500403321 /* TourProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA606B32408BC7500403321 /* TourProgress.swift */; };
 		8DA94B1823DE3D1D006A5D5F /* OrderedCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */; };
 		8DB1DE4C23F492C0003E072D /* FirebaseStorageAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */; };
-		8DD14B8C245557E60077B7B3 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD14B8B245557E60077B7B3 /* config.plist */; };
+		8DD14B9424560E730077B7B3 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD14B9324560E730077B7B3 /* config.plist */; };
+		8DD14B9624560E770077B7B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD14B9524560E770077B7B3 /* GoogleService-Info.plist */; };
 		8DE9D49924520FE0000F7DE5 /* TourProgressFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */; };
 		8DEF8516243E90D800095687 /* AdminInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF8515243E90D800095687 /* AdminInfoViewController.swift */; };
 		8DEF851824439E0E00095687 /* DistanceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF851724439E0E00095687 /* DistanceTracker.swift */; };
@@ -49,7 +49,6 @@
 		A71A0887237760B000AF7BA0 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A0886237760B000AF7BA0 /* Tour.swift */; };
 		A71A0889237766BD00AF7BA0 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A0888237766BD00AF7BA0 /* TourTableViewCell.swift */; };
 		A71A088B2377713700AF7BA0 /* TourTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A088A2377713700AF7BA0 /* TourTableViewController.swift */; };
-		A7C06E162384C4C200DD197B /* GonzagaGPX.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */; };
 		E424E2B8244D1A090061FE19 /* StatsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424E2B7244D1A090061FE19 /* StatsTabBarController.swift */; };
 		E424E2BA244D1BF40061FE19 /* TourProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424E2B9244D1BF40061FE19 /* TourProgressTableViewController.swift */; };
 		E424E2BC244D2B7A0061FE19 /* UserProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424E2BB244D2B7A0061FE19 /* UserProgressViewController.swift */; };
@@ -95,15 +94,14 @@
 		8D87DF9E23D92D2C00FB30C2 /* Directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
 		8D886E4A23D7D26F0099449E /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		8D990653245371EF0083D821 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8DA56779244677C0002D00EC /* GonzagaCampusWalkingTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GonzagaCampusWalkingTour.entitlements; sourceTree = "<group>"; };
 		8DA5677A2446968F002D00EC /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		8DA606AF2408B88D00403321 /* TourProgressRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgressRetrievable.swift; sourceTree = "<group>"; };
 		8DA606B12408BACA00403321 /* UserDefaultsProgressRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProgressRetrieval.swift; sourceTree = "<group>"; };
 		8DA606B32408BC7500403321 /* TourProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgress.swift; sourceTree = "<group>"; };
 		8DA94B1723DE3D1D006A5D5F /* OrderedCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedCoordinate.swift; sourceTree = "<group>"; };
 		8DB1DE4B23F492C0003E072D /* FirebaseStorageAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageAccess.swift; sourceTree = "<group>"; };
-		8DD14B8B245557E60077B7B3 /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		8DD14B9324560E730077B7B3 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = config.plist; path = ../../../config.plist; sourceTree = "<group>"; };
+		8DD14B9524560E770077B7B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourProgressFullViewController.swift; sourceTree = "<group>"; };
 		8DEF8515243E90D800095687 /* AdminInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminInfoViewController.swift; sourceTree = "<group>"; };
 		8DEF851724439E0E00095687 /* DistanceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceTracker.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 		A71A0886237760B000AF7BA0 /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		A71A0888237766BD00AF7BA0 /* TourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourTableViewCell.swift; sourceTree = "<group>"; };
 		A71A088A2377713700AF7BA0 /* TourTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourTableViewController.swift; sourceTree = "<group>"; };
-		A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GonzagaGPX.gpx; sourceTree = "<group>"; };
 		B47C547D339749E2C4E9C7B3 /* Pods-GonzagaCampusWalkingTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.debug.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.debug.xcconfig"; sourceTree = "<group>"; };
 		C4641F10C79A8E3220B02C21 /* Pods-GonzagaCampusWalkingTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonzagaCampusWalkingTour.release.xcconfig"; path = "Target Support Files/Pods-GonzagaCampusWalkingTour/Pods-GonzagaCampusWalkingTour.release.xcconfig"; sourceTree = "<group>"; };
 		E424E2B7244D1A090061FE19 /* StatsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTabBarController.swift; sourceTree = "<group>"; };
@@ -181,12 +178,9 @@
 		8D4262E4236127540075D46C /* GonzagaCampusWalkingTour */ = {
 			isa = PBXGroup;
 			children = (
-				8DA56779244677C0002D00EC /* GonzagaCampusWalkingTour.entitlements */,
 				8D5C33CC23F0E5960077FFAF /* Database */,
-				A7C06E152384C4C200DD197B /* GonzagaGPX.gpx */,
 				8D81D944236E0B0300D1CB79 /* Extensions */,
 				8D4262E5236127540075D46C /* AppDelegate.swift */,
-				8DD14B8B245557E60077B7B3 /* config.plist */,
 				8D8D5CA22413505F00AB2DF1 /* SettingsViewController.swift */,
 				8D7AFD0A244FBA8C00DF8393 /* LocationNotificationCenter.swift */,
 				8D4262E7236127540075D46C /* ViewController.swift */,
@@ -197,6 +191,7 @@
 				8DE9D49824520FE0000F7DE5 /* TourProgressFullViewController.swift */,
 				E424E2B7244D1A090061FE19 /* StatsTabBarController.swift */,
 				E424E2BB244D2B7A0061FE19 /* UserProgressViewController.swift */,
+				8DD14B9324560E730077B7B3 /* config.plist */,
 				A71A088A2377713700AF7BA0 /* TourTableViewController.swift */,
 				A71A0888237766BD00AF7BA0 /* TourTableViewCell.swift */,
 				A71A088423775EBF00AF7BA0 /* Asset.swift */,
@@ -205,9 +200,9 @@
 				8D886E4A23D7D26F0099449E /* Path.swift */,
 				8D4262EC236127540075D46C /* Assets.xcassets */,
 				8D4262EE236127540075D46C /* LaunchScreen.storyboard */,
+				8DD14B9524560E770077B7B3 /* GoogleService-Info.plist */,
 				8D4262F1236127540075D46C /* Info.plist */,
 				8D87991C2363724B0005AF68 /* GoogleMapsViewController.swift */,
-				8D990653245371EF0083D821 /* GoogleService-Info.plist */,
 				8DEF851724439E0E00095687 /* DistanceTracker.swift */,
 				8DEF85192443A3B600095687 /* DistanceConverter.swift */,
 				8D87DF9E23D92D2C00FB30C2 /* Directions.swift */,
@@ -322,7 +317,7 @@
 				TargetAttributes = {
 					8D4262E1236127540075D46C = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					8D4262F5236127540075D46C = {
 						CreatedOnToolsVersion = 9.1;
@@ -357,10 +352,9 @@
 			files = (
 				8D4262F0236127540075D46C /* LaunchScreen.storyboard in Resources */,
 				8D4262ED236127540075D46C /* Assets.xcassets in Resources */,
-				8DD14B8C245557E60077B7B3 /* config.plist in Resources */,
-				8D990654245371EF0083D821 /* GoogleService-Info.plist in Resources */,
-				A7C06E162384C4C200DD197B /* GonzagaGPX.gpx in Resources */,
 				8D4262EB236127540075D46C /* Main.storyboard in Resources */,
+				8DD14B9424560E730077B7B3 /* config.plist in Resources */,
+				8DD14B9624560E770077B7B3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,13 +629,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GonzagaCampusWalkingTour/GonzagaCampusWalkingTour.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = M8YM97V34C;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GonzagaCampusWalkingTour/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = GonzagaCampusWalkingTour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "GU Walking Tour (no push notifications)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -653,13 +652,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GonzagaCampusWalkingTour/GonzagaCampusWalkingTour.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = M8YM97V34C;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GonzagaCampusWalkingTour/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = GonzagaCampusWalkingTour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "GU Walking Tour (no push notifications)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

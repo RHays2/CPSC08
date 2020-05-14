@@ -35,6 +35,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     var userInRegion: Bool = false
     var distanceTracker: DistanceTracker?
     var notificationCenter: LocationNotificationCenter = LocationNotificationCenter()
+    var mapSetup = false;
     
     var progressLabel: UILabel = {
         let label = UILabel()
@@ -59,10 +60,14 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                     self.notificationCenter.requestLocationNotificationPermissions(callback: { (granted) in
                         if granted { print("notifications granted") } else { print("notifications denied") }
                     })
-                    startLocationServices()
-                    setUpMapView()
-                    addProgressLabel()
-                    setupMapWithTourStops()
+                    if self.mapSetup == false {
+                        startLocationServices()
+                        setUpMapView()
+                        addProgressLabel()
+                        setupMapWithTourStops()
+                        mapSetup = true
+                    }
+                    
                     break
                 case .restricted, .denied:
                     displayLocationsNeededAlert()
@@ -85,10 +90,14 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
             self.notificationCenter.requestLocationNotificationPermissions(callback: { (granted) in
                 if granted { print("notifications granted") } else { print("notifications denied") }
             })
-            startLocationServices()
-            setUpMapView()
-            addProgressLabel()
-            setupMapWithTourStops()
+            //make sure the map hasnt already been setup
+            if self.mapSetup == false {
+                startLocationServices()
+                setUpMapView()
+                addProgressLabel()
+                setupMapWithTourStops()
+                self.mapSetup = true
+            }
             break
         case .restricted, .denied:
             displayLocationsNeededAlert()
@@ -126,6 +135,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         if let vc = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController {
             if let progress = self.tourProgress {
                 vc.tourProgress = progress
+                vc.distanceTracker = self.distanceTracker
             }
             vc.tourProgressRetriever = self.tourProgressRetriever
             self.navigationController?.pushViewController(vc, animated: true)
@@ -300,7 +310,8 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         }
         
         //determine if the user has entered a region
-        if self.isUserInCurrentRegion() {
+        let inRegion = self.isUserInCurrentRegion()
+        if inRegion {
             if self.userInRegion == false {
                 //alert the user they have just entered the region
                 if self.notificationCenter.notificationsPermissions {
@@ -308,7 +319,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                 }
             }
         }
-        self.userInRegion = self.isUserInCurrentRegion()
+        self.userInRegion = inRegion
         
         if let location = locations.last {
             //if the initial location of distance tracker is nil, add it as the initial
@@ -346,7 +357,13 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
         //user wants to have map centered around their location once again
         self.centerOnUser = true
         self.currentZoom = GoogleMapsViewController.DEFAULT_ZOOM
-        self.centerUserLocationOnMap(location: self.currentLocation)
+        if let loc = locationManager.location {
+            self.centerUserLocationOnMap(location: loc)
+        }
+        else {
+            self.centerUserLocationOnMap(location: self.currentLocation)
+        }
+        
         return true
     }
     
@@ -420,6 +437,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                         }
                         else {
                             self.addDirectionsPath()
+                            self.updateMonitoredRegion()
                         }
                     }
                     
@@ -499,7 +517,7 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
                         }
                     }
                     //create a monitored region for the current stop
-                    self.createMonitoredRegion(center: CLLocationCoordinate2D(latitude: stops[curStop].stopLatitude, longitude: stops[curStop].stopLongitude), radius: 15, id: String(curStop))
+                    self.createMonitoredRegion(center: CLLocationCoordinate2D(latitude: stops[curStop].stopLatitude, longitude: stops[curStop].stopLongitude), radius: 50, id: String(curStop))
                     //determine if user is in the region
                     self.isUserInRegion()
                 }
@@ -509,8 +527,15 @@ class GoogleMapsViewController: UIViewController,CLLocationManagerDelegate, GMSM
     
     func isUserInCurrentRegion() -> Bool {
         if let reg = self.currentMonitoredRegion {
-            if reg.contains(self.currentLocation.coordinate) {
-                return true
+            if let loc = locationManager.location {
+                if reg.contains(loc.coordinate) {
+                    return true
+                }
+            }
+            else {
+                if reg.contains(self.currentLocation.coordinate) {
+                    return true
+                }
             }
         }
         return false
